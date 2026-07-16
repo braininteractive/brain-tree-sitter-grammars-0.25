@@ -1,0 +1,22 @@
+# Method-level bounded type parameters (the primary fix in this fork).
+class Container[Elem < Comparable]
+  # Unbounded method type parameter still works.
+  def each: [T] () { (T) -> void } -> void
+
+  # Single bounded method type parameter.
+  def add: [U < Numeric] (U value) -> Elem
+
+  # Multiple parameters, one bounded by an interface type.
+  def zip: [A, B < _Each[A]] (A a, B b) -> Array[A]
+
+  # Singleton method with a bounded type parameter.
+  def self.build: [X < Comparable] (X seed) -> Container[X]
+
+  # self?. method with a bounded parameter and an overload.
+  def self?.wrap: [Y < Numeric] (Y y) -> Container[Y]
+                | (Elem e) -> Container[Elem]
+end
+
+interface _Sortable[T < Comparable]
+  def sort: [S < _Sortable[T]] (S other) -> S
+end

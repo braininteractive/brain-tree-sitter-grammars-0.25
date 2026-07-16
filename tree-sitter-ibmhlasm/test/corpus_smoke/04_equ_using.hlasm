@@ -1,0 +1,8 @@
+* EQUATES AND ADDRESSABILITY
+R0       EQU   0
+R13      EQU   13
+R15      EQU   15
+MAXLEN   EQU   256
+         USING *,12
+         USING DSECTA,9
+         DROP  9

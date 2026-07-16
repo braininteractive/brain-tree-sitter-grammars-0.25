@@ -1,0 +1,8 @@
+/**
+ * @alias Apple.Core
+ * @event module:foo/bar.event:MyEvent
+ * @fires Hurl#snowball
+ * @exports hello/world
+ * @augments Base
+ * @example apple.core(config);
+ */

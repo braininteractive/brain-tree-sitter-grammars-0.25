@@ -1,0 +1,14 @@
+PREFIX ex: <http://example.org/ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?s
+WHERE {
+  ?s ex:label "chat"@fr .
+  ?s ex:title "cat"@en-GB .
+  ?s ex:count "42"^^xsd:integer .
+  ?s ex:weight "3.14"^^xsd:decimal .
+  ?s ex:created "2024-01-15T10:30:00Z"^^xsd:dateTime .
+  ?s ex:active true .
+  ?s ex:score -1.5e3 .
+  BIND (STRLANG("hello", "en") AS ?greeting)
+}

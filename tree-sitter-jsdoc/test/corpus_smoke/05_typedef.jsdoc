@@ -1,0 +1,7 @@
+/**
+ * A point in two-dimensional space.
+ *
+ * @typedef {Object} Point
+ * @property {number} x The horizontal coordinate.
+ * @property {number} y The vertical coordinate.
+ */

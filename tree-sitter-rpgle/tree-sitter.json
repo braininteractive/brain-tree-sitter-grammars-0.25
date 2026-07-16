@@ -1,0 +1,35 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "rpg",
+      "camelcase": "Rpg",
+      "title": "RPGLE",
+      "scope": "source.rpgle",
+      "file-types": [
+        "rpgle",
+        "sqlrpgle",
+        "rpg"
+      ],
+      "injection-regex": "^rpg(le)?$",
+      "class-name": "TreeSitterRpg"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "IBM ILE RPG (free-form) grammar for tree-sitter, extracted from mayflower/rpg-explainer",
+    "links": {
+      "repository": "https://github.com/mayflower/rpg-explainer"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

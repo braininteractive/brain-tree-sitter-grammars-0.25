@@ -1,0 +1,12 @@
+{{ {"key": [1, 2.5, 0x1f, true, none], "t": "v"}|tojson }}
+{{ "positive" if value > 0 else "non-positive" }}
+{{ (price * quantity) - discount + shipping % 5 }}
+{{ 2 ** 10 // 3 }}
+{{ users|map(attribute="email")|reject("none")|list|join("; ") }}
+{{ a and b or not c }}
+{% if n is divisibleby 3 and n is not string %}fizz{% endif %}
+{% if x is even %}even{% elif x is odd %}odd{% endif %}
+{% if "admin" in user.roles and user.email not in banned %}ok{% endif %}
+{{ items[-1] }} {{ matrix[i][j] }} {{ lookup["some key"] }}
+{{ "%s / %s"|format(numerator, denominator) }}
+{{ range(1, 11)|sum }}

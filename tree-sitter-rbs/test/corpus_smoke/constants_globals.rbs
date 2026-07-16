@@ -1,0 +1,24 @@
+# Constant, global and alias declarations plus use directives.
+use RBS::AST::Node
+
+use RBS::Types::*
+
+use Integer as Int
+
+VERSION: String
+
+MAX_RETRIES: Integer
+
+DEFAULTS: Hash[Symbol, untyped]
+
+RBS::Config::PATH: String
+
+$stdout: IO
+
+$DEBUG: bool
+
+class Container
+  alias size length
+
+  alias self.create self.build
+end

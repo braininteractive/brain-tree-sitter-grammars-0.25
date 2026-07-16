@@ -1,0 +1,70 @@
+================================================================================
+form definition without parameters
+================================================================================
+
+FORM show_message.
+  WRITE 'hello'.
+ENDFORM.
+
+--------------------------------------------------------------------------------
+
+(program
+  (form_definition
+    (name)
+    (write_statement
+      (character_literal))))
+
+================================================================================
+form definition with tables, using and changing parameters
+================================================================================
+
+FORM calc_total TABLES it_items STRUCTURE zitem
+                USING iv_factor TYPE i VALUE(iv_mode)
+                CHANGING cv_total TYPE i.
+  cv_total = cv_total + iv_factor.
+ENDFORM.
+
+--------------------------------------------------------------------------------
+
+(program
+  (form_definition
+    (name)
+    (form_parameter
+      (name)
+      (type))
+    (form_parameter
+      (name)
+      (complete_typing
+        (type)))
+    (form_parameter
+      (name))
+    (form_parameter
+      (name)
+      (complete_typing
+        (type)))
+    (assignment
+      (name)
+      (arithmetic_expression
+        (name)
+        (name)))))
+
+================================================================================
+form definition with untyped using parameters
+================================================================================
+
+FORM fill_table USING p_low p_high.
+  APPEND p_low TO gt_values.
+ENDFORM.
+
+--------------------------------------------------------------------------------
+
+(program
+  (form_definition
+    (name)
+    (form_parameter
+      (name))
+    (form_parameter
+      (name))
+    (append_statement
+      (name)
+      (name))))

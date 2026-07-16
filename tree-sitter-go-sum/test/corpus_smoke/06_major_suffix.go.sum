@@ -1,0 +1,4 @@
+example.com/storage/v2 v2.0.3 h1:TWFqb3JTdWZmaXhIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDA=
+example.com/storage/v2 v2.0.3/go.mod h1:TWFqb3JTdWZmaXhNb2RIYXNoMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/queue/v3 v3.2.1 h1:UXVldWVWM0hhc2hWYWx1ZTAwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/queue/v3 v3.2.1/go.mod h1:UXVldWVWM01vZEhhc2gwMDAwMDAwMDAwMDAwMDAwMDAwMDA=

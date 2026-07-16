@@ -1,0 +1,41 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "pug",
+      "camelcase": "Pug",
+      "title": "Pug",
+      "scope": "source.pug",
+      "path": ".",
+      "file-types": [
+        "pug"
+      ],
+      "injection-regex": "^(pug|jade)$",
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "class-name": "TreeSitterPug"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "Pug grammar for the tree-sitter parsing library",
+    "authors": [
+      {
+        "name": "Florian Proksch"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/zealot128/tree-sitter-pug"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false
+  }
+}

@@ -1,0 +1,14 @@
+# Node
+node_modules
+
+# Keep some samples local
+sample_code/*
+corpus/local_tests/*
+
+# Misc
+log.html
+.DS_Store
+
+# Rust
+/Cargo.lock
+/target/

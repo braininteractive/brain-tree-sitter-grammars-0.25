@@ -1,0 +1,34 @@
+# Tree-sitter / Node build outputs
+build/
+node_modules/
+parser
+*.wasm
+
+# Rust build outputs
+target/
+
+# Python build outputs
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+.eggs/
+
+# Compiled grammar artifacts
+*.so
+*.dylib
+*.dll
+*.o
+*.a
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# local agent worktrees and settings
+.claude/worktrees/
+.claude/settings.local.json
+.claude/ralph-loop.local.md

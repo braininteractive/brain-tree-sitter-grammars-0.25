@@ -1,0 +1,13 @@
+// Translation strings
+{
+  en: {
+    greeting: 'Hello, world!',
+    farewell: 'Goodbye!',
+    itemCount: '{count} items',
+  },
+  fr: {
+    greeting: 'Bonjour le monde !',
+    farewell: 'Au revoir !',
+    itemCount: '{count} éléments',
+  },
+}

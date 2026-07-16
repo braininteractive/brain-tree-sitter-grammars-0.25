@@ -1,0 +1,18 @@
+ul
+  each item in items
+    li= item
+
+ol
+  each value, index in list
+    li Row #{index}
+
+each user in users
+  p= user.name
+else
+  p No users found
+
+for pet in pets
+  span= pet
+
+while n < 10
+  p iteration

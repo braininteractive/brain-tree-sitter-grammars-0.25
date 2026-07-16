@@ -1,0 +1,5 @@
+extensions:
+	di: @container
+	logger: @system.logger
+factory: @routerFactory
+connection: @Nette\Database\Connection

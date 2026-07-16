@@ -1,0 +1,6 @@
+[
+  { id: 1, name: 'Ada', active: true, score: 99.5 },
+  { id: 2, name: 'Grace', active: false, score: 87.25 },
+  { id: 3, name: 'Alan', active: true, score: NaN },
+  { id: 4, name: 'Edsger', active: null, score: +0x10 },
+]

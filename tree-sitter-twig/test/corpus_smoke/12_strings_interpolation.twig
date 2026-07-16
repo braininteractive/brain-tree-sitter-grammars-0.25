@@ -1,0 +1,7 @@
+{% set name = 'world' %}
+{{ "hello #{name}" }}
+{{ "sum: #{1 + 2}" }}
+{{ "nested #{ user.first ~ ' ' ~ user.last }" }}
+{{ "escaped \" quote and \# hash and \\ backslash" }}
+{{ 'plain string, no #{interpolation} here' }}
+{{ "price: #{price|number_format(2)} EUR" }}

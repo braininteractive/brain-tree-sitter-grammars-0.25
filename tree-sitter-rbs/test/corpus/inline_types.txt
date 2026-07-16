@@ -1,0 +1,749 @@
+==================
+Simple type annotation
+==================
+
+#: String
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (type
+      (class_type
+        (class_name
+          (constant))))))
+
+==================
+Generic type annotation
+==================
+
+#: Array[String]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (type
+      (class_type
+        (class_name
+          (constant))
+        (type_arguments
+          (type
+            (class_type
+              (class_name
+                (constant)))))))))
+
+==================
+Method signature without parameters
+==================
+
+#: () -> void
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (method_type_body
+      (parameters)
+      (type
+        (builtin_type)))))
+
+==================
+Method signature without parameters or parentheses
+==================
+
+#: -> void
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (method_type_body
+      (type
+        (builtin_type)))))
+
+==================
+Method signature with parameters
+==================
+
+#: (Position, Position) -> void
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (method_type_body
+      (parameters
+        (required_positionals
+          (parameter
+            (type
+              (class_type
+                (class_name
+                  (constant)))))
+          (parameter
+            (type
+              (class_type
+                (class_name
+                  (constant)))))))
+      (type
+        (builtin_type)))))
+
+==================
+Method signature with @rbs prefix
+==================
+
+# @rbs () -> String
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (method_type_body
+      (parameters)
+      (type
+        (class_type
+          (class_name
+            (constant)))))))
+
+==================
+Simple type without prefix
+==================
+
+String
+
+---
+
+(program
+  (inline_type
+    (type
+      (class_type
+        (class_name
+          (constant))))))
+
+==================
+Method signature without prefix
+==================
+
+(Integer, String) -> bool
+
+---
+
+(program
+  (inline_type
+    (method_type_body
+      (parameters
+        (required_positionals
+          (parameter
+            (type
+              (class_type
+                (class_name
+                  (constant)))))
+          (parameter
+            (type
+              (class_type
+                (class_name
+                  (constant)))))))
+      (type
+        (builtin_type)))))
+
+==================
+Union type annotation
+==================
+
+#: String | Integer
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (type
+      (union_type
+        left: (type
+          (class_type
+            (class_name
+              (constant))))
+        right: (type
+          (class_type
+            (class_name
+              (constant))))))))
+
+==================
+Optional type annotation
+==================
+
+#: String?
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (type
+      (optional_type
+        (type
+          (class_type
+            (class_name
+              (constant))))))))
+
+==================
+Hash type annotation
+==================
+
+#: Hash[Symbol, String]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (type
+      (class_type
+        (class_name
+          (constant))
+        (type_arguments
+          (type
+            (class_type
+              (class_name
+                (constant))))
+          (type
+            (class_type
+              (class_name
+                (constant)))))))))
+
+==================
+Namespaced type alias annotation
+==================
+
+#: Herb::serialized_location
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (type
+      (alias_type
+        (alias_name
+          (namespace
+            (constant))
+          (identifier))))))
+
+==================
+Method type with type parameters
+==================
+
+#: [T] (T) -> T
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (method_type
+      type_parameters: (method_type_parameters
+        (type_variable
+          (constant)))
+      body: (method_type_body
+        (parameters
+          (required_positionals
+            (parameter
+              (type
+                (class_type
+                  (class_name
+                    (constant)))))))
+        (type
+          (class_type
+            (class_name
+              (constant))))))))
+
+==================
+Continuation line (method overloading)
+==================
+
+#    | (?Regexp?) { (String) -> void } -> void
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (method_type_body
+      (parameters
+        (optional_positionals
+          (parameter
+            (type
+              (optional_type
+                (type
+                  (class_type
+                    (class_name
+                      (constant)))))))))
+      (block
+        (parameters
+          (required_positionals
+            (parameter
+              (type
+                (class_type
+                  (class_name
+                    (constant)))))))
+        (type
+          (builtin_type)))
+      (type
+        (builtin_type)))))
+
+==================
+Full multiline method overloading
+==================
+
+# @rbs (?Regexp?) -> Enumerator[String, void]
+#    | (?Regexp?) { (String) -> void } -> void
+
+---
+
+(program
+  (inline_content
+    (inline_type
+      (inline_prefix)
+      (method_type_body
+        (parameters
+          (optional_positionals
+            (parameter
+              (type
+                (optional_type
+                  (type
+                    (class_type
+                      (class_name
+                        (constant)))))))))
+        (type
+          (class_type
+            (class_name
+              (constant))
+            (type_arguments
+              (type
+                (class_type
+                  (class_name
+                    (constant))))
+              (type
+                (builtin_type)))))))
+    (inline_prefix)
+    (method_type_body
+      (parameters
+        (optional_positionals
+          (parameter
+            (type
+              (optional_type
+                (type
+                  (class_type
+                    (class_name
+                      (constant)))))))))
+      (block
+        (parameters
+          (required_positionals
+            (parameter
+              (type
+                (class_type
+                  (class_name
+                    (constant)))))))
+        (type
+          (builtin_type)))
+      (type
+        (builtin_type)))))
+
+==================
+Simple multiline method signature with #: and #|
+==================
+
+#: (
+#|   String,
+#|   Integer
+#| ) -> void
+
+---
+
+(program
+  (ERROR
+    (inline_prefix))
+  (comment)
+  (comment)
+  (comment))
+
+==================
+Annotated type (inherits)
+==================
+
+# @rbs inherits Array[String]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_class_annotation)
+    (type
+      (class_type
+        (class_name
+          (constant))
+        (type_arguments
+          (type
+            (class_type
+              (class_name
+                (constant)))))))))
+
+==================
+Annotated type (module-self)
+==================
+
+# @rbs module-self Array[String]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_class_annotation)
+    (type
+      (class_type
+        (class_name
+          (constant))
+        (type_arguments
+          (type
+            (class_type
+              (class_name
+                (constant)))))))))
+
+==================
+Annotated type (module)
+==================
+
+# @rbs module Array[String]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_class_annotation)
+    (type
+      (class_type
+        (class_name
+          (constant))
+        (type_arguments
+          (type
+            (class_type
+              (class_name
+                (constant)))))))))
+
+==================
+Annotated type (class)
+==================
+
+# @rbs class Array[String]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_class_annotation)
+    (type
+      (class_type
+        (class_name
+          (constant))
+        (type_arguments
+          (type
+            (class_type
+              (class_name
+                (constant)))))))))
+
+==================
+Generic type simple
+==================
+
+# @rbs generic A
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_generic)
+    (module_type_parameter
+      (type_variable
+        (constant)))))
+
+==================
+Generic type complex
+==================
+
+# @rbs generic unchecked in B < String -- Type of `b`
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_generic)
+    (module_type_parameter
+      (generics_unchecked)
+      (generics_variance)
+      (type_variable
+        (constant))
+      (generics_bound
+        (bound_type
+          (class_type
+            (class_name
+              (constant))))))
+    (inline_doc_comment)))
+
+==================
+Doc style syntax
+==================
+
+# @rbs size: Integer
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (var_name
+        (identifier))
+      (type
+        (class_type
+          (class_name
+            (constant)))))))
+
+==================
+Doc style syntax with document body
+==================
+
+# @rbs size: Integer -- the size of the section
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (var_name
+        (identifier))
+      (type
+        (class_type
+          (class_name
+            (constant))))
+      (inline_doc_comment))))
+
+==================
+Doc style syntax with block pattern
+==================
+
+# @rbs &block: (?) -> untyped -- foo
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (block_operator)
+      (var_name
+        (identifier))
+      (inline_block_type
+        (parameters
+          (unnamed_parameter))
+        (type
+          (builtin_type)))
+      (inline_doc_comment))))
+
+==================
+Doc style syntax with optional block pattern
+==================
+
+# @rbs &block: ? (?) -> untyped -- foo
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (block_operator)
+      (var_name
+        (identifier))
+      (optional_block_operator)
+      (inline_block_type
+        (parameters
+          (unnamed_parameter))
+        (type
+          (builtin_type)))
+      (inline_doc_comment))))
+
+
+==================
+Doc style syntax with unnamed block pattern
+==================
+
+# @rbs &: (String) -> void -- foo
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (block_operator)
+      (inline_block_type
+        (parameters
+          (required_positionals
+            (parameter
+              (type
+                (class_type
+                  (class_name
+                    (constant)))))))
+        (type
+          (builtin_type)))
+      (inline_doc_comment))))
+
+==================
+Doc style syntax with "return" keyword
+==================
+
+# @rbs !return: Integer
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (var_name)
+      (type
+        (class_type
+          (class_name
+            (constant)))))))
+
+==================
+Doc style syntax with rest parameter pattern
+==================
+
+# @rbs *rest: Array[Integer]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (rest_operator)
+      (var_name
+        (identifier))
+      (type
+        (class_type
+          (class_name
+            (constant))
+          (type_arguments
+            (type
+              (class_type
+                (class_name
+                  (constant))))))))))
+
+==================
+Doc style syntax with rest kw parameter pattern
+==================
+
+# @rbs **params: Hash[String, Integer]
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_doc
+      (rest_operator)
+      (var_name
+        (identifier))
+      (type
+        (class_type
+          (class_name
+            (constant))
+          (type_arguments
+            (type
+              (class_type
+                (class_name
+                  (constant))))
+            (type
+              (class_type
+                (class_name
+                  (constant))))))))))
+
+==================
+Inline override
+==================
+
+# @rbs override
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_override)))
+
+==================
+Inline skip
+==================
+
+# @rbs skip
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (inline_skip)))
+
+==================
+Inline Ivar
+==================
+
+# @rbs @name: String -- name of Person
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (ivar_member
+      (ivar_name)
+      (type
+        (class_type
+          (class_name
+            (constant)))))
+    (inline_doc_comment)))
+
+
+==================
+Inline Ivar of class
+==================
+
+# @rbs self.@all_names: String
+
+---
+
+(program
+  (inline_type
+    (inline_prefix)
+    (ivar_member
+      (self)
+      (ivar_name)
+      (type
+        (class_type
+          (class_name
+            (constant)))))))

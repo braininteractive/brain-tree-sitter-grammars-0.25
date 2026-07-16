@@ -1,0 +1,13 @@
+{
+  // JSON5 numeric extensions
+  hex: 0xDEADbeef,
+  hexNegative: -0x0F,
+  leadingDot: .8675309,
+  trailingDot: 8675309.,
+  positiveSign: +1,
+  exponent: 1.2e34,
+  negativeExponent: 5E-10,
+  infinity: Infinity,
+  negativeInfinity: -Infinity,
+  notANumber: NaN,
+}

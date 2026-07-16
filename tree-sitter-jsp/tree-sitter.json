@@ -1,0 +1,30 @@
+{
+  "grammars": [
+    {
+      "name": "jsp",
+      "camelcase": "JSP",
+      "scope": "source.jsp",
+      "path": ".",
+      "file-types": ["jsp", "jspf"],
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "injection-regex": "jsp"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "JSP (JavaServer Pages) grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/karlvr/tree-sitter-jsp"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": true
+  }
+}

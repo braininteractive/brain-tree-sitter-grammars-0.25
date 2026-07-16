@@ -1,0 +1,27 @@
+# A small but complete project manifest.
+ninja_required_version = 1.8
+builddir = build
+cc = gcc
+cflags = -Wall -Wextra -O2
+
+pool heavy
+  depth = 2
+
+rule cc
+  command = $cc $cflags -MMD -MF $out.d -c $in -o $out
+  depfile = $out.d
+  deps = gcc
+  description = CC $out
+
+rule link
+  command = $cc -o $out $in
+  pool = heavy
+  description = LINK $out
+
+build $builddir/main.o: cc src/main.c || $builddir/.dir
+build $builddir/lib.o: cc src/lib.c | src/lib.h || $builddir/.dir
+
+build $builddir/app: link $builddir/main.o $builddir/lib.o
+
+build all: phony $builddir/app
+default all

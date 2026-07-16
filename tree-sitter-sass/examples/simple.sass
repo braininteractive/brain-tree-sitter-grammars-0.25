@@ -1,0 +1,26 @@
+$color: red
+$size: 10px
+
+.box
+  color: $color
+  width: 100%
+  height: 50%
+
+=rounded($radius: 5px)
+  border-radius: $radius
+
+.card
+  +rounded(10px)
+  background: blue
+
+%clearfix
+  &::after
+    content: ""
+    clear: both
+
+.container
+  @extend %clearfix
+  &-header
+    color: blue
+  &:hover
+    opacity: 0.8

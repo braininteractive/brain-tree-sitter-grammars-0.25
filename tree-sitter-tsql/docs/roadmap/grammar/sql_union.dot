@@ -1,0 +1,4 @@
+digraph {
+  sql_union
+    [color=gray]
+}

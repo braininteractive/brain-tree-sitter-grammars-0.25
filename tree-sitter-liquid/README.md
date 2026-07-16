@@ -1,0 +1,99 @@
+# tree-sitter-liquid #
+
+> **Provenance (fork):** forked from <https://github.com/hankthetank27/tree-sitter-liquid>
+> (commit `e45dbac`, 2026-04-02).
+> **Changes vs upstream:** Rust binding modernized to the `tree-sitter-language`
+> `LanguageFn` API (`pub const LANGUAGE`); `tree-sitter` moved to a dev-dependency;
+> added `tree-sitter.json` (required by tree-sitter-cli 0.25 to emit ABI 15);
+> `parser.c` regenerated with tree-sitter-cli 0.25.10 (ABI 14 -> 15);
+> `bindings/rust/build.rs` now compiles `src/scanner.c` (the grammar has an external
+> scanner, but upstream's Rust build script left it commented out, so the upstream
+> Rust crate could not link); added a synthetic smoke-test corpus
+> (`test/corpus_smoke/`) and `tests/smoke.rs`. No grammar-rule changes.
+> **Rebase policy:** binding-only diff, rebased onto upstream when it moves; retired if
+> upstream ships an equivalent 0.25 binding.
+> **Upstream PR:** pending (link will be added here once opened).
+
+[![Build/test](https://github.com/hankthetank27/tree-sitter-liquid/actions/workflows/ci.yml/badge.svg)](https://github.com/hankthetank27/tree-sitter-liquid/actions/workflows/ci.yml)
+[![Lint](https://github.com/hankthetank27/tree-sitter-liquid/actions/workflows/lint.yml/badge.svg)](https://github.com/hankthetank27/tree-sitter-liquid/actions/workflows/lint.yml)
+
+Liquid grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
+
+### Usage in neovim with nvim-treesitter ###
+
+tree-sitter-liquid is included in [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) and will work out of the box with any files using the `.liquid` extension, injecting HTML over the template file. That being said, liquid also allows for templating in JavaScript, CSS, and SCSS files using the `.js.liquid` `.css.liquid` and `.scss.liquid` file extensions. Since in nvim-treesitter there is no way to distinguish and inject different languages depending on the extension, you can optionally add the following custom query and injections to your neovim configuration to add the correct highlighting for these additional file types.
+
+``` lua
+-- compatibility shim for breaking change on nightly/0.11
+local opts = vim.fn.has "nvim-0.10" == 1 and { force = true, all = false } or true
+
+-- custom query predicate for allowing injections based on file extension
+require"vim.treesitter.query".add_directive("set-lang-by-filetype!", function (_, _, bufnr, pred, metadata)
+    local function find_nth_dot_from_end(str, n)
+        for i = #str, 1, -1 do
+            if str:sub(i, i) == "." then
+                n = n - 1
+                if n <= 0 then
+                    return i
+                end
+            end
+        end
+        return nil
+    end
+    local filename = vim.fn.expand("#"..bufnr..":t")
+    local dots_in_extension = select(2, string.gsub(pred[2], "%.", "")) + 1
+    local extension_index = find_nth_dot_from_end(filename, dots_in_extension)
+    if not extension_index then
+        return
+    end
+    if pred[2] == filename:sub(extension_index + 1) then
+        metadata["injection.language"] = pred[3]
+    end
+end, opts)
+
+local liquid_injections = [[
+    ((template_content) @injection.content
+     (#set-lang-by-filetype! "liquid" "html")
+     (#set-lang-by-filetype! "js.liquid" "javascript")
+     (#set-lang-by-filetype! "css.liquid" "css")
+     (#set-lang-by-filetype! "scss.liquid" "scss")
+     (#set! injection.combined))
+
+    (javascript_statement
+      (js_content) @injection.content
+      (#set! injection.language "javascript")
+      (#set! injection.combined))
+
+    (schema_statement
+      (json_content) @injection.content
+      (#set! injection.language "json")
+      (#set! injection.combined))
+
+    (style_statement
+      (style_content) @injection.content
+      (#set! injection.language "css")
+      (#set! injection.combined))
+
+    ((front_matter) @injection.content
+      (#set! injection.language "yaml")
+      (#offset! @injection.content 1 0 -1 0)
+      (#set! injection.include-children))
+
+    ((comment) @injection.content
+      (#set! injection.language "comment"))
+]]
+
+vim.treesitter.query.set("liquid", "injections", liquid_injections)
+
+```
+---
+
+This repository was originally forked from Shopify's archived [tree-sitter-liquid](https://github.com/Shopify/tree-sitter-liquid.git) repository.
+
+
+## Maintenance & support
+
+This grammar is a **fork maintained for our own use, provided as-is, with no support and no SLA.**
+We are **not responsible for its ongoing maintenance.** Issues may go unanswered; pull requests
+are welcome but are not guaranteed to be reviewed or merged. The upstream project (see the
+provenance header above) is the canonical source — please prefer contributing fixes there.

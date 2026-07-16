@@ -1,0 +1,10 @@
+rule cc
+  command = cc -c $in -o $out
+
+build main.o: cc main.c
+build util.o: cc util.c
+
+build all: phony main.o util.o
+
+default all
+default main.o util.o

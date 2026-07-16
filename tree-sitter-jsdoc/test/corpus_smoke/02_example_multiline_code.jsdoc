@@ -1,0 +1,18 @@
+/**
+ * Iterates over a collection from right to left.
+ *
+ * @param {Array} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the collection.
+ * @example
+ *
+ * var users = [
+ *   { 'user': 'barney',  'active': false },
+ *   { 'user': 'fred',    'active': true }
+ * ];
+ *
+ * _.forEachRight(users, function(user) {
+ *   console.log(user.user);
+ * });
+ * // => Logs 'fred' then 'barney'.
+ */

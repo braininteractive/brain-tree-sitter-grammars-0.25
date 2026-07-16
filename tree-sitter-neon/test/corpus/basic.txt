@@ -1,0 +1,220 @@
+==================
+Flat mapping
+==================
+
+name: hello
+version: 1.2
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      key: (identifier)
+      value: (plain_scalar
+        (identifier)))
+    (block_mapping_pair
+      key: (identifier)
+      value: (number))))
+
+==================
+Nested mapping
+==================
+
+parameters:
+	database:
+		host: localhost
+		port: 5432
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      key: (identifier)
+      value: (block_mapping
+        (block_mapping_pair
+          key: (identifier)
+          value: (block_mapping
+            (block_mapping_pair
+              key: (identifier)
+              value: (plain_scalar
+                (identifier)))
+            (block_mapping_pair
+              key: (identifier)
+              value: (number))))))))
+
+==================
+Sequence
+==================
+
+- first
+- second
+- third
+
+---
+
+(document
+  (block_sequence
+    (block_sequence_item
+      value: (plain_scalar
+        (identifier)))
+    (block_sequence_item
+      value: (plain_scalar
+        (identifier)))
+    (block_sequence_item
+      value: (plain_scalar
+        (identifier)))))
+
+==================
+Datetime
+==================
+
+created: 2016-06-03 19:49:00
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      key: (identifier)
+      value: (datetime))))
+
+==================
+Comment between pairs
+==================
+
+# leading
+level: 8
+	# indented note
+nested:
+	key: value
+
+---
+
+(document
+  (comment)
+  (block_mapping
+    (block_mapping_pair
+      key: (identifier)
+      value: (number))
+    (comment)
+    (block_mapping_pair
+      key: (identifier)
+      value: (block_mapping
+        (block_mapping_pair
+          key: (identifier)
+          value: (plain_scalar
+            (identifier)))))))
+
+==================
+Equals separator
+==================
+
+name = value
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      (identifier)
+      (plain_scalar
+        (identifier)))))
+
+==================
+Sequence of mappings
+==================
+
+- name: John
+  age: 35
+- name: Jane
+  age: 28
+
+---
+
+(document
+  (block_sequence
+    (block_sequence_item
+      (block_mapping
+        (block_mapping_pair
+          (identifier)
+          (plain_scalar
+            (identifier)))
+        (block_mapping_pair
+          (identifier)
+          (number))))
+    (block_sequence_item
+      (block_mapping
+        (block_mapping_pair
+          (identifier)
+          (plain_scalar
+            (identifier)))
+        (block_mapping_pair
+          (identifier)
+          (number))))))
+
+==================
+Chained entity
+==================
+
+svc: Foo(a: 1) Bar(b: 2)
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      (identifier)
+      (entity
+        (identifier)
+        (plain_scalar
+          (identifier))
+        (number)
+        (identifier)
+        (plain_scalar
+          (identifier))
+        (number)))))
+
+==================
+Triple quoted string
+==================
+
+text:
+	"""
+	hello
+	world
+	"""
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      (identifier)
+      (string))))
+
+==================
+Multiline entity with commas
+==================
+
+svc: Column(
+	type: int,
+	nulls: yes,
+)
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      (identifier)
+      (entity
+        (identifier)
+        (plain_scalar
+          (identifier))
+        (plain_scalar
+          (identifier))
+        (plain_scalar
+          (identifier))
+        (boolean)))))

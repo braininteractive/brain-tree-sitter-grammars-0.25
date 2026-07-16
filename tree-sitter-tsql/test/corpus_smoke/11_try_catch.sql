@@ -1,0 +1,10 @@
+BEGIN TRY
+    BEGIN TRANSACTION;
+    UPDATE dbo.Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+    UPDATE dbo.Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    ROLLBACK TRANSACTION;
+    THROW;
+END CATCH

@@ -1,0 +1,6 @@
+# if n is divisibleby 3 and n is not string
+# endif
+# if "admin" in user.roles and user.email not in banned
+# endif
+# if (price * quantity) - discount > threshold
+# endif

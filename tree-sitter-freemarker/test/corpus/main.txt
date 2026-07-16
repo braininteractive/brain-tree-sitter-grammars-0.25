@@ -1,0 +1,131 @@
+====================
+Interpolation
+====================
+
+<h1>Hello ${name}!</h1>
+
+---
+
+(template
+  (content)
+  (interpolation
+    (expression))
+  (content))
+
+====================
+If directive
+====================
+
+<#if user??>
+  <p>${user.name}</p>
+<#else>
+  <p>guest</p>
+</#if>
+
+---
+
+(template
+  (content)
+  (directive
+    (angle_directive
+      (directive_name)
+      (directive_content)))
+  (content)
+  (interpolation
+    (expression))
+  (content)
+  (directive
+    (angle_directive
+      (directive_name)))
+  (content)
+  (directive
+    (angle_directive
+      (directive_name)))
+  (content))
+
+====================
+List directive
+====================
+
+<#list items as item>
+  <li>${item}</li>
+</#list>
+
+---
+
+(template
+  (content)
+  (directive
+    (angle_directive
+      (directive_name)
+      (directive_content)))
+  (content)
+  (interpolation
+    (expression))
+  (content)
+  (directive
+    (angle_directive
+      (directive_name)))
+  (content))
+
+====================
+Comments
+====================
+
+<#-- angle comment -->
+[#-- square comment --]
+
+---
+
+(template
+  (content)
+  (comment
+    (comment_content))
+  (content)
+  (comment
+    (comment_content))
+  (content))
+
+====================
+User directives
+====================
+
+<@card title="Hi"/>
+[@banner text="Sale"/]
+
+---
+
+(template
+  (content)
+  (directive
+    (angle_user_directive
+      (directive_name)
+      (directive_content)))
+  (content)
+  (directive
+    (square_user_directive
+      (directive_name)
+      (directive_content)))
+  (content))
+
+====================
+Square directives
+====================
+
+[#if ok]
+  <p>yes</p>
+[/#if]
+
+---
+
+(template
+  (content)
+  (directive
+    (square_directive
+      (directive_name)
+      (directive_content)))
+  (content)
+  (directive
+    (square_directive
+      (directive_name)))
+  (content))

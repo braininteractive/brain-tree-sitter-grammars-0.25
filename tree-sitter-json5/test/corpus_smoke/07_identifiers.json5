@@ -1,0 +1,9 @@
+{
+  $schema: 'https://example.com/schema.json5',
+  _private: 1,
+  ascii: 'unicode escape in identifier',
+  camelCase: true,
+  PascalCase: false,
+  'quoted-key-with-dashes': 'still fine',
+  "another quoted key": null,
+}

@@ -1,0 +1,5 @@
+name: My Application
+debug: true
+version: 2.1
+using_equals = enabled
+empty:

@@ -1,0 +1,20 @@
+# Interface declarations.
+interface _ToStr
+  def to_str: () -> String
+end
+
+interface _Each[T]
+  def each: () { (T) -> void } -> void
+end
+
+interface _Comparable[T]
+  def <=>: (T other) -> Integer?
+
+  def ==: (untyped other) -> bool
+end
+
+interface _Reader
+  def read: (?Integer length) -> String?
+
+  def close: () -> void
+end

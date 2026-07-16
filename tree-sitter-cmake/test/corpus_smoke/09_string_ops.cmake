@@ -1,0 +1,8 @@
+string(TOUPPER "hello" upper_result)
+string(TOLOWER "WORLD" lower_result)
+string(REPLACE "old" "new" replaced "old text old")
+string(REGEX MATCH "[0-9]+" number_part "abc123def")
+string(SUBSTRING "abcdef" 1 3 middle)
+string(LENGTH "measure me" str_len)
+string(APPEND accumulated "first" " " "second")
+string(CONCAT combined ${upper_result} "-" ${lower_result})

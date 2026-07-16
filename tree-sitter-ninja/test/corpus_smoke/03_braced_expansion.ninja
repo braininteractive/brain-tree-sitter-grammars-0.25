@@ -1,0 +1,7 @@
+prefix = /usr/local
+version = 1.2.3
+
+rule install
+  command = install -m 0755 $in ${prefix}/bin/${out}
+
+build ${prefix}/bin/tool-${version}: install tool

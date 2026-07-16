@@ -1,0 +1,6 @@
+example.com/nextgen v1.5.0-rc.1 h1:UmNQcmVSZWxlYXNlSGFzaDAwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/nextgen v1.5.0-rc.1/go.mod h1:UmNNb2RIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDAwMDAwMA=
+example.com/experimental v0.2.0-beta.3 h1:QmV0YVByZVJlbGVhc2VIYXNoMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/experimental v0.2.0-beta.3/go.mod h1:QmV0YU1vZEhhc2hWYWx1ZTAwMDAwMDAwMDAwMDAwMDAwMA=
+example.com/early v0.1.0-alpha1 h1:QWxwaGFQcmVSZWxlYXNlSGFzaDAwMDAwMDAwMDAwMDAwMDA=
+example.com/early v0.1.0-alpha1/go.mod h1:QWxwaGFNb2RIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDAwMDA=

@@ -1,0 +1,9 @@
+{% include 'partials/header.html.twig' %}
+{% include 'partials/card.html.twig' with { title: 'Hello', body: text } %}
+{% include 'partials/menu.html.twig' with items only %}
+{% include 'partials/optional.html.twig' ignore missing %}
+{% embed 'partials/panel.html.twig' with { compact: true } %}
+{% endembed %}
+{% with { theme: 'dark' } only %}
+  {{ theme }}
+{% endwith %}

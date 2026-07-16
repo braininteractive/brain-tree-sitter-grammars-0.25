@@ -1,0 +1,241 @@
+=================
+trans
+=================
+
+# trans
+# endtrans
+# trans user=user.username
+# endtrans
+
+---
+
+(source
+  (trans_block
+    (trans_statement)
+    (endtrans_statement))
+  (trans_block
+    (trans_statement
+      (assignment_expression
+        (identifier)
+        (binary_operator)
+        (expression
+          (expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier)))))
+          (expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier))))))))
+    (endtrans_statement)))
+
+==============
+block
+==============
+
+# trans book_title=book.title, author=author.name
+# endtrans
+
+----
+
+(source
+  (trans_block
+    (trans_statement
+      (assignment_expression
+        (identifier)
+        (binary_operator)
+        (expression
+          (expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier)))))
+          (expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier)))))))
+      (assignment_expression
+        (identifier)
+        (binary_operator)
+        (expression
+          (expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier)))))
+          (expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier))))))))
+    (endtrans_statement)))
+
+==================
+pluralize
+==================
+
+# trans count=list|length
+# pluralize
+# endtrans
+
+----
+
+(source
+  (trans_block
+    (trans_statement
+      (assignment_expression
+        (identifier)
+        (binary_operator)
+        (expression
+          (binary_expression
+            (binary_expression
+              (unary_expression
+                (primary_expression
+                  (identifier))))
+            (binary_operator)
+            (unary_expression
+              (primary_expression
+                (identifier)))))))
+    (pluralize_block
+      (pluralize_statement))
+    (endtrans_statement)))
+
+=================
+inline
+=================
+
+# _("Hello, World!")
+
+# _("Hello, %(user)s!")|format(user=user.username)
+
+----
+
+(source
+  (line_statement
+    (expression
+      (binary_expression
+        (unary_expression
+          (primary_expression
+            (inline_trans
+              (expression
+                (binary_expression
+                  (unary_expression
+                    (primary_expression
+                      (literal
+                        (string_literal))))))))))))
+  (line_statement
+    (expression
+      (binary_expression
+        (binary_expression
+          (unary_expression
+            (primary_expression
+              (inline_trans
+                (expression
+                  (binary_expression
+                    (unary_expression
+                      (primary_expression
+                        (literal
+                          (string_literal))))))))))
+        (binary_operator)
+        (unary_expression
+          (primary_expression
+            (function_call
+              (identifier)
+              (arg
+                (identifier)
+                (binary_operator)
+                (expression
+                  (expression
+                    (binary_expression
+                      (unary_expression
+                        (primary_expression
+                          (identifier)))))
+                  (expression
+                    (binary_expression
+                      (unary_expression
+                        (primary_expression
+                          (identifier))))))))))))))
+
+=================
+gettext
+=================
+
+# gettext('Hello World!')
+# gettext('Hello %(name)s!', name='World')
+# ngettext('%(num)d apple', '%(num)d apples', apples|count)
+
+---------
+
+(source
+  (line_statement
+    (expression
+      (binary_expression
+        (unary_expression
+          (primary_expression
+            (function_call
+              (identifier)
+              (arg
+                (expression
+                  (binary_expression
+                    (unary_expression
+                      (primary_expression
+                        (literal
+                          (string_literal)))))))))))))
+  (line_statement
+    (expression
+      (binary_expression
+        (unary_expression
+          (primary_expression
+            (function_call
+              (identifier)
+              (arg
+                (expression
+                  (binary_expression
+                    (unary_expression
+                      (primary_expression
+                        (literal
+                          (string_literal)))))))
+              (arg
+                (identifier)
+                (binary_operator)
+                (expression
+                  (binary_expression
+                    (unary_expression
+                      (primary_expression
+                        (literal
+                          (string_literal)))))))))))))
+  (line_statement
+    (expression
+      (binary_expression
+        (unary_expression
+          (primary_expression
+            (function_call
+              (identifier)
+              (arg
+                (expression
+                  (binary_expression
+                    (unary_expression
+                      (primary_expression
+                        (literal
+                          (string_literal)))))))
+              (arg
+                (expression
+                  (binary_expression
+                    (unary_expression
+                      (primary_expression
+                        (literal
+                          (string_literal)))))))
+              (arg
+                (expression
+                  (binary_expression
+                    (binary_expression
+                      (unary_expression
+                        (primary_expression
+                          (identifier))))
+                    (binary_operator)
+                    (unary_expression
+                      (primary_expression
+                        (identifier)))))))))))))

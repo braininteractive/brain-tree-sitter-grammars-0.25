@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "include-v-in-tag": true,
+  "include-component-in-tag": false,
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "extra-files": [
+        {
+          "path": "tree-sitter-jinja/Cargo.toml",
+          "type": "toml",
+          "jsonpath": "$.package.version"
+        },
+        {
+          "path": "tree-sitter-jinja/pyproject.toml",
+          "type": "toml",
+          "jsonpath": "$.project.version"
+        },
+        {
+          "path": "tree-sitter-jinja/package.json",
+          "type": "json",
+          "jsonpath": "$.version"
+        },
+        {
+          "path": "tree-sitter-jinja/package-lock.json",
+          "type": "json",
+          "jsonpath": "$.version"
+        },
+        {
+          "path": "tree-sitter-jinja_inline/Cargo.toml",
+          "type": "toml",
+          "jsonpath": "$.package.version"
+        },
+        {
+          "path": "tree-sitter-jinja_inline/pyproject.toml",
+          "type": "toml",
+          "jsonpath": "$.project.version"
+        },
+        {
+          "path": "tree-sitter-jinja_inline/package.json",
+          "type": "json",
+          "jsonpath": "$.version"
+        },
+        {
+          "path": "tree-sitter-jinja_inline/package-lock.json",
+          "type": "json",
+          "jsonpath": "$.version"
+        }
+      ]
+    }
+  }
+}

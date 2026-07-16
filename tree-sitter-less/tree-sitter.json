@@ -1,0 +1,38 @@
+{
+  "grammars": [
+    {
+      "name": "less",
+      "camelcase": "Less",
+      "scope": "source.less",
+      "path": ".",
+      "file-types": [
+        "less"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "LESS grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "jimliang",
+        "email": "769925821@qq.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/jimliang/tree-sitter-less"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

@@ -1,0 +1,8 @@
+/**
+ * The iteratee invoked per element.
+ *
+ * @callback IterateeCallback
+ * @param {*} value The current value.
+ * @param {number} index The current index.
+ * @returns {boolean} Returns truthy to keep the element.
+ */

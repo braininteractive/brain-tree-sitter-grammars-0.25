@@ -1,0 +1,17 @@
+if(WIN32)
+  set(PLATFORM "windows")
+elseif(APPLE)
+  set(PLATFORM "macos")
+elseif(UNIX AND NOT APPLE)
+  set(PLATFORM "linux")
+else()
+  set(PLATFORM "unknown")
+endif()
+
+if(DEFINED MY_VAR AND MY_VAR STREQUAL "value")
+  message(STATUS "matched")
+endif()
+
+if(NOT (A OR B))
+  message(STATUS "neither")
+endif()

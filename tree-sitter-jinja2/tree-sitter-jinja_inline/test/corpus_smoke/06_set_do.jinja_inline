@@ -1,0 +1,5 @@
+# set theme = user.preferences.theme|default("dark")
+# set ns = namespace(total=0)
+# do audit_log.append(request.remote_addr)
+# set sidebar
+# endset

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "clojure",
+      "camelcase": "Clojure",
+      "title": "Clojure",
+      "scope": "source.clojure",
+      "file-types": [
+        "bb",
+        "clj",
+        "cljc",
+        "cljs"
+      ],
+      "injection-regex": "^(clojure|clj)$",
+      "class-name": "TreeSitterClojure"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "CC0-1.0",
+    "description": "Clojure grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "sogaiu"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/sogaiu/tree-sitter-clojure"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

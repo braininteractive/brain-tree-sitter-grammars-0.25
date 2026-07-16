@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <p>{{ _("Welcome back") }}, {{ user.name }}!</p>
+
+  {% trans %}This message is translated as a whole.{% endtrans %}
+
+  {% trans count=items|length, name=user.name %}
+    Hello {{ name }}, you have {{ count }} item.
+  {% pluralize count %}
+    Hello {{ name }}, you have {{ count }} items.
+  {% endtrans %}
+
+  {% autoescape false %}
+    {{ trusted_html }}
+  {% endautoescape %}
+
+  {% autoescape true %}
+    {{ untrusted_comment }}
+  {% endautoescape %}
+{% endblock %}

@@ -1,0 +1,7 @@
+* REGISTER EQUATES AND USAGE
+R1       EQU   1
+R2       EQU   2
+R3       EQU   3
+         LR    R1,R2
+         AR    R2,R3
+         LM    R1,R3,0(R2)

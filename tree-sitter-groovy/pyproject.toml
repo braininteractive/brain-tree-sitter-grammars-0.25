@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=82.0.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dekobon-tree-sitter-groovy"
+description = "Apache Groovy grammar for tree-sitter (dekobon fork)"
+version = "0.2.2"
+keywords = [
+  "incremental",
+  "parsing",
+  "tree-sitter",
+  "groovy",
+  "jenkins",
+  "gradle",
+]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Compilers",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed",
+]
+requires-python = ">=3.9"
+license = "Apache-2.0 OR MIT"
+license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/dekobon/tree-sitter-groovy"
+
+[project.optional-dependencies]
+core = ["tree-sitter~=0.25"]
+
+[tool.cibuildwheel]
+build = "cp39-*"
+build-frontend = "build"

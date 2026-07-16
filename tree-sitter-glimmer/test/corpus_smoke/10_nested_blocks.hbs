@@ -1,0 +1,15 @@
+{{#each this.categories as |category|}}
+  <section class="category">
+    <h2>{{category.name}}</h2>
+    {{#if category.hasItems}}
+      <ul>
+        {{#each category.items as |item|}}
+          <li>
+            <img src={{item.icon}} alt="">
+            {{item.name}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </section>
+{{/each}}

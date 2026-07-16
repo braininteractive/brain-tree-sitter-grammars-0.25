@@ -1,0 +1,6 @@
+rule copy
+  command = cp $in $out
+
+build out/hello$ world.txt: copy src/hello$ world.txt
+build price$$list.txt: copy data$$src.txt
+build weird$:name.o: copy input.c

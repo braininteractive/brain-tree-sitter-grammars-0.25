@@ -1,0 +1,30 @@
+{
+  "grammars": [
+    {
+      "name": "ninja",
+      "camelcase": "Ninja",
+      "scope": "source.ninja",
+      "file-types": [
+        "ninja"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "Ninja grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Alexandre Muller"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/alemuller/tree-sitter-ninja"
+    }
+  },
+  "bindings": {
+    "node": true,
+    "rust": true
+  }
+}

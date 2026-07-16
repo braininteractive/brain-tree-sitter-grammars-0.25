@@ -1,0 +1,3 @@
+example.com/onlymod v1.0.0/go.mod h1:T25seU1vZEhhc2hWYWx1ZTAwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/another v2.3.4/go.mod h1:QW5vdGhlck1vZEhhc2hWYWx1ZTAwMDAwMDAwMDAwMDAwMDA=
+example.com/third v0.0.1/go.mod h1:VGhpcmRNb2RIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDAwMDA=

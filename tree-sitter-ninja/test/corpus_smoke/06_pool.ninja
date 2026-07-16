@@ -1,0 +1,11 @@
+pool link_pool
+  depth = 4
+
+pool expensive
+  depth = 1
+
+rule link
+  command = ld -o $out $in
+  pool = link_pool
+
+build app: link main.o util.o

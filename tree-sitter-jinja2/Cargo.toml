@@ -1,0 +1,10 @@
+# Virtual workspace manifest so both grammar crates are resolvable when this
+# repo is consumed as a git dependency, e.g.:
+#   tree-sitter-jinja = { git = "…", tag = "v0.25.0-fork.1", package = "tree-sitter-jinja" }
+#   tree-sitter-jinja-inline = { git = "…", tag = "v0.25.0-fork.1", package = "tree-sitter-jinja-inline" }
+[workspace]
+resolver = "2"
+members = [
+    "tree-sitter-jinja",
+    "tree-sitter-jinja_inline",
+]

@@ -1,0 +1,3 @@
+SELECT Id FROM dbo.Items WHERE Price > ALL (SELECT Price FROM dbo.Budget);
+SELECT Name FROM dbo.Items FOR JSON AUTO;
+SELECT Id FROM dbo.Items OPTION (MAXDOP 1);

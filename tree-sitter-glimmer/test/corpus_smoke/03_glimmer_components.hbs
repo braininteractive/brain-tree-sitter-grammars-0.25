@@ -1,0 +1,11 @@
+<MyComponent @title="Hello" @count={{this.count}} class="wide">
+  <:header>
+    <h2>Header</h2>
+  </:header>
+  <:body as |value|>
+    {{value}}
+  </:body>
+</MyComponent>
+
+<Nested::Child @arg={{this.foo}} />
+<@item.Trigger>Open</@item.Trigger>

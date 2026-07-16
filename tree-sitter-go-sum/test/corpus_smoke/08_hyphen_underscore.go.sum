@@ -1,0 +1,4 @@
+example.com/go-kit-style v1.11.0 h1:SHlwaGVuTW9kdWxlSGFzaFZhbHVlMDAwMDAwMDAwMDAwMDA=
+example.com/go-kit-style v1.11.0/go.mod h1:SHlwaGVuTW9kSGFzaFZhbHVlMDAwMDAwMDAwMDAwMDAwMA=
+example.com/snake_case_pkg v0.6.2 h1:VW5kZXJzY29yZUhhc2hWYWx1ZTAwMDAwMDAwMDAwMDAwMDA=
+example.com/snake_case_pkg v0.6.2/go.mod h1:VW5kZXJzY29yZU1vZEhhc2gwMDAwMDAwMDAwMDAwMDAwMDA=

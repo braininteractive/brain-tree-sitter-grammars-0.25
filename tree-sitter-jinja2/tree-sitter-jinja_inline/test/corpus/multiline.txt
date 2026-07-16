@@ -1,0 +1,60 @@
+==========
+multiline
+==========
+
+# for href, caption in [('index.html', 'Index'),
+                        ('about.html', 'About')]:
+# endfor
+
+---
+
+(source
+  (for_block
+    (for_statement
+      (in_expression
+        (identifier)
+        (identifier)
+        (binary_operator)
+        (expression
+          (binary_expression
+            (unary_expression
+              (primary_expression
+                (literal
+                  (list_literal
+                    (expression
+                      (binary_expression
+                        (unary_expression
+                          (primary_expression
+                            (literal
+                              (tuple_literal
+                                (expression
+                                  (binary_expression
+                                    (unary_expression
+                                      (primary_expression
+                                        (literal
+                                          (string_literal))))))
+                                (expression
+                                  (binary_expression
+                                    (unary_expression
+                                      (primary_expression
+                                        (literal
+                                          (string_literal))))))))))))
+                    (expression
+                      (binary_expression
+                        (unary_expression
+                          (primary_expression
+                            (literal
+                              (tuple_literal
+                                (expression
+                                  (binary_expression
+                                    (unary_expression
+                                      (primary_expression
+                                        (literal
+                                          (string_literal))))))
+                                (expression
+                                  (binary_expression
+                                    (unary_expression
+                                      (primary_expression
+                                        (literal
+                                          (string_literal))))))))))))))))))))
+    (endfor_statement)))

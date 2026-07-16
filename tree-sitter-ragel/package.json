@@ -1,0 +1,27 @@
+{
+  "name": "tree-sitter-ragel",
+  "version": "0.1.0",
+  "description": "ragel grammar for tree-sitter",
+  "main": "bindings/node",
+  "keywords": [
+    "parsing",
+    "incremental"
+  ],
+  "dependencies": {
+    "nan": "^2.12.1"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.2"
+  },
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.rl",
+      "file-types": [
+        "rl"
+      ]
+    }
+  ]
+}

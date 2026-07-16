@@ -1,0 +1,37 @@
+{
+  "grammars": [
+    {
+      "name": "abap",
+      "camelcase": "Abap",
+      "scope": "source.abap",
+      "path": ".",
+      "file-types": [
+        "abap"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "MIT",
+    "description": "Abap grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "mkoval1"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/mkoval1/tree-sitter-abap"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

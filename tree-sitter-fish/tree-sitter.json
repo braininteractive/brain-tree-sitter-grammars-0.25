@@ -1,0 +1,37 @@
+{
+  "grammars": [
+    {
+      "name": "fish",
+      "camelcase": "Fish",
+      "scope": "source.fish",
+      "path": ".",
+      "file-types": [
+        "fish"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "3.7.0",
+    "license": "MIT",
+    "description": "Fish tree-sitter grammar",
+    "authors": [
+      {
+        "name": "Krnik"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/ram02z/tree-sitter-fish"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ * Creates a debounced function.
+ *
+ * @param {Function} func The function to debounce.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ * ```typescript
+ * const save = _.debounce(persist, 250);
+ * window.addEventListener('resize', save);
+ * ```
+ */

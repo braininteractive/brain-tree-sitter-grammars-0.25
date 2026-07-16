@@ -1,0 +1,49 @@
+{
+  "name": "tree-sitter-pug",
+  "version": "0.25.0",
+  "description": "Pug grammar for the tree-sitter parsing library",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "parse": "tree-sitter parse",
+    "test": "tree-sitter generate && tree-sitter test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.0",
+    "prebuildify": "^6.0.0"
+  },
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "tree-sitter.json"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.pug",
+      "file-types": [
+        "pug"
+      ]
+    }
+  ]
+}

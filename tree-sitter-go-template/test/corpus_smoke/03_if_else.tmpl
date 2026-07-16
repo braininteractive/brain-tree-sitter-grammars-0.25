@@ -1,0 +1,9 @@
+{{ if .Enabled }}
+enabled
+{{ else if .Fallback }}
+fallback
+{{ else }}
+disabled
+{{ end }}
+{{ if and .A .B }}both{{ end }}
+{{ if eq .Env "prod" }}production{{ end }}

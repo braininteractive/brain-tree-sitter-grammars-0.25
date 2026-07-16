@@ -1,0 +1,14 @@
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * // A regular expression is not a function.
+ * _.isFunction(/abc/);
+ * // => false
+ */

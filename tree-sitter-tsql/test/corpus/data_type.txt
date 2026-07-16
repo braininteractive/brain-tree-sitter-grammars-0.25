@@ -1,0 +1,1249 @@
+=================================================
+Datatype Exact Numerics tinyint
+=================================================
+SELECT CAST('3' as tinyint)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (tinyint_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics smallint
+=================================================
+SELECT CAST('3' as smallint)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (smallint_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics int
+=================================================
+SELECT CAST('3' as int)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (int_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics bigint
+=================================================
+SELECT CAST('3' as bigint)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (bigint_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics DECIMAL
+=================================================
+SELECT CAST('1' as DECIMAL(16))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (decimalty_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics DECIMAL PRECISION
+=================================================
+SELECT CAST('1' as DECIMAL(16,2))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (decimalty_)
+                              (decimal_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Numeric
+=================================================
+SELECT CAST('1' as NUMERIC(16))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (numeric_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Numeric Precision
+=================================================
+SELECT CAST('1' as NUMERIC(16,2))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (numeric_)
+                              (decimal_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Money
+=================================================
+SELECT CAST('1' as MONEY)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (moneyty_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Smallmoney
+=================================================
+SELECT CAST('1' as SMALLMONEY)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (smallmoney_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Float
+=================================================
+SELECT CAST('1' as FLOAT)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (floatty_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Float Opt
+=================================================
+SELECT CAST('1' as FLOAT(16))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (floatty_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Real
+=================================================
+SELECT CAST('1' as REAL)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (realty_))))))))))))))))
+
+=================================================
+Datatype Exact Numerics Real Opt
+=================================================
+SELECT CAST('1' as REAL(16))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (realty_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Character Strings Char
+=================================================
+SELECT CAST('1' as CHAR)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (char_))))))))))))))))
+
+=================================================
+Datatype Exact Character Strings Char Opt
+=================================================
+SELECT CAST('1' as CHAR(3))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (char_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Character Strings Varchar
+=================================================
+SELECT CAST('1' as VARCHAR)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (varchar_))))))))))))))))
+
+=================================================
+Datatype Exact Character Strings Varchar Opt
+=================================================
+SELECT CAST('1' as VARCHAR(16))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (varchar_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Character Strings Varchar Max
+=================================================
+SELECT CAST('1' as VARCHAR(Max))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (varchar_)
+                              (max_))))))))))))))))
+
+=================================================
+Datatype Exact Character Strings Text
+=================================================
+SELECT CAST('1' as TEXT)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (text_))))))))))))))))
+
+=================================================
+Datatype Exact Unicode Character Strings NCHAR
+=================================================
+SELECT CAST('1' as NCHAR)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (nchar_))))))))))))))))
+
+=================================================
+Datatype Exact Unicode Character Strings NCHAR OPT
+=================================================
+SELECT CAST('1' as NCHAR(4))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (nchar_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Unicode Character Strings NVarchar
+=================================================
+SELECT CAST('1' as NVARCHAR)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (nvarchar_))))))))))))))))
+
+=================================================
+Datatype Exact Unicode Character Strings NVarchar OPT
+=================================================
+SELECT CAST('1' as NVARCHAR(4))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (nvarchar_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Exact Unicode Character Strings NVarchar Max
+=================================================
+SELECT CAST('1' as NVARCHAR(MAX))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (nvarchar_)
+                              (max_))))))))))))))))
+
+=================================================
+Datatype Exact Unicode Character Strings NText
+=================================================
+SELECT CAST('1' as NTEXT)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (ntext_))))))))))))))))
+
+=================================================
+Datatype Binary Strings BINARY
+=================================================
+SELECT CAST('1' as BINARY)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (binary_))))))))))))))))
+
+=================================================
+Datatype Binary Strings BINARY OPT
+=================================================
+SELECT CAST('1' as BINARY(4))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (binary_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Binary Strings VARBINARY
+=================================================
+SELECT CAST('1' as VARBINARY)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (varbinary_))))))))))))))))
+
+=================================================
+Datatype Binary Strings VARBINARY OPT
+=================================================
+SELECT CAST('1' as VARBINARY(4))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (varbinary_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Binary Strings VARBINARY MAX
+=================================================
+SELECT CAST('1' as VARBINARY(MAX))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (varbinary_)
+                              (max_))))))))))))))))
+
+=================================================
+Datatype Binary Strings IMAGE
+=================================================
+SELECT CAST('1' as IMAGE)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (image_))))))))))))))))
+
+=================================================
+Datatype Date and Time Date
+=================================================
+SELECT CAST('01/01/01' as DATE)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (date_))))))))))))))))
+
+=================================================
+Datatype Date and Time TIME
+=================================================
+SELECT CAST('12:25' as TIME)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (time_))))))))))))))))
+
+=================================================
+Datatype Date and Time TIME OPT
+=================================================
+SELECT CAST('12:25' as TIME(3))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (time_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Date and Time DATETIME2
+=================================================
+SELECT CAST('12:25' as DATETIME2)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (datetime2_))))))))))))))))
+
+=================================================
+Datatype Date and Time DATETIME2 OPT
+=================================================
+SELECT CAST('12:25' as DATETIME2(5))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (datetime2_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Date and Time DATETIMEOFFSET
+=================================================
+SELECT CAST('12:25' as datetimeoffset)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (datetimeoffset_))))))))))))))))
+
+=================================================
+Datatype Date and Time DATETIMEOFFSET OPT
+=================================================
+SELECT CAST('12:25' as datetimeoffset(5))
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (datetimeoffset_)
+                              (decimal_))))))))))))))))
+
+=================================================
+Datatype Date and Time DATETIME
+=================================================
+SELECT CAST('12:25' as DATETIME)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (datetime_))))))))))))))))
+
+=================================================
+Datatype Date and Time SMALLDATETIME
+=================================================
+SELECT CAST('12:25' as SMALLDATETIME)
+---
+
+(tsql_file
+  (batch
+    (sql_clauses
+      (dml_clause
+        (select_statement_standalone
+          (select_statement
+            (query_expression
+              (query_specification
+                (select)
+                (select_list
+                  (select_list_elem
+                    (expression_elem
+                      (expression
+                        (function_call
+                          (conversion_functions
+                            (cast_)
+                            (expression
+                              (primitive_expression
+                                (primitive_constant
+                                  (string_lit))))
+                            (AS)
+                            (data_type
+                              (smalldatetime_))))))))))))))))

@@ -1,0 +1,8 @@
+{{ with .Account }}
+Balance: {{ .Balance }}
+{{ else }}
+No account.
+{{ end }}
+{{ with $user := .CurrentUser }}
+Welcome back, {{ $user.Name }}.
+{{ end }}

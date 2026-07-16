@@ -1,0 +1,46 @@
+================================================================================
+perform without parameters
+================================================================================
+
+PERFORM show_message.
+
+--------------------------------------------------------------------------------
+
+(program
+  (perform_statement
+    (name)))
+
+================================================================================
+perform with tables, using and changing parameters
+================================================================================
+
+PERFORM calc_total TABLES lt_items USING lv_factor 'A' 42 CHANGING lv_total.
+
+--------------------------------------------------------------------------------
+
+(program
+  (perform_statement
+    (name)
+    (name)
+    (name)
+    (character_literal)
+    (numeric_literal)
+    (name)))
+
+================================================================================
+perform in another program
+================================================================================
+
+PERFORM helper(zreport) IF FOUND.
+PERFORM helper IN PROGRAM zother IF FOUND USING lv_value.
+
+--------------------------------------------------------------------------------
+
+(program
+  (perform_statement
+    (name)
+    (name))
+  (perform_statement
+    (name)
+    (name)
+    (name)))

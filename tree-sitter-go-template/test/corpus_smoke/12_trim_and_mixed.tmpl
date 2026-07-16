@@ -1,0 +1,7 @@
+{{- .Leading -}}
+text between actions
+{{- range .Rows }}
+  cell: {{ .Cell | html }}
+{{- end }}
+{{ with .Meta }}{{ .Author }}{{ end }}
+trailing text

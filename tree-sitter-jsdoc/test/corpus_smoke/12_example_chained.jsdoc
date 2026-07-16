@@ -1,0 +1,14 @@
+/**
+ * Creates a lodash wrapper instance that wraps `value`.
+ *
+ * @param {*} value The value to wrap.
+ * @returns {Object} Returns the new `lodash` wrapper instance.
+ * @example
+ *
+ * var wrapped = _([1, 2, 3])
+ *   .map(function(n) { return n * n; })
+ *   .filter(function(n) { return n % 2 == 1; });
+ *
+ * wrapped.value();
+ * // => [1, 9]
+ */

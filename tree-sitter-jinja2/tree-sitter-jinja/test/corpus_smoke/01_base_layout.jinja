@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ lang|default('en') }}">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{{ site_name }}{% endblock %}</title>
+  {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  {% endblock %}
+</head>
+<body class="{{ body_class|default('page') }}">
+  {% include "partials/nav.html" ignore missing with context %}
+  <main id="content">
+    {% block content required %}{% endblock %}
+  </main>
+  {# site-wide footer, kept out of child templates #}
+  <footer>&copy; {{ now.year }} {{ site_name|upper }}</footer>
+</body>
+</html>

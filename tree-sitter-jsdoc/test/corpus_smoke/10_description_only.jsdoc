@@ -1,0 +1,6 @@
+/**
+ * This module provides a collection of small, composable utility
+ * functions for working with arrays, objects, and strings.
+ *
+ * Every function is pure and side-effect free unless documented otherwise.
+ */

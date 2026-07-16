@@ -1,0 +1,28 @@
+// A small real-world style sheet
+@brand: #2f54eb;
+@radius: 6px;
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: @radius;
+  background: @brand;
+  color: contrast(@brand);
+
+  &:hover {
+    background: darken(@brand, 8%);
+  }
+
+  &.btn-ghost {
+    background: transparent;
+    border: 1px solid @brand;
+    color: @brand;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}

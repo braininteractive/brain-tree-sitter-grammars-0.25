@@ -1,0 +1,10 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT DISTINCT ?employee ?salary
+WHERE {
+  ?employee ex:salary ?salary .
+  ?employee ex:department ?dept .
+}
+ORDER BY DESC(?salary) ASC(?employee)
+LIMIT 20
+OFFSET 40

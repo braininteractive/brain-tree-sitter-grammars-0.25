@@ -1,0 +1,10 @@
+cc = clang
+cflags = -O2 -g
+ldflags = -lm
+builddir = out
+
+rule compile
+  command = $cc $cflags -c $in -o $out
+  description = CC $out
+
+build $builddir/main.o: compile src/main.c

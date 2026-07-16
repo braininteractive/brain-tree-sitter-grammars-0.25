@@ -1,0 +1,12 @@
+=border-radius($radius)
+  border-radius: $radius
+
+.box
+  +border-radius(4px)
+
+@mixin flex-center
+  display: flex
+  align-items: center
+
+.container
+  @include flex-center

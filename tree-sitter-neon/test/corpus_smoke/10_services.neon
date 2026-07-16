@@ -1,0 +1,7 @@
+application:
+	name: Demo
+	services:
+		router: App\Router\RouterFactory::createRouter
+		mailer: Nette\Mail\SmtpMailer(host: localhost, port: 25)
+	parameters:
+		tempDir: %rootDir%/temp

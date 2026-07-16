@@ -1,0 +1,14 @@
+/* Compiler options, JSON5 flavour */
+{
+  compilerOptions: {
+    target: 'es2022',
+    module: 'nodenext',
+    strict: true,
+    outDir: './dist',
+    paths: {
+      '@app/*': ['./src/*'],
+    },
+  },
+  include: ['src/**/*.ts'],
+  exclude: ['node_modules', 'dist',],
+}

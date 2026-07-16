@@ -1,0 +1,5 @@
+node_modules/
+build/
+pug.so
+log.html
+target/

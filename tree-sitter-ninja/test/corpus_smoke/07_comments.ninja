@@ -1,0 +1,12 @@
+# Top-level comment describing this manifest.
+# Second comment line.
+
+cflags = -Wall # this text is part of the value in ninja
+
+# Rule definitions
+rule cc
+  # indented comment inside a body
+  command = gcc $cflags -c $in -o $out
+
+build foo.o: cc foo.c
+# trailing comment

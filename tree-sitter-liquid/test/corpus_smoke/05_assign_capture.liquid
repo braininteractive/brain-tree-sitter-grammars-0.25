@@ -1,0 +1,9 @@
+{% assign favorite_food = "pizza" %}
+{% assign discounted = product.price | times: 0.75 | round %}
+{% capture greeting %}
+  Hello, {{ customer.first_name | default: "friend" }}!
+{% endcapture %}
+{{ greeting }}
+{% increment counter %}
+{% increment counter %}
+{% decrement counter %}

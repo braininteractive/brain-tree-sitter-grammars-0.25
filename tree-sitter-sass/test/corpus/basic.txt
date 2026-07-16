@@ -1,0 +1,714 @@
+================================================================================
+Variables
+================================================================================
+
+$color: red
+$size: 10px
+
+---
+
+(stylesheet
+  (declaration
+    (variable_name)
+    (plain_value))
+  (declaration
+    (variable_name)
+    (integer_value
+      (unit))))
+
+================================================================================
+Variables with Percent
+================================================================================
+
+$width: 100%
+
+---
+
+(stylesheet
+  (declaration
+    (variable_name)
+    (integer_value
+      (unit))))
+
+================================================================================
+Rule Set
+================================================================================
+
+.box
+  color: red
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (plain_value)))))
+
+================================================================================
+Nesting
+================================================================================
+
+.parent
+  color: blue
+  .child
+    color: red
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (plain_value))
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Mixin Shorthand
+================================================================================
+
+=button
+  padding: 10px
+
+.btn
+  +button
+
+---
+
+(stylesheet
+  (mixin_statement
+    (shorthand_mixin)
+    (name)
+    (block
+      (declaration
+        (property_name)
+        (integer_value
+          (unit)))))
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (include_statement
+        (shorthand_include)
+        (mixin_name)))))
+
+================================================================================
+Comments
+================================================================================
+
+// single line comment
+.box
+  color: red
+
+---
+
+(stylesheet
+  (single_line_comment)
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (plain_value)))))
+
+================================================================================
+Use Statement
+================================================================================
+
+@use "sass:math"
+
+---
+
+(stylesheet
+  (use_statement
+    (string_value)))
+
+================================================================================
+Function Call
+================================================================================
+
+.box
+  width: triple(50px)
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (call_expression
+          (function_name)
+          (arguments
+            (integer_value
+              (unit))))))))
+
+================================================================================
+Placeholder Selector
+================================================================================
+
+%clearfix
+  &::after
+    content: ""
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (placeholder_selector
+        (placeholder_name)))
+    (block
+      (rule_set
+        (selectors
+          (pseudo_element_selector
+            (nesting_selector)
+            (element_name)))
+        (block
+          (declaration
+            (property_name)
+            (string_value)))))))
+
+================================================================================
+Nesting Selector with Suffix
+================================================================================
+
+.container
+  &-header
+    color: blue
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (rule_set
+        (selectors
+          (nesting_selector
+            (suffix)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Extend Statement
+================================================================================
+
+.container
+  @extend %clearfix
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (extend_statement
+        (placeholder_selector
+          (placeholder_name))))))
+
+================================================================================
+Pseudo Class Selector
+================================================================================
+
+.link
+  &:hover
+    color: red
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (rule_set
+        (selectors
+          (pseudo_class_selector
+            (nesting_selector)
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+CSS Keywords
+================================================================================
+
+.box
+  display: flex
+  position: absolute
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (plain_value))
+      (declaration
+        (property_name)
+        (plain_value)))))
+
+================================================================================
+Color Functions
+================================================================================
+
+.box
+  color: rgb(255, 0, 0)
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (call_expression
+          (color_function
+            (function_name)
+            (arguments
+              (integer_value)
+              (integer_value)
+              (integer_value))))))))
+
+================================================================================
+CSS Custom Properties
+================================================================================
+
+.box
+  --my-color: blue
+  color: var(--my-color)
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (plain_value))
+      (declaration
+        (property_name)
+        (call_expression
+          (var_function
+            (function_name)
+            (custom_property_name)))))))
+
+================================================================================
+Gradient Function
+================================================================================
+
+.box
+  background: linear-gradient(red, blue)
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (call_expression
+          (gradient_function
+            (function_name)
+            (arguments
+              (plain_value)
+              (plain_value))))))))
+
+================================================================================
+Math Function
+================================================================================
+
+.box
+  width: calc(100px - 20px)
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (declaration
+        (property_name)
+        (call_expression
+          (math_function
+            name: (function_name)
+            arguments: (arguments
+              (binary_expression
+                left: (integer_value
+                  (unit))
+                right: (integer_value
+                  (unit))))))))))
+
+================================================================================
+Scope Statement
+================================================================================
+
+@scope (.card)
+  .title
+    color: blue
+
+---
+
+(stylesheet
+  (scope_statement
+    (class_selector
+      (class_name))
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Scope Statement with To
+================================================================================
+
+@scope (.card) to (.content)
+  .header
+    font-size: 16px
+
+---
+
+(stylesheet
+  (scope_statement
+    (class_selector
+      (class_name))
+    (class_selector
+      (class_name))
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (integer_value
+              (unit))))))))
+
+================================================================================
+Nth Child Selector
+================================================================================
+
+.list
+  &:nth-child(2n+1)
+    background: gray
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (class_selector
+        (class_name)))
+    (block
+      (rule_set
+        (selectors
+          (pseudo_class_selector
+            (nesting_selector)
+            (class_name)
+            (arguments
+              (plain_value))))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Has Selector
+================================================================================
+
+.container:has(.active)
+  border: 1px
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (pseudo_class_selector
+        (class_selector
+          (class_name))
+        (class_name)
+        (arguments
+          (class_selector
+            (class_name)))))
+    (block
+      (declaration
+        (property_name)
+        (integer_value
+          (unit))))))
+
+================================================================================
+Not Selector
+================================================================================
+
+.item:not(.hidden)
+  display: block
+
+---
+
+(stylesheet
+  (rule_set
+    (selectors
+      (pseudo_class_selector
+        (class_selector
+          (class_name))
+        (class_name)
+        (arguments
+          (class_selector
+            (class_name)))))
+    (block
+      (declaration
+        (property_name)
+        (plain_value)))))
+
+================================================================================
+Layer Statement Simple
+================================================================================
+
+@layer base, components, utilities
+
+---
+
+(stylesheet
+  (layer_statement
+    (layer_name)
+    (layer_name)
+    (layer_name)))
+
+================================================================================
+Layer Statement with Block
+================================================================================
+
+@layer base
+  .button
+    color: blue
+
+---
+
+(stylesheet
+  (layer_statement
+    (layer_name)
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Anonymous Layer
+================================================================================
+
+@layer
+  .reset
+    margin: 0
+
+---
+
+(stylesheet
+  (layer_statement
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (integer_value)))))))
+
+================================================================================
+Container Query
+================================================================================
+
+@container (min-width: 400px)
+  .card
+    display: grid
+
+---
+
+(stylesheet
+  (container_statement
+    (feature_query
+      (feature_name)
+      (integer_value
+        (unit)))
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Named Container Query
+================================================================================
+
+@container sidebar (width >= 300px)
+  .widget
+    font-size: 14px
+
+---
+
+(stylesheet
+  (container_statement
+    (container_name)
+    (range_query
+      (feature_name)
+      (integer_value
+        (unit)))
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (integer_value
+              (unit))))))))
+
+================================================================================
+Unicode Range
+================================================================================
+
+@font-face
+  unicode-range: U+0025-00FF
+
+---
+
+(stylesheet
+  (font_face_statement
+    (block
+      (declaration
+        (property_name)
+        (unicode_range)))))
+
+================================================================================
+Unicode Range with Wildcard
+================================================================================
+
+@font-face
+  unicode-range: U+4??
+
+---
+
+(stylesheet
+  (font_face_statement
+    (block
+      (declaration
+        (property_name)
+        (unicode_range)))))
+
+================================================================================
+Range Query in Media
+================================================================================
+
+@media (width >= 600px)
+  .box
+    color: blue
+
+---
+
+(stylesheet
+  (media_statement
+    (range_query
+      (feature_name)
+      (integer_value
+        (unit)))
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (plain_value)))))))
+
+================================================================================
+Range Query Double Bound
+================================================================================
+
+@media (400px <= width <= 800px)
+  .responsive
+    padding: 20px
+
+---
+
+(stylesheet
+  (media_statement
+    (range_query
+      (integer_value
+        (unit))
+      (feature_name)
+      (integer_value
+        (unit)))
+    (block
+      (rule_set
+        (selectors
+          (class_selector
+            (class_name)))
+        (block
+          (declaration
+            (property_name)
+            (integer_value
+              (unit))))))))

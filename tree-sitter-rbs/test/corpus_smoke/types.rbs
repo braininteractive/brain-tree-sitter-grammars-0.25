@@ -1,0 +1,22 @@
+# A survey of the type grammar.
+class Types
+  def union: () -> (Integer | String | nil)
+
+  def intersection: () -> (_Reader & _Writer)
+
+  def optional: () -> String?
+
+  def tuple: () -> [Integer, String, bool]
+
+  def record: () -> { name: String, age: Integer, ?nickname: String }
+
+  def generic: () -> Hash[Symbol, Array[String]]
+
+  def proc_type: () -> ^(Integer, ?String) -> void
+
+  def singleton: () -> singleton(Object)
+
+  def literals: () -> (:read | :write | 42 | true | false)
+
+  def nested: () -> Array[Hash[Symbol, Array[Integer]]?]
+end

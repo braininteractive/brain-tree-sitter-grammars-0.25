@@ -1,0 +1,23 @@
+{
+  "name": "tree-sitter-neon",
+  "version": "0.0.1",
+  "description": "NEON (Nette Object Notation) grammar for tree-sitter",
+  "license": "MIT",
+  "author": "Shubham Dhaboya <shubham.dhaboya99@gmail.com>",
+  "main": "bindings/node",
+  "keywords": ["parser", "tree-sitter", "neon", "nette"],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "queries/*",
+    "src/**"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.0"
+  }
+}

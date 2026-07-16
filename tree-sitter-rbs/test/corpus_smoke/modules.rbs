@@ -1,0 +1,20 @@
+# Module declarations, self-type constraints and nested namespaces.
+module Enumerable[Elem]
+  def each: () { (Elem) -> void } -> void
+
+  def to_a: () -> Array[Elem]
+end
+
+module Comparable : _Comparable
+  def clamp: (self min, self max) -> self
+end
+
+module RBS
+  module AST
+    class Node
+      def location: () -> String
+    end
+  end
+
+  VERSION: String
+end

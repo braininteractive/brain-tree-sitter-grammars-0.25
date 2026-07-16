@@ -1,0 +1,9 @@
+{
+  single: 'I can use "double quotes" here',
+  double: "I can use 'single quotes' here",
+  lineBreaks: "Look, Mom! \
+No \\n's!",
+  escaped: 'quoted \'inner\' text',
+  unicode: 'éè€',
+  tabAndNewline: "col1\tcol2\nrow2",
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "ibmhlasm",
+      "camelcase": "Ibmhlasm",
+      "title": "IBM HLASM",
+      "scope": "source.hlasm",
+      "file-types": [
+        "hlasm",
+        "asm",
+        "mlc"
+      ],
+      "injection-regex": "^(ibm)?hlasm$",
+      "class-name": "TreeSitterIbmhlasm"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "Apache-2.0",
+    "description": "IBM HLASM grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "The MITRE Corporation"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/janus-llm/tree-sitter-ibmhlasm"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

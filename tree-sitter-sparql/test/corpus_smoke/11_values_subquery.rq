@@ -1,0 +1,19 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?city ?population ?mayor
+WHERE {
+  VALUES (?city ?country) {
+    (ex:Paris "France")
+    (ex:Berlin "Germany")
+    (UNDEF "Spain")
+  }
+  ?city ex:mayor ?mayor .
+  {
+    SELECT ?city (SUM(?districtPop) AS ?population)
+    WHERE {
+      ?city ex:district ?district .
+      ?district ex:population ?districtPop .
+    }
+    GROUP BY ?city
+  }
+}
