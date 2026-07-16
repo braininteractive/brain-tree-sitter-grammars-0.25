@@ -1,0 +1,4 @@
+services:
+	mailer: Nette\Mail\SmtpMailer(host: smtp.example.com, port: 465)
+	simple: Foo(bar)
+	chained: Column(type: int) Field(id: 1)

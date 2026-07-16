@@ -1,0 +1,561 @@
+==================
+Plain single-quoted string
+==================
+
+'hello'
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Empty single-quoted string
+==================
+
+''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Single-quoted with escaped quote
+==================
+
+'it\'s fine'
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Single-quoted with backslash escape
+==================
+
+'a\\b'
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Single-quoted with newline escape
+==================
+
+'line\nbreak'
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Single-quoted with unicode escape
+==================
+
+'éclair'
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-single-quoted empty
+==================
+
+''''''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-single-quoted single line
+==================
+
+'''hello'''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-single-quoted multi-line
+==================
+
+'''first
+second
+third'''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-single-quoted with one internal quote
+==================
+
+'''it's fine'''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-single-quoted with two internal quotes
+==================
+
+'''double''quote'''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-single-quoted with escape sequences
+==================
+
+'''line\nbreak'''
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Plain double-quoted string
+==================
+
+"hello"
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Empty double-quoted string
+==================
+
+""
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Double-quoted with escaped quote
+==================
+
+"she said \"hi\""
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Double-quoted with backslash escape
+==================
+
+"a\\b"
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Double-quoted with dollar interpolation
+==================
+
+"hello $name"
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_dollar_interpolation
+        value: (identifier)))))
+
+==================
+Double-quoted with brace interpolation
+==================
+
+"hello ${target}"
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_brace_interpolation
+        value: (identifier)))))
+
+==================
+Double-quoted with mixed interpolations
+==================
+
+"hello ${name}, $count items"
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_brace_interpolation
+        value: (identifier))
+      (string_fragment)
+      (gstring_dollar_interpolation
+        value: (identifier))
+      (string_fragment))))
+
+==================
+Double-quoted with dotted dollar interpolation
+==================
+
+"value is $obj.field"
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_dollar_interpolation
+        value: (identifier)))))
+
+==================
+Double-quoted with brace expression interpolation
+==================
+
+"result: ${a + b}"
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_brace_interpolation
+        value: (binary_expression
+          left: (identifier)
+          right: (identifier))))))
+
+==================
+Triple-double-quoted empty
+==================
+
+""""""
+
+---
+
+(source_file
+  (expression_statement (string_literal)))
+
+==================
+Triple-double-quoted single line
+==================
+
+"""hello"""
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Triple-double-quoted multi-line
+==================
+
+"""first
+second
+third"""
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Triple-double-quoted with internal one quote
+==================
+
+"""it"s fine"""
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Triple-double-quoted with two internal quotes
+==================
+
+"""double""quote"""
+
+---
+
+(source_file
+  (expression_statement (string_literal (string_fragment))))
+
+==================
+Triple-double-quoted with interpolation
+==================
+
+"""prefix $name suffix"""
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_dollar_interpolation
+        value: (identifier))
+      (string_fragment))))
+
+==================
+Triple-double-quoted multi-line with interpolation
+==================
+
+"""first $name
+second ${expr}
+third"""
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_dollar_interpolation
+        value: (identifier))
+      (string_fragment)
+      (gstring_brace_interpolation
+        value: (identifier))
+      (string_fragment))))
+
+==================
+Dollar-slashy plain string
+==================
+
+$/hello world/$
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment))))
+
+==================
+Dollar-slashy with slashes inside
+==================
+
+$/path/to/file/$
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment))))
+
+==================
+Dollar-slashy with dollar-escape
+==================
+
+$/cost is $$5/$
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment))))
+
+==================
+Dollar-slashy with slash escape
+==================
+
+$/x $/ inside/$
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment))))
+
+==================
+Dollar-slashy multi-line
+==================
+
+$/
+first
+second
+/$
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment))))
+
+==================
+Dollar-slashy with dollar interpolation
+==================
+
+$/name is $user/$
+
+---
+
+(source_file
+  (expression_statement
+    (string_literal
+      (string_fragment)
+      (gstring_dollar_interpolation
+        value: (identifier)))))
+
+==================
+Slashy string in assignment
+==================
+
+def pat = /[a-z]+/
+
+---
+
+(source_file
+  (local_variable_declaration
+    (variable_declarator
+      name: (identifier)
+      value: (string_literal
+        (string_fragment)))))
+
+==================
+Slashy string in regex match
+==================
+
+s =~ /[0-9]+/
+
+---
+
+(source_file
+  (expression_statement
+    (regex_find_expression
+      subject: (identifier)
+      pattern: (string_literal
+        (string_fragment)))))
+
+==================
+Slashy string with escaped slash
+==================
+
+def url = /path\/to\/file/
+
+---
+
+(source_file
+  (local_variable_declaration
+    (variable_declarator
+      name: (identifier)
+      value: (string_literal
+        (string_fragment)))))
+
+==================
+Slashy string with dollar interpolation
+==================
+
+def msg = /hello $name world/
+
+---
+
+(source_file
+  (local_variable_declaration
+    (variable_declarator
+      name: (identifier)
+      value: (string_literal
+        (string_fragment)
+        (gstring_dollar_interpolation
+          value: (identifier))
+        (string_fragment)))))
+
+==================
+Slashy string with brace interpolation
+==================
+
+def msg = /value ${expr}/
+
+---
+
+(source_file
+  (local_variable_declaration
+    (variable_declarator
+      name: (identifier)
+      value: (string_literal
+        (string_fragment)
+        (gstring_brace_interpolation
+          value: (identifier))))))
+
+==================
+Slashy string in list
+==================
+
+[/one/, /two/]
+
+---
+
+(source_file
+  (expression_statement
+    (list_literal
+      (string_literal
+        (string_fragment))
+      (string_literal
+        (string_fragment)))))
+
+==================
+Slashy string in method call arg
+==================
+
+println(/hello/)
+
+---
+
+(source_file
+  (expression_statement
+    (method_invocation
+      function: (identifier)
+      arguments: (argument_list
+        (string_literal
+          (string_fragment))))))
+
+==================
+Division still parses as binary
+==================
+
+a / b
+
+---
+
+(source_file
+  (expression_statement
+    (binary_expression
+      left: (identifier)
+      right: (identifier))))

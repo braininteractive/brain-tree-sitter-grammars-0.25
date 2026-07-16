@@ -1,0 +1,13 @@
+mixin pet(name)
+  li.pet= name
+
+mixin card(title, body)
+  .card
+    h2= title
+    p= body
+
+ul
+  +pet('cat')
+  +pet('dog')
+
++card('Hello', 'World')

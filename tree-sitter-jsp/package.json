@@ -1,0 +1,32 @@
+{
+  "name": "tree-sitter-jsp",
+  "version": "0.1.0",
+  "description": "JSP (JavaServer Pages) grammar for tree-sitter",
+  "license": "MIT",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "jsp"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.0"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && swift build",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  }
+}

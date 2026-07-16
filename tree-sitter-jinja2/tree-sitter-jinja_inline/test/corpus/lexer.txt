@@ -1,0 +1,43 @@
+=============
+loop
+=============
+
+# for item in sequence
+# endfor
+# endfor
+
+----
+
+(source
+  (for_block
+    (for_statement
+      (in_expression
+        (identifier)
+        (binary_operator)
+        (expression
+          (binary_expression
+            (unary_expression
+              (primary_expression
+                (identifier)))))))
+    (endfor_statement))
+  (line_statement
+    (expression
+      (binary_expression
+        (unary_expression
+          (primary_expression
+            (identifier)))))))
+
+=======================
+autoescape
+=======================
+
+# autoescape true
+# endautoescape
+
+----------
+
+(source
+  (autoescape_block
+    (autoescape_statement
+      (boolean_literal))
+    (endautoescape_statement)))

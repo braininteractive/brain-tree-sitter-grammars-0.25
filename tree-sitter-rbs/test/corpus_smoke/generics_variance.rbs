@@ -1,0 +1,21 @@
+# Declaration-level type parameters: variance, unchecked and bounds.
+class Producer[out T]
+  def produce: () -> T
+end
+
+class Consumer[in T]
+  def consume: (T value) -> void
+end
+
+class Box[unchecked out Elem < Object]
+  def get: () -> Elem
+end
+
+interface _Container[out Elem, in Key < _ToStr]
+  def fetch: (Key key) -> Elem
+end
+
+class Graph[Node < Comparable, Edge]
+  # Method-level bound interacting with class-level bound.
+  def neighbors: [N < Comparable] (N node) -> Array[Node]
+end

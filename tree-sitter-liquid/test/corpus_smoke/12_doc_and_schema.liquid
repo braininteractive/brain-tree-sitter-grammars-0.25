@@ -1,0 +1,20 @@
+{% doc %}
+  Renders a product badge.
+
+  @param {string} badge_text - the text to display
+  @param {number} [max_width] - optional maximum width
+
+  @example
+  {% render 'badge', badge_text: 'New' %}
+{% enddoc %}
+
+<div class="badge">{{ badge_text }}</div>
+
+{% schema %}
+{
+  "name": "Badge",
+  "settings": [
+    { "type": "text", "id": "badge_text", "label": "Badge text" }
+  ]
+}
+{% endschema %}

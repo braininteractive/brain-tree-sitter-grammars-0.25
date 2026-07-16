@@ -1,0 +1,5 @@
+handlers:
+	- name: first
+	  level: high
+	- name: second
+	  level: low

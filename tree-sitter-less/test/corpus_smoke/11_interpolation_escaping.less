@@ -1,0 +1,12 @@
+// Variable interpolation and escaping
+@my-selector: banner;
+@property: color;
+
+.@{my-selector} {
+  font-weight: bold;
+}
+
+.widget {
+  @{property}: #0ee;
+  background-@{property}: #999;
+}

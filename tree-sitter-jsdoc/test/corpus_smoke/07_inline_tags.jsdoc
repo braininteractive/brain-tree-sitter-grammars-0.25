@@ -1,0 +1,8 @@
+/**
+ * Resolves a value, delegating to {@link resolveAll} for arrays.
+ *
+ * See also {@linkcode module:core.resolveSync} for the blocking variant.
+ *
+ * @param {*} value The value to resolve.
+ * @returns {Promise} Returns a promise for the resolved value.
+ */

@@ -1,0 +1,4 @@
+{{ .Title | upper | trim }}
+{{ .Price | printf "%.2f" }}
+{{ .Items | len }}
+{{ (.Description | trunc 40) | quote }}

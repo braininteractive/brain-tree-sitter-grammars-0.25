@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "ragel",
+      "camelcase": "Ragel",
+      "title": "Ragel",
+      "scope": "source.rl",
+      "file-types": [
+        "rl"
+      ],
+      "injection-regex": "^ragel$",
+      "class-name": "TreeSitterRagel"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "ragel grammar for the tree-sitter parsing library",
+    "authors": [
+      {
+        "name": "Alexandre A. Muller"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/alemuller/tree-sitter-ragel"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

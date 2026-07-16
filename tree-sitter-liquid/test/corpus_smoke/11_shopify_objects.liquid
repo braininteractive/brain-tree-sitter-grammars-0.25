@@ -1,0 +1,19 @@
+{% paginate collection.products by 12 %}
+  {% for product in collection.products %}
+    {{ product.title }}
+  {% endfor %}
+{% endpaginate %}
+
+{% form "contact" %}
+  <input type="email" name="contact[email]" value="{{ form.email }}">
+{% endform %}
+
+{% style %}
+  .hero { background: {{ settings.hero_color }}; }
+{% endstyle %}
+
+{% cycle "one", "two", "three" %}
+{% cycle "group1": "odd", "even" %}
+
+{{ products[0].variants.first.price }}
+{{ collections["sale"].title }}

@@ -1,0 +1,12 @@
+# People and, if known, their email and homepage
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?name ?mbox ?homepage
+WHERE {
+  ?person foaf:name ?name .
+  OPTIONAL { ?person foaf:mbox ?mbox . }
+  OPTIONAL {
+    ?person foaf:homepage ?homepage .
+    FILTER (isIRI(?homepage))
+  }
+}

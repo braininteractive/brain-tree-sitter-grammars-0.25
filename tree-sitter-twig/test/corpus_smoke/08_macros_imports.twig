@@ -1,0 +1,13 @@
+{% macro input(name, value = '', type = 'text', size = 20) %}
+  <input type="{{ type }}" name="{{ name }}" value="{{ value }}" size="{{ size }}"/>
+{% endmacro %}
+
+{% macro label(text) %}
+  <label>{{ text }}</label>
+{% endmacro %}
+
+{% import 'forms.html.twig' as forms %}
+{% from 'forms.html.twig' import input as input_field, label %}
+
+{{ forms.input('username') }}
+{{ input_field('password', '', 'password') }}

@@ -1,0 +1,12 @@
+{% raw %}
+  In raw mode, {{ this }} and {% that %} are not parsed.
+{% endraw %}
+
+{% echo "welcome to my store" | upcase %}
+
+{% liquid
+  assign name = "world"
+  if name == "world"
+    echo "hello " | append: name
+  endif
+%}

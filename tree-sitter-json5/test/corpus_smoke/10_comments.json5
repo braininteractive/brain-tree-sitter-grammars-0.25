@@ -1,0 +1,15 @@
+// Leading line comment
+/* leading
+   block comment */
+{
+  // comment before member
+  key: 'value', // trailing comment
+  /* block before */ other: 2 /* block after */,
+  list: [
+    1, // one
+    2, /* two */
+    3,
+  ],
+}
+// trailing line comment
+/* trailing block */

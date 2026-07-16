@@ -1,0 +1,28 @@
+# Class declarations with type parameters, superclasses and mixins.
+class Animal
+  def speak: () -> String
+end
+
+class Dog < Animal
+  include Comparable
+
+  def speak: () -> String
+
+  def bark: (?Integer times) -> void
+end
+
+class Registry[K, V] < Hash[K, V]
+  extend Enumerable
+
+  prepend Kernel
+
+  def fetch: (K key) -> V
+           | (K key, V default) -> V
+           | [W] (K key) { (K) -> W } -> (V | W)
+end
+
+module Namespaced
+  class Inner[unchecked out T]
+    def value: () -> T
+  end
+end

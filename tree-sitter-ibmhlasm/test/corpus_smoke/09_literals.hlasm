@@ -1,0 +1,7 @@
+* CHARACTER AND HEX LITERALS
+         MVC   MSG,=C'READY'
+         CLC   CODE,=X'F1F2'
+         L     4,=F'100'
+         LA    5,=A(BUFFER)
+MSG      DS    CL5
+CODE     DS    XL2

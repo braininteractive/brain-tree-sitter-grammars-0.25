@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "COBOL",
+      "camelcase": "COBOL",
+      "scope": "source.cobol",
+      "path": ".",
+      "file-types": [
+        "cbl",
+        "cob",
+        "cpy"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "MIT",
+    "description": "COBOL grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Yutaro Sakamoto"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/yutaro-sakamoto/tree-sitter-cobol"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false
+  }
+}

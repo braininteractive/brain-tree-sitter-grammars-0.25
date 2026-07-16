@@ -1,0 +1,4 @@
+# macro render_field(field, label_class="form-label")
+# endmacro
+# call card("Recent activity")
+# endcall

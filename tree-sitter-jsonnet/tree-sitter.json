@@ -1,0 +1,39 @@
+{
+  "grammars": [
+    {
+      "name": "jsonnet",
+      "camelcase": "Jsonnet",
+      "scope": "source.jsonnet",
+      "path": ".",
+      "file-types": [
+        "jsonnet",
+        "libsonnet"
+      ],
+      "injection-regex": "jsonnet",
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "jsonnet grammar for the tree-sitter parsing library",
+    "authors": [
+      {
+        "name": "Sourcegraph"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/sourcegraph/tree-sitter-jsonnet"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

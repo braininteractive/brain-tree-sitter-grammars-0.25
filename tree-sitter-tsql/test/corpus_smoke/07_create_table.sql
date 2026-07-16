@@ -1,0 +1,8 @@
+CREATE TABLE dbo.Employees (
+    EmployeeID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    Salary DECIMAL(18,2) NULL DEFAULT 0,
+    HireDate DATETIME2 DEFAULT SYSDATETIME(),
+    DepartmentID INT REFERENCES dbo.Departments(DepartmentID)
+);

@@ -1,0 +1,4 @@
+example.com/org/team/project/subpkg v1.0.0 h1:RGVlcFBhdGhIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/org/team/project/subpkg v1.0.0/go.mod h1:RGVlcFBhdGhNb2RIYXNoMDAwMDAwMDAwMDAwMDAwMDAwMDA=
+gopkg.in/yaml.v3.example v3.0.1 h1:R29wa2dJblN0eWxlSGFzaDAwMDAwMDAwMDAwMDAwMDAwMDAw
+gopkg.in/yaml.v3.example v3.0.1/go.mod h1:R29wa2dJblN0eWxlTW9kSGFzaDAwMDAwMDAwMDAwMDAwMDA=

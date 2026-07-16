@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  {% for group, members in users|groupby("team") %}
+    <section id="team-{{ loop.index0 }}">
+      <h2>{{ group }} ({{ members|length }})</h2>
+      <table>
+        {% for member in members %}
+          <tr class="{{ 'first' if loop.first else 'rest' }}">
+            <td>{{ loop.index }}/{{ loop.length }}</td>
+            <td>{{ member.name|e }}</td>
+            <td>{{ member.score|round(2) }}</td>
+            {% for role in member.roles %}
+              <td>{{ role }}{{ "," if not loop.last }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
+    </section>
+  {% endfor %}
+  {% for row in data|batch(3, '&nbsp;') %}
+    <div class="row">{% for cell in row %}<span>{{ cell }}</span>{% endfor %}</div>
+  {% endfor %}
+{% endblock %}

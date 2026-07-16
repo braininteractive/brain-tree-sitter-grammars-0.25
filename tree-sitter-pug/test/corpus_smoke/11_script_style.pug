@@ -1,0 +1,19 @@
+script.
+  if (usingPug) {
+    console.log('you are awesome');
+  } else {
+    console.log('use pug');
+  }
+
+style.
+  .card {
+    color: red;
+  }
+
+div
+  script.
+    window.addEventListener('load', init);
+
+- var count = 0
+p= count
+p!= rawHtml

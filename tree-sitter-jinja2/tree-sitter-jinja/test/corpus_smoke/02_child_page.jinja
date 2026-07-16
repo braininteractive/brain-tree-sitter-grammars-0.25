@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "macros/forms.html" import render_field, csrf_token with context %}
+{% import "macros/ui.html" as ui %}
+
+{% set page_title = article.title ~ " | " ~ site_name %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ article.title|title }}</h1>
+  {% if article.subtitle is defined and article.subtitle is not none %}
+    <p class="sub">{{ article.subtitle|striptags|trim }}</p>
+  {% endif %}
+  <div class="body">{{ article.body|safe }}</div>
+{% endblock %}

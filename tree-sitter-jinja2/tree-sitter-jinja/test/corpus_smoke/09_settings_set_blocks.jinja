@@ -1,0 +1,20 @@
+{% set ns = namespace(total=0, enabled=false) %}
+{% set theme = user.preferences.theme|default("dark") %}
+{% set first_name, last_name = user.full_name.split(" ") %}
+
+{% set sidebar %}
+  <aside>
+    {% for link in nav_links %}<a href="{{ link.href }}">{{ link.label }}</a>{% endfor %}
+  </aside>
+{% endset %}
+
+{% do audit_log.append(request.remote_addr) %}
+{% do seen.update({"page": request.path}) %}
+
+{% for option in options %}
+  {% set ns.total = ns.total + option.weight %}
+  {% if option.key == "notifications" %}{% set ns.enabled = true %}{% endif %}
+{% endfor %}
+
+<p>Total weight: {{ ns.total }}, notifications: {{ "on" if ns.enabled else "off" }}</p>
+{{ sidebar }}

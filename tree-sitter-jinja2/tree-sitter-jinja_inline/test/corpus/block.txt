@@ -1,0 +1,29 @@
+=============
+block
+=============
+
+# block foo
+# endblock
+
+---
+
+(source
+  (block_block
+    (block_statement
+      (identifier))
+    (endblock_statement)))
+
+===============
+required block
+===============
+
+# block foo required
+# endblock
+
+---
+
+(source
+  (block_block
+    (block_statement
+      (identifier))
+    (endblock_statement)))

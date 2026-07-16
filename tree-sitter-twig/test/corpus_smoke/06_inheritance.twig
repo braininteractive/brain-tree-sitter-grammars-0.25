@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <main>
+    <h2>{{ page.heading }}</h2>
+    {% block inner %}
+      <p>default inner content</p>
+    {% endblock %}
+  </main>
+{% endblock %}
+
+{% block footer %}
+  {{ parent() }}
+  <small>extra footer line</small>
+{% endblock %}

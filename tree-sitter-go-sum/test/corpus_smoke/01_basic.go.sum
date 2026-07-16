@@ -1,0 +1,4 @@
+example.com/logging v1.4.2 h1:QmFzZTY0SGFzaFZhbHVlMDAwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/logging v1.4.2/go.mod h1:U2Vjb25kQmFzZTY0SGFzaFZhbHVlMDAwMDAwMDAwMDAw=
+example.com/router v0.9.1 h1:VGhpcmRCYXNlNjRIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDA=
+example.com/router v0.9.1/go.mod h1:Rm91cnRoQmFzZTY0SGFzaFZhbHVlMDAwMDAwMDAwMDAwMA=

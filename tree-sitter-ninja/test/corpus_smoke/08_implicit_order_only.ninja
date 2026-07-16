@@ -1,0 +1,10 @@
+rule cc
+  command = cc -c $in -o $out
+
+rule codegen
+  command = ./gen.sh $out
+
+build gen.h: codegen
+
+build foo.o | foo.o.d: cc foo.c | gen.h || dir_marker
+build bar.o: cc bar.c || gen.h dir_marker

@@ -1,0 +1,11 @@
+count: 42
+negative: -7
+floating: 3.14
+hexer: 0xFF
+octal: 0o755
+binary: 0b1010
+flag_true: true
+flag_off: off
+nothing: null
+tilde: ~
+when: 2016-06-03 19:49:00 +0200

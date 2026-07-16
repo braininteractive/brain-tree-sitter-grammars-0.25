@@ -1,0 +1,23 @@
+<div class="page">
+  <header>
+    <img src="/logo.svg" alt="Logo">
+    <h1>{{@title}}</h1>
+  </header>
+
+  {{#if this.loading}}
+    <p>Loading...</p>
+  {{else}}
+    {{#each this.rows as |row|}}
+      <div class="row" data-id={{row.id}}>
+        <input type="checkbox" checked={{row.selected}}>
+        <span>{{row.label}}</span>
+        <br>
+      </div>
+    {{/each}}
+  {{/if}}
+
+  <footer>
+    <hr>
+    <MyButton @onClick={{this.submit}}>Submit</MyButton>
+  </footer>
+</div>

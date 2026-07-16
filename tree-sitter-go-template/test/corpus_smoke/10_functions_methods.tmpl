@@ -1,0 +1,5 @@
+{{ printf "%s-%d" .Prefix 42 }}
+{{ .Repo.CommitsSince "2024-01-01" }}
+{{ index .Matrix 0 1 }}
+{{ len (printf "%v" .Thing) }}
+{{ not .Hidden }}

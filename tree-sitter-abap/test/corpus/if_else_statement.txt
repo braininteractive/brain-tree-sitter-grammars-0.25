@@ -1,0 +1,68 @@
+================================================================================
+if with elseif and else branches
+================================================================================
+
+IF lv_count > 10.
+  WRITE 'big'.
+ELSEIF lv_count >= 5.
+  WRITE 'medium'.
+ELSE.
+  WRITE 'small'.
+ENDIF.
+
+--------------------------------------------------------------------------------
+
+(program
+  (if_statement
+    (comparison_expression
+      (name)
+      (numeric_literal))
+    (write_statement
+      (character_literal))
+    (elseif_block
+      (comparison_expression
+        (name)
+        (numeric_literal))
+      (write_statement
+        (character_literal)))
+    (else_block
+      (write_statement
+        (character_literal)))))
+
+================================================================================
+ordering comparison operators
+================================================================================
+
+IF a < b.
+ENDIF.
+IF a <= b.
+ENDIF.
+IF a GT b AND a GE c.
+ENDIF.
+CHECK lv_qty LT lv_max OR lv_qty LE 100.
+
+--------------------------------------------------------------------------------
+
+(program
+  (if_statement
+    (comparison_expression
+      (name)
+      (name)))
+  (if_statement
+    (comparison_expression
+      (name)
+      (name)))
+  (if_statement
+    (comparison_expression
+      (name)
+      (name))
+    (comparison_expression
+      (name)
+      (name)))
+  (check_statement
+    (comparison_expression
+      (name)
+      (name))
+    (comparison_expression
+      (name)
+      (numeric_literal))))

@@ -1,0 +1,26 @@
+# Application configuration (NEON)
+
+name: My Application
+debug: true
+version: 2.1
+
+database:
+	driver: pdo_mysql
+	host: localhost
+	port: 3306
+	user: 'root'
+	password: "secret"
+
+services:
+	router: App\Router\RouterFactory::createRouter
+	mailer: Nette\Mail\SmtpMailer(host: smtp.example.com, port: 465)
+
+middlewares:
+	- App\Middleware\Auth
+	- App\Middleware\Cors
+
+extensions:
+	di: @container
+	cache: %tempDir%/cache
+
+inline: { a: 1, b: [2, 3, 4], c: false }

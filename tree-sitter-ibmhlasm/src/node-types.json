@@ -1,0 +1,641 @@
+[
+  {
+    "type": "ago_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "remark",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "aif_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "remark",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "anop_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "remark",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "condition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "paren_group",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "global_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_symbol",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "instruction",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "operands",
+          "named": true
+        },
+        {
+          "type": "operation",
+          "named": true
+        },
+        {
+          "type": "remark",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "local_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_symbol",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ago_statement",
+          "named": true
+        },
+        {
+          "type": "aif_statement",
+          "named": true
+        },
+        {
+          "type": "anop_statement",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "global_declaration",
+          "named": true
+        },
+        {
+          "type": "instruction",
+          "named": true
+        },
+        {
+          "type": "local_declaration",
+          "named": true
+        },
+        {
+          "type": "macro_comment",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
+          "named": true
+        },
+        {
+          "type": "macro_header",
+          "named": true
+        },
+        {
+          "type": "macro_prototype",
+          "named": true
+        },
+        {
+          "type": "macro_trailer",
+          "named": true
+        },
+        {
+          "type": "mexit_statement",
+          "named": true
+        },
+        {
+          "type": "mnote_statement",
+          "named": true
+        },
+        {
+          "type": "set_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "remark",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_parameter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "paren_group",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_prototype",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "macro_name",
+          "named": true
+        },
+        {
+          "type": "macro_parameter",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_trailer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "remark",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mexit_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "remark",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mnote_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "paren_group",
+          "named": true
+        },
+        {
+          "type": "sequence_symbol",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "operation",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "paren_group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "paren_group",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ago_statement",
+          "named": true
+        },
+        {
+          "type": "aif_statement",
+          "named": true
+        },
+        {
+          "type": "anop_statement",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "global_declaration",
+          "named": true
+        },
+        {
+          "type": "instruction",
+          "named": true
+        },
+        {
+          "type": "local_declaration",
+          "named": true
+        },
+        {
+          "type": "macro_comment",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
+          "named": true
+        },
+        {
+          "type": "mexit_statement",
+          "named": true
+        },
+        {
+          "type": "mnote_statement",
+          "named": true
+        },
+        {
+          "type": "set_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "paren_group",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "subscript",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "paren_group",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "&&",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "AGO",
+    "named": false
+  },
+  {
+    "type": "AIF",
+    "named": false
+  },
+  {
+    "type": "ANOP",
+    "named": false
+  },
+  {
+    "type": "GBLA",
+    "named": false
+  },
+  {
+    "type": "GBLB",
+    "named": false
+  },
+  {
+    "type": "GBLC",
+    "named": false
+  },
+  {
+    "type": "LCLA",
+    "named": false
+  },
+  {
+    "type": "LCLB",
+    "named": false
+  },
+  {
+    "type": "LCLC",
+    "named": false
+  },
+  {
+    "type": "MACRO",
+    "named": false
+  },
+  {
+    "type": "MEND",
+    "named": false
+  },
+  {
+    "type": "MEXIT",
+    "named": false
+  },
+  {
+    "type": "MNOTE",
+    "named": false
+  },
+  {
+    "type": "SETA",
+    "named": false
+  },
+  {
+    "type": "SETB",
+    "named": false
+  },
+  {
+    "type": "SETC",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "macro_comment",
+    "named": true
+  },
+  {
+    "type": "macro_name",
+    "named": true
+  },
+  {
+    "type": "name",
+    "named": true
+  },
+  {
+    "type": "operands",
+    "named": true
+  },
+  {
+    "type": "remark",
+    "named": true
+  },
+  {
+    "type": "sequence_symbol",
+    "named": true
+  },
+  {
+    "type": "variable_symbol",
+    "named": true
+  }
+]

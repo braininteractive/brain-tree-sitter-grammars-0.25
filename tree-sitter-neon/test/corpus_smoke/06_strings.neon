@@ -1,0 +1,7 @@
+title: "double quoted"
+name: 'single quoted'
+banner: """
+multiline
+triple string
+"""
+escaped: "with \"quote\" inside"

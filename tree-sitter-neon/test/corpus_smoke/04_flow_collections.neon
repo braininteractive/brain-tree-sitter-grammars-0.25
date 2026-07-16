@@ -1,0 +1,5 @@
+inline: { a: 1, b: [2, 3, 4], c: false }
+list: [10, 20, 30]
+mixed: [ { x: 1 }, { y: 2 } ]
+empty_map: {}
+empty_list: []

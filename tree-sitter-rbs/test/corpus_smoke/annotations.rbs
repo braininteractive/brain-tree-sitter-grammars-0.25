@@ -1,0 +1,19 @@
+# Declaration annotations in the several bracket styles.
+%a{pure}
+class Calculator
+  %a{implicitly-returns-nil}
+  def compute: (Integer a, Integer b) -> Integer
+
+  %a{rbs:test:skip}
+  def experimental: () -> void
+end
+
+%a(deprecated)
+module Legacy
+  def old_api: () -> void
+end
+
+%a{note: keep in sync}
+interface _Plugin
+  def call: () -> void
+end

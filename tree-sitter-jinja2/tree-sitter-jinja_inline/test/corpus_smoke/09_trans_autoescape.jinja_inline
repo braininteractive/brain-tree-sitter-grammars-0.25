@@ -1,0 +1,5 @@
+# trans count=items|length, name=user.name
+# pluralize count
+# endtrans
+# autoescape false
+# endautoescape

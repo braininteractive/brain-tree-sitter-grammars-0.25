@@ -1,0 +1,55 @@
+{
+  "name": "tree-sitter-sass",
+  "version": "0.1.0",
+  "description": "Sass (indented syntax) grammar for tree-sitter",
+  "license": "MIT",
+  "main": "bindings/node/index.js",
+  "types": "bindings/node/index.d.ts",
+  "keywords": [
+    "tree-sitter",
+    "sass",
+    "parser",
+    "syntax",
+    "grammar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bajrangCoder/tree-sitter-sass"
+  },
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "build": "tree-sitter generate && tree-sitter build",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse",
+    "highlight": "tree-sitter highlight"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.3"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.sass",
+      "injection-regex": "^(sass|Sass)$",
+      "file-types": [
+        "sass"
+      ],
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm",
+      "indents": "queries/indents.scm",
+      "injections": "queries/injections.scm"
+    }
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.0.0",
+    "node-gyp-build": "^4.8.0"
+  }
+}

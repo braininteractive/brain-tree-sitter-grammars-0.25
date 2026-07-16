@@ -1,0 +1,30 @@
+[package]
+name = "tree-sitter-rpgle"
+description = "IBM ILE RPG (free-form RPGLE) grammar for the tree-sitter parsing library"
+version = "0.25.0"
+keywords = ["incremental", "parsing", "rpg", "rpgle"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/mayflower/rpg-explainer"
+edition = "2021"
+license = "MIT"
+
+build = "bindings/rust/build.rs"
+include = [
+    "bindings/rust/*",
+    "grammar.js",
+    "src/*",
+    "tree-sitter.json",
+    "LICENSE",
+]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.0"
+
+[dev-dependencies]
+tree-sitter = "0.25"

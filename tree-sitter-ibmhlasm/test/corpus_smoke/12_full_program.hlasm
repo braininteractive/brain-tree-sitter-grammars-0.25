@@ -1,0 +1,16 @@
+* COMPLETE SMALL PROGRAM
+SUMPGM   CSECT
+         STM   14,12,12(13)   SAVE REGISTERS
+         BALR  12,0           SET BASE
+         SR    5,5            CLEAR ACCUMULATOR
+         L     3,N            LOAD COUNT
+ADDLOOP  A     5,ONE          ADD ONE
+         BCT   3,ADDLOOP      LOOP N TIMES
+         ST    5,RESULT       STORE ANSWER
+         LM    14,12,12(13)   RESTORE REGISTERS
+         BR    14             RETURN
+N        DC    F'10'
+ONE      DC    F'1'
+RESULT   DS    F
+SAVEAREA DS    18F
+         END   SUMPGM

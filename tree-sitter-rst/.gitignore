@@ -1,0 +1,51 @@
+# Rust artifacts
+target/
+
+# Node artifacts
+build/
+prebuilds/
+node_modules/
+
+# Swift artifacts
+.build/
+
+# Go artifacts
+_obj/
+
+# Python artifacts
+.venv/
+dist/
+*.egg-info
+*.whl
+__pycache__/
+*.pyc
+
+# C artifacts
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.pc
+*.exp
+*.lib
+
+# Zig artifacts
+.zig-cache/
+zig-cache/
+zig-out/
+
+# Example dirs
+/examples/*/
+
+# Grammar volatiles
+*.obj
+*.o
+
+# tree-sitter generated logs
+log.html
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip

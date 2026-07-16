@@ -1,0 +1,26 @@
+# Doc comments containing ASCII tables and art (attached to members).
+class Report
+  # Renders a summary in a table:
+  #
+  #     |------|-------|--------|
+  #     | Name | Count | Ratio  |
+  #     |------|-------|--------|
+  #     | a    | 1     | 0.25   |
+  #     | b    | 3     | 0.75   |
+  #
+  # Returns the formatted string.
+  def render: () -> String
+
+  # A small data-flow diagram:
+  #
+  #     +--------+       +--------+       +--------+
+  #     | Source | ----> | Filter | ----> | Sink   |
+  #     +--------+       +--------+       +--------+
+  #
+  # Bounded generic alongside the art.
+  def pipe: [T < Numeric] (T value) -> T
+
+  # Mixed prose and a pipe-heavy line:
+  #   choices are | red | green | blue |
+  def color: () -> Symbol
+end

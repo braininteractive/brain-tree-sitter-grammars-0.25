@@ -1,0 +1,26 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "neon",
+      "camelcase": "Neon",
+      "scope": "source.neon",
+      "file-types": ["neon"],
+      "injection-regex": "^neon$"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "MIT",
+    "description": "NEON (Nette Object Notation) grammar for tree-sitter",
+    "authors": [{ "name": "Shubham Dhaboya", "email": "shubham.dhaboya99@gmail.com" }]
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false
+  }
+}

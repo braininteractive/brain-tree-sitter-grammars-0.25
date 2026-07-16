@@ -1,0 +1,8 @@
+rule link
+  command = ld -o $out $in $
+    -lpthread $
+    -lm
+
+build app: link main.o $
+    util.o $
+    extra.o

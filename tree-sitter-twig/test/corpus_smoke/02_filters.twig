@@ -1,0 +1,8 @@
+{{ name|upper }}
+{{ name|lower|trim }}
+{{ price|number_format(2, '.', ',') }}
+{{ post.published_at|date('Y-m-d') }}
+{{ items|join(', ')|upper }}
+{{ description|default('n/a') }}
+{{ body|striptags|slice(0, 255) }}
+{{ 'now'|date('H:i') }}

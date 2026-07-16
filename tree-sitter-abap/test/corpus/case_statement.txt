@@ -1,0 +1,30 @@
+================================================================================
+case statement with when others
+================================================================================
+
+CASE lv_status.
+  WHEN 'A'.
+    WRITE 'active'.
+  WHEN 'B' OR 'C'.
+    WRITE 'blocked'.
+  WHEN OTHERS.
+    WRITE 'unknown'.
+ENDCASE.
+
+--------------------------------------------------------------------------------
+
+(program
+  (case_statement
+    (name)
+    (when_block
+      (character_literal)
+      (write_statement
+        (character_literal)))
+    (when_block
+      (character_literal)
+      (character_literal)
+      (write_statement
+        (character_literal)))
+    (when_block
+      (write_statement
+        (character_literal)))))

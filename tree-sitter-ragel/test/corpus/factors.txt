@@ -1,0 +1,367 @@
+===============================================================
+Factor, AlphabetNum, Uint
+===============================================================
+fsm = 0;
+fsm = 9;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (uint))
+  (machine_def
+    name: (word)
+    expr: (uint)))
+
+===============================================================
+Factor, AlphabetNum, Neg (signed)
+===============================================================
+fsm = +1;
+fsm = -1;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (signed (uint)))
+  (machine_def
+    name: (word)
+    expr: (signed (uint))))
+
+===============================================================
+Factor, AlphabetNum, Hex
+===============================================================
+fsm = 0x0123456789;
+fsm = 0xabcdef;
+fsm = 0xABCDEF;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (hex))
+  (machine_def
+    name: (word)
+    expr: (hex))
+  (machine_def
+    name: (word)
+    expr: (hex)))
+
+===============================================================
+Factor, Word
+===============================================================
+fsm = word;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (word)))
+
+===============================================================
+Factor, String
+===============================================================
+fsm = 'foo';
+fsm = "bar";
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (string))
+  (machine_def
+    name: (word)
+    expr: (string)))
+
+===============================================================
+Factor, String, Zero length
+===============================================================
+fsm = '';
+fsm = "";
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (string))
+  (machine_def
+    name: (word)
+    expr: (string)))
+
+===============================================================
+Factor, Character class, empty
+===============================================================
+fsm = [];
+fsm = [^];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (negate))))
+
+
+===============================================================
+Factor, Character class, literal, open bracket
+===============================================================
+fsm = [[];
+fsm = [^[];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class (literal)))
+  (machine_def
+    name: (word)
+    expr: (char_class (negate (literal)))))
+
+
+===============================================================
+Factor, Character class, literal, space
+===============================================================
+fsm = [ ];
+fsm = [^ ];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class (literal)))
+  (machine_def
+    name: (word)
+    expr: (char_class (negate (literal)))))
+
+===============================================================
+Factor, Character class, literal, escape, quote, backslash
+===============================================================
+fsm = [\\];
+fsm = [^\\];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class (quote)))
+  (machine_def
+    name: (word)
+    expr: (char_class (negate (quote)))))
+
+===============================================================
+Factor, Character class, literal, escape, quote, open bracket
+===============================================================
+fsm = [\[];
+fsm = [^\[];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class (quote)))
+  (machine_def
+    name: (word)
+    expr: (char_class (negate (quote)))))
+
+===============================================================
+Factor, Character class, literal, many
+===============================================================
+fsm = [[ ^\\\]\r\n];
+fsm = [^[ ^\\\]\r\n];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (literal)
+      (literal)
+      (literal)
+      (quote)
+      (quote)
+      (ctrl_code)
+      (ctrl_code)))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (negate
+        (literal)
+        (literal)
+        (literal)
+        (quote)
+        (quote)
+        (ctrl_code)
+        (ctrl_code)))))
+
+===============================================================
+Factor, Character class, literal, many, space carret
+===============================================================
+fsm = [ ^];
+fsm = [^ ];
+fsm = [^^];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class (literal) (literal)))
+  (machine_def
+    name: (word)
+    expr: (char_class (negate (literal))))
+  (machine_def
+    name: (word)
+    expr: (char_class (negate (literal)))))
+
+===============================================================
+Factor, Character class, literal, closing bracket, expect ERROR
+===============================================================
+fsm = [a]b];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (literal))
+    (ERROR
+      (word))))
+
+===============================================================
+Factor, Character class, literal, dash, expect ERROR
+===============================================================
+fsm = [-];
+fsm = [^-];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class (ERROR)))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (negate) (ERROR))))
+
+===============================================================
+Factor, Character class, range
+===============================================================
+fsm = [a-b];
+fsm = [^a-b];
+fsm = [ - ];
+fsm = [^ - ];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (range
+        low: (literal)
+        high: (literal))))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (negate
+        (range
+          low: (literal)
+          high: (literal)))))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (range
+        low: (literal)
+        high: (literal))))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (negate
+        (range
+          low: (literal)
+          high: (literal))))))
+
+===============================================================
+Factor, Character class, range, missing low, expect ERROR
+===============================================================
+fsm = [-^];
+fsm = [^-^];
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (ERROR)
+      (negate)))
+  (machine_def
+    name: (word)
+    expr: (char_class
+      (negate
+        (range
+          low: (literal (MISSING "literal_token1"))
+          high: (literal))))))
+
+
+===============================================================
+Factor, Regex, dot
+===============================================================
+fsm = /./;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (regex (any))))
+
+
+===============================================================
+Factor, Regex, literal
+===============================================================
+fsm = /abc/;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (regex
+      (literal)
+      (literal)
+      (literal))))
+
+===============================================================
+Factor, Regex, repetition
+===============================================================
+fsm = /a*/;
+fsm = /a*.c*/;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (regex
+      (repeat (literal))))
+  (machine_def
+    name: (word)
+    expr: (regex
+      (repeat (literal))
+      (any)
+      (repeat (literal)))))
+
+===============================================================
+Factor, Regex, character class, repetition
+===============================================================
+fsm = /[ 0-9]*/;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (regex
+      (repeat
+        (char_class
+          (literal)
+          (range
+             low: (literal)
+            high: (literal)))))))

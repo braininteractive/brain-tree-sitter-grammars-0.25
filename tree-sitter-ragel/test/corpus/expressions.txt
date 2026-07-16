@@ -1,0 +1,172 @@
+===============================================================
+Join
+===============================================================
+fsm = a,b;
+fsm = a,b,c;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (join (word) (word)))
+  (machine_def
+    name: (word)
+    expr: (join (word) (word) (word))))
+
+===============================================================
+Expression, operators
+===============================================================
+fsm = a|b, a&b, a-b, a--b;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (join
+      (combine
+        lhs: (word)
+        rhs: (word))
+      (intersect
+        lhs: (word)
+        rhs: (word))
+      (subtract
+        lhs: (word)
+        rhs: (word))
+      (subtract
+        lhs: (word)
+        rhs: (word)))))
+
+===============================================================
+Expression, operators, precedence
+===============================================================
+fsm = a|b&c-d--e;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (subtract
+      lhs: (subtract
+        lhs: (intersect
+          lhs: (combine
+            lhs: (word)
+            rhs: (word))
+          rhs: (word))
+        rhs: (word))
+      rhs: (word))))
+
+===============================================================
+Expression, concatenation
+===============================================================
+fsm = a.b , c.d;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (join
+      (concatenate (word) (word))
+      (concatenate (word) (word)))))
+
+===============================================================
+Expression, concatenation, precedence
+===============================================================
+fsm = a.b | c.d , e.f & g.h;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (join
+      (combine
+        lhs: (concatenate (word) (word))
+        rhs: (concatenate (word) (word)))
+      (intersect
+        lhs: (concatenate (word) (word))
+        rhs: (concatenate (word) (word))))))
+
+===============================================================
+Expression, label
+===============================================================
+fsm = label: a
+    | label: b;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (combine
+      lhs: (label (word) (word))
+      rhs: (label (word) (word)))))
+
+===============================================================
+Expression, repetition, meta characters
+===============================================================
+fsm = a* , b**, c?, c+;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (join
+      (repeat (word))
+      (repeat (word))
+      (repeat (word))
+      (repeat (word)))))
+
+===============================================================
+Expression, repetition, limits
+===============================================================
+fsm = a{ 1 };
+fsm = a{ ,2};
+fsm = a{1, };
+fsm = a{1,2};
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (repeat
+      (word)
+      (limits exactly: (uint))))
+  (machine_def
+    name: (word)
+    expr: (repeat
+      (word)
+      (limits maximum: (uint))))
+  (machine_def
+    name: (word)
+    expr: (repeat
+      (word)
+      (limits minimum: (uint))))
+  (machine_def
+    name: (word)
+    expr: (repeat
+      (word)
+      (limits minimum: (uint) maximum: (uint)))))
+
+===============================================================
+Expression, negation
+===============================================================
+fsm = !a , ^b;
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (join
+      (negate (word))
+      (negate (word)))))
+
+===============================================================
+Expression, grouping
+===============================================================
+fsm = !(a,b);
+---
+
+(specification
+  (machine_def
+    name: (word)
+    expr: (negate
+      (group
+        (join (word) (word))))))

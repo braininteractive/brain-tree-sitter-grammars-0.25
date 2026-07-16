@@ -1,0 +1,9 @@
+{{ range .Items }}
+- {{ .Name }}: {{ .Value }}
+{{ end }}
+{{ range $index, $element := .List }}
+{{ $index }} => {{ $element }}
+{{ else }}
+no items
+{{ end }}
+{{ range $i := .Numbers }}{{ if gt $i 10 }}{{ break }}{{ end }}{{ continue }}{{ end }}

@@ -1,0 +1,7 @@
+PREFIX ex: <http://example.org/ns#>
+
+DESCRIBE ?book <http://example.org/book/book1>
+WHERE {
+  ?book ex:author ?author .
+  ?author ex:name "Bob" .
+}

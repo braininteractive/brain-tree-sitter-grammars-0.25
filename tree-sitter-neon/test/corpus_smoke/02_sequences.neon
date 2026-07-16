@@ -1,0 +1,7 @@
+middlewares:
+	- App\Middleware\Auth
+	- App\Middleware\Cors
+	- App\Middleware\Session
+plain:
+	- first
+	- second

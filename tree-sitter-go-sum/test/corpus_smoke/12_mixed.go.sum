@@ -1,0 +1,8 @@
+example.com/auth v2.3.1+incompatible h1:TWl4ZWRBdXRoSGFzaFZhbHVlMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/auth v2.3.1+incompatible/go.mod h1:TWl4ZWRBdXRoTW9kSGFzaDAwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/core v1.0.0 h1:TWl4ZWRDb3JlSGFzaFZhbHVlMDAwMDAwMDAwMDAwMDAwMDAw
+example.com/core v1.0.0/go.mod h1:TWl4ZWRDb3JlTW9kSGFzaDAwMDAwMDAwMDAwMDAwMDAwMDAw
+example.com/plugin v0.0.0-20240501000000-deadbeef0000 h1:TWl4ZWRQbHVnaW5IYXNoMDAwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/plugin v0.0.0-20240501000000-deadbeef0000/go.mod h1:TWl4ZWRQbHVnaW5Nb2RIYXNoMDAwMDAwMDAwMDAwMDAwMA=
+example.com/preview v1.2.0-rc2 h1:TWl4ZWRQcmV2aWV3SGFzaDAwMDAwMDAwMDAwMDAwMDAwMDAw
+example.com/preview v1.2.0-rc2/go.mod h1:TWl4ZWRQcmV2aWV3TW9kSGFzaDAwMDAwMDAwMDAwMDAwMDA=

@@ -1,0 +1,15 @@
+{{#if this.isLoggedIn}}
+  <p>Welcome back, {{this.user.name}}!</p>
+{{else if this.isGuest}}
+  <p>Hello, guest.</p>
+{{else}}
+  <p>Please sign in.</p>
+{{/if}}
+
+{{#each this.items as |item index|}}
+  <li>{{index}}: {{item.label}}</li>
+{{/each}}
+
+{{#unless this.hidden}}
+  <span>Visible</span>
+{{/unless}}

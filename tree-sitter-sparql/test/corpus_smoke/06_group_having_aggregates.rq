@@ -1,0 +1,10 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?dept (COUNT(?employee) AS ?headcount) (AVG(?salary) AS ?avgSalary) (MAX(?salary) AS ?top)
+WHERE {
+  ?employee ex:department ?dept .
+  ?employee ex:salary ?salary .
+}
+GROUP BY ?dept
+HAVING (COUNT(?employee) > 5 && AVG(?salary) >= 50000)
+ORDER BY DESC(?avgSalary)

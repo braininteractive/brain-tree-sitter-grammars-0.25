@@ -1,0 +1,15 @@
+{% if customer %}
+  <p>Hello, {{ customer.name }}!</p>
+{% elsif guest %}
+  <p>Hello, guest.</p>
+{% else %}
+  <p>Please log in.</p>
+{% endif %}
+
+{% unless product.available %}
+  <p>Sold out!</p>
+{% endunless %}
+
+{% if cart.item_count > 0 and customer.orders_count >= 1 or shop.enabled %}
+  <p>Thanks for shopping.</p>
+{% endif %}

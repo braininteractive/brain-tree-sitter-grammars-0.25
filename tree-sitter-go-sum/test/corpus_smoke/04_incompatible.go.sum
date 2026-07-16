@@ -1,0 +1,4 @@
+example.com/legacy v2.0.0+incompatible h1:SW5jb21wYXRpYmxlSGFzaFZhbHVlMDAwMDAwMDAwMDAwMDA=
+example.com/legacy v2.0.0+incompatible/go.mod h1:SW5jb21wYXRpYmxlTW9kSGFzaDAwMDAwMDAwMDAwMDAwMDA=
+example.com/olderapi v3.1.4+incompatible h1:T2xkZXJBcGlIYXNoVmFsdWUwMDAwMDAwMDAwMDAwMDAwMDA=
+example.com/olderapi v3.1.4+incompatible/go.mod h1:T2xkZXJBcGlNb2RIYXNoMDAwMDAwMDAwMDAwMDAwMDAwMDA=

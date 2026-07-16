@@ -1,0 +1,10 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?item ?price
+WHERE {
+  ?item ex:price ?price .
+  ?item ex:label ?label .
+  FILTER (?price > 10 && ?price <= 100)
+  FILTER (!REGEX(?label, "^discontinued", "i"))
+  FILTER (BOUND(?price) || ?price != 0)
+}

@@ -1,0 +1,9 @@
+* DUMMY SECTION LAYOUT
+PARMLIST DSECT
+PARM1    DS    F
+PARM2    DS    CL8
+PARM3    DS    XL4
+PGM      CSECT
+         USING PARMLIST,1
+         L     2,PARM1
+         END   PGM

@@ -1,0 +1,31 @@
+{
+  "grammars": [
+    {
+      "name": "sass",
+      "path": ".",
+      "scope": "source.sass",
+      "file-types": ["sass"],
+      "injection-regex": "^(sass|Sass)$",
+      "external-files": [
+        "src/scanner.c"
+      ],
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm",
+      "injections": "queries/injections.scm",
+      "indents": "queries/indents.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Sass (indented syntax) grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Raunak"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/bajrangCoder/tree-sitter-sass"
+    }
+  }
+}

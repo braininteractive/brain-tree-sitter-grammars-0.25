@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "plsql",
+      "camelcase": "Plsql",
+      "title": "PL/SQL",
+      "scope": "source.plsql",
+      "file-types": [
+        "sql",
+        "pks",
+        "pkb",
+        "plsql"
+      ],
+      "injection-regex": "^plsql$",
+      "class-name": "TreeSitterPlsql"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "Oracle plsql grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Andreas Maier",
+        "email": "andreas.maier.de@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/AndreasMaierDe/tree-sitter-plsql"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

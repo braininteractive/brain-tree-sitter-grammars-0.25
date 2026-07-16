@@ -1,0 +1,15 @@
+<ul>
+{% for item in items %}
+  <li>{{ item.label }}</li>
+{% endfor %}
+</ul>
+
+{% for key, value in mapping %}
+  {{ key }}: {{ value }}
+{% endfor %}
+
+{% for user in users %}
+  {{ loop.index }}. {{ user.name }}
+{% else %}
+  <em>no users found</em>
+{% endfor %}

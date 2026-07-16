@@ -1,0 +1,5 @@
+var lst = [a b c [nested 1 2]]
+var m = [&key=value &n=42]
+echo $lst[0]
+echo $m[key]
+var slice = $lst[0 1]

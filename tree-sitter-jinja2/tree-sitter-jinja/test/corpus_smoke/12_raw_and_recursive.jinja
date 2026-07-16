@@ -1,0 +1,23 @@
+{% extends layout_template if layout_template is defined else "base.html" %}
+{% block content %}
+  <div id="vue-app">
+    {% raw %}
+      <span>{{ clientSideBinding }}</span>
+      {% this is not parsed %}
+    {% endraw %}
+  </div>
+
+  <ul class="tree">
+    {% for node in tree recursive %}
+      <li>
+        {{ node.label|e }}
+        {% if node.children %}
+          <ul>{{ loop(node.children) }}</ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  ## line comment between statements
+  {% include ["theme/" ~ page ~ ".html", "default.html"] %}
+{% endblock %}

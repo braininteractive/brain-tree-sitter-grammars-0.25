@@ -1,0 +1,16 @@
+<ul>
+{% for product in collection.products limit: 8, offset: 2 %}
+  <li>{{ forloop.index }}: {{ product.title }}</li>
+{% else %}
+  <li>No products found.</li>
+{% endfor %}
+</ul>
+
+{% for i in (1..5) reversed %}
+  {{ i }}
+  {% if i == 3 %}{% break %}{% else %}{% continue %}{% endif %}
+{% endfor %}
+
+{% tablerow item in items cols: 3 %}
+  {{ item.name }}
+{% endtablerow %}

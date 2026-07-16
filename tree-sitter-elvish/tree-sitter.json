@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "elvish",
+      "camelcase": "Elvish",
+      "title": "Elvish",
+      "scope": "source.elvish",
+      "file-types": [
+        "elv"
+      ],
+      "injection-regex": "^elvish$",
+      "class-name": "TreeSitterElvish"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "0BSD",
+    "description": "elvish grammar for the tree-sitter parsing library",
+    "authors": [
+      {
+        "name": "Tobias Frilling"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/elves/tree-sitter-elvish"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

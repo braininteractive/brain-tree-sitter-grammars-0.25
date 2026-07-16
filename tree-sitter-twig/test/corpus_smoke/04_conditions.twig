@@ -1,0 +1,15 @@
+{% if online %}
+  <span class="online">online</span>
+{% elseif away %}
+  <span class="away">away</span>
+{% else %}
+  <span class="offline">offline</span>
+{% endif %}
+
+{% if user.age >= 18 and user.active %}
+  adult account
+{% endif %}
+
+{% if not locked or role == 'admin' %}
+  editable
+{% endif %}

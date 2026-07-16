@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  {% for post in posts|selectattr("published")|sort(attribute="date", reverse=true) if post.author == user %}
+    <article class="{{ loop.cycle('odd', 'even') }}">
+      <h2>{{ loop.index }}. {{ post.title|truncate(80, true, '...') }}</h2>
+      {% if post.summary is defined %}
+        {{ post.summary|striptags|trim }}
+      {% elif post.body|length > 200 %}
+        {{ post.body|truncate(200) }}
+      {% else %}
+        {{ post.body }}
+      {% endif %}
+      <p>{{ post.tags|join(", ") if post.tags else "untagged" }}</p>
+    </article>
+  {% else %}
+    <p class="empty">{{ _("No posts found.") }}</p>
+  {% endfor %}
+{% endblock %}

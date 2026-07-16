@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% from "macros/forms.html" import render_field %}
+
+{% block content %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="post" action="{{ url_for('auth.login', next=request.args.get('next')) }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    {{ render_field(form.email) }}
+    {{ render_field(form.password, show_errors=false) }}
+    <button type="submit" {{ "disabled" if form.locked else "" }}>Sign in</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+# Method signatures: overloads, keyword args, blocks, splats.
+class Api
+  def get: (String path) -> String
+
+  def request: (
+      String path,
+      ?Hash[Symbol, String] headers,
+      *untyped args,
+      method: Symbol,
+      ?timeout: Integer
+    ) -> String
+
+  def with_block: [T] () { (Integer) -> T } -> Array[T]
+
+  def optional_block: () ?{ () -> void } -> void
+
+  def splat: (*Integer values) -> Integer
+
+  def double_splat: (**String options) -> void
+
+  def visibility_check: () -> void
+
+  private
+
+  def helper: () -> void
+end

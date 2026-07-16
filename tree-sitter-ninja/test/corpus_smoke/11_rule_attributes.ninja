@@ -1,0 +1,15 @@
+rule cxx
+  command = g++ -MMD -MF $out.d -c $in -o $out
+  depfile = $out.d
+  deps = gcc
+  description = CXX $out
+
+rule archive
+  command = ar rcs $out $in
+  restat = 1
+
+build obj/widget.o: cxx src/widget.cc
+  cflags = -O3
+  extra_defines = -DNDEBUG
+
+build lib/libwidget.a: archive obj/widget.o

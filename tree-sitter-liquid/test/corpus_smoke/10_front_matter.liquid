@@ -1,0 +1,11 @@
+---
+layout: default
+title: A Jekyll page
+tags:
+  - demo
+  - liquid
+---
+<h1>{{ page.title }}</h1>
+{% for tag in page.tags %}
+  <span class="tag">{{ tag }}</span>
+{% endfor %}

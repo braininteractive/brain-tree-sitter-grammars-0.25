@@ -1,0 +1,9 @@
+* MACHINE INSTRUCTIONS
+         LR    12,15
+         L     3,FIELDA
+         ST    3,FIELDB
+         A     3,ONE
+         SR    5,5
+         MVC   TARGET,SOURCE
+         CLC   FIELDA,FIELDB
+         AR    2,3

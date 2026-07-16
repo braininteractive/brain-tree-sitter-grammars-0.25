@@ -1,0 +1,8 @@
+* BRANCH INSTRUCTIONS
+LOOP     BCT   3,LOOP
+         B     EXIT
+         BE    EQUAL
+         BNE   NOTEQ
+         BAL   14,SUBRTN
+         BC    15,ANYWHERE
+EXIT     BR    14

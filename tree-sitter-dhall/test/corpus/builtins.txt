@@ -1,0 +1,154 @@
+==================
+All builtins (builtinsA.dhall*)
+==================
+
+[ Date/show
+, Double/show
+, Integer/clamp
+, Integer/negate
+, Integer/show
+, Integer/toDouble
+, List/build
+, List/fold
+, List/head
+, List/indexed
+, List/last
+, List/length
+, List/reverse
+, Natural/build
+, Natural/even
+, Natural/fold
+, Natural/isZero
+, Natural/odd
+, Natural/show
+, Natural/subtract
+, Natural/toInteger
+, Text/replace
+, Text/show
+, Time/show
+, TimeZone/show
+, Bool
+, Bytes
+, Date
+, Double
+, False
+, Integer
+, List
+, Natural
+, None
+, Optional
+, Text
+, Time
+, TimeZone
+, True
+]
+
+---
+
+(expression
+  (primitive_expression (list_literal
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (boolean_literal)))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (identifier (builtin))))
+    (expression (primitive_expression (boolean_literal))))))
+
+==================
+Bool (unit/BoolA.dhall)
+==================
+
+Bool
+
+---
+
+(expression
+  (primitive_expression (identifier (builtin))))
+
+==================
+Boolean literal (unit/BoolLitTrueA.dhall)
+==================
+
+True
+
+---
+
+(expression
+  (primitive_expression (boolean_literal)))
+
+==================
+Type (unit/TypeA.dhall)
+==================
+
+Type
+
+---
+
+(expression
+  (primitive_expression (identifier (builtin))))
+
+==================
+Kind (unit/KindA.dhall)
+==================
+
+Kind
+
+---
+
+(expression
+  (primitive_expression (identifier (builtin))))
+
+==================
+Sort (unit/SortA.dhall)
+==================
+
+Sort
+
+---
+
+(expression
+  (primitive_expression (identifier (builtin))))
+
+==================
+List/Build (unit/BuiltinListBuildA.dhall)
+==================
+
+List/Build
+
+---
+
+(expression
+  (primitive_expression (identifier (label))))

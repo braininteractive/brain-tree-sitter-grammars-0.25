@@ -1,0 +1,48 @@
+{
+  "grammars": [
+    {
+      "name": "thrift",
+      "camelcase": "Thrift",
+      "scope": "source.thrift",
+      "path": ".",
+      "file-types": [
+        "thrift"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injections": [
+        "queries/injections.scm"
+      ],
+      "locals": [
+        "queries/locals.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "Thrift grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Amaan Qureshi",
+        "email": "amaanq12@gmail.com"
+      },
+      {
+        "name": "duskmoon (Campbell He)",
+        "email": "kp.campbell.he@duskmoon314.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/duskmoon314/tree-sitter-thrift"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

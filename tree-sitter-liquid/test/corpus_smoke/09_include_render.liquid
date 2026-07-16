@@ -1,0 +1,9 @@
+{% render "product-card", product: featured, show_price: true %}
+{% render "icon" with icon_setting as icon %}
+{% render "item" for items as item %}
+{% include "snippet-name" %}
+{% include color-swatch.html color="red" size=2 %}
+{% layout "full-width" %}
+{% layout none %}
+{% section "header" %}
+{% sections "footer-group" %}

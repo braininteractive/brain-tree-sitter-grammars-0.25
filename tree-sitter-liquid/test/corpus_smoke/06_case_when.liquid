@@ -1,0 +1,10 @@
+{% case handle %}
+  {% when "cake" %}
+    This is a cake.
+  {% when "cookie", "biscuit" %}
+    This is a cookie or a biscuit.
+  {% when product.type %}
+    Matched the product type.
+  {% else %}
+    This is not a dessert.
+{% endcase %}

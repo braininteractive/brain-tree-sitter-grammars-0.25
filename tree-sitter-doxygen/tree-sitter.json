@@ -1,0 +1,39 @@
+{
+  "grammars": [
+    {
+      "name": "doxygen",
+      "camelcase": "Doxygen",
+      "scope": "text.doxygen",
+      "path": ".",
+      "injection-regex": "doxygen",
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injections": [
+        "queries/injections.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "Doxygen grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Amaan Qureshi",
+        "email": "amaanq12@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter-grammars/tree-sitter-doxygen"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": true
+  }
+}

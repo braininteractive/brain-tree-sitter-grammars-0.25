@@ -1,0 +1,4 @@
+# Safety net for the monorepo: never commit build artifacts
+.DS_Store
+target/
+node_modules/

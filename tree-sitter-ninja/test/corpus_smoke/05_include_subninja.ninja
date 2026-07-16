@@ -1,0 +1,7 @@
+include rules.ninja
+include $builddir/generated.ninja
+
+subninja third_party/zlib/build.ninja
+subninja modules/core.ninja
+
+build app: link main.o

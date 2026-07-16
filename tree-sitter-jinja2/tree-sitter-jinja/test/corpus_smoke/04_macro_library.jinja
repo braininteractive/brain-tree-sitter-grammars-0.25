@@ -1,0 +1,26 @@
+{% macro render_field(field, label_class="form-label", show_errors=true) -%}
+  <div class="form-group">
+    <label class="{{ label_class }}" for="{{ field.id }}">{{ field.label.text }}</label>
+    {{ field(class_="form-control") }}
+    {% if show_errors and field.errors %}
+      <ul class="errors">
+        {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{%- endmacro %}
+
+{% macro badge(label, color="gray", size=1) -%}
+  <span class="badge badge-{{ color }} s{{ size }}">{{ label }}</span>
+{%- endmacro %}
+
+{% macro card(title) %}
+  <div class="card">
+    <h3>{{ title }}</h3>
+    <div class="card-body">{{ caller() }}</div>
+  </div>
+{% endmacro %}
+
+{% call card("Recent activity") %}
+  {{ badge("new", color="red") }}
+{% endcall %}

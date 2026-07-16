@@ -1,0 +1,15 @@
+// Application configuration
+{
+  appName: 'sample-service',
+  version: '1.4.2',
+  server: {
+    host: 'localhost',
+    port: 8080,
+    // keep-alive tuning
+    keepAliveTimeoutMs: 65000,
+  },
+  featureFlags: {
+    newOnboarding: true,
+    betaSearch: false,
+  },
+}

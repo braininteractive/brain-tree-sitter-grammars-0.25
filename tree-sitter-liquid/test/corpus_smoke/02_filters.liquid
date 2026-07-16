@@ -1,0 +1,6 @@
+{{ "hello world" | capitalize }}
+{{ product.title | upcase | truncate: 20 }}
+{{ article.published_at | date: "%a, %b %d, %y" }}
+{{ cart.total_price | money_with_currency }}
+{{ "sales" | append: ".jpg" | asset_url | img_tag }}
+{{ collection.products | map: 'title' | join: ', ' }}

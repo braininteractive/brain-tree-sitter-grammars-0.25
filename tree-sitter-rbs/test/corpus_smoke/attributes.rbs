@@ -1,0 +1,20 @@
+# Attribute members and instance/class variables.
+class Config
+  attr_reader name: String
+
+  attr_writer secret: String
+
+  attr_accessor enabled: bool
+
+  attr_reader self.default: Config
+
+  attr_accessor count (@counter): Integer
+
+  @internal: Hash[Symbol, untyped]
+
+  self.@registry: Array[Config]
+
+  @@instances: Integer
+
+  def initialize: (name: String) -> void
+end

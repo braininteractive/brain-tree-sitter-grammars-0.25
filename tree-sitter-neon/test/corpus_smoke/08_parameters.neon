@@ -1,0 +1,4 @@
+paths:
+	cache: %tempDir%/cache
+	log: %appDir%/log
+	combined: %wwwDir%/assets

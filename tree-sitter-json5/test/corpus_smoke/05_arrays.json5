@@ -1,0 +1,9 @@
+[
+  1,
+  'two',
+  [3, 3.5,],
+  { nested: true },
+  null,
+  // trailing comma after the last element
+  'end',
+]

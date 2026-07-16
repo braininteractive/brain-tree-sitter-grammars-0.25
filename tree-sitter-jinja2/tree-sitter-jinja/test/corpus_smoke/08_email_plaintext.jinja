@@ -1,0 +1,14 @@
+{% filter trim %}
+Hi {{ user.first_name|default("there") }},
+
+{% filter wordwrap(72) %}
+Your order {{ order.reference }} has shipped and should arrive by {{ order.eta.strftime("%B %d") }}. Track it at any time from your account dashboard.
+{% endfilter %}
+
+Items:
+{% for item in order.items -%}
+  - {{ item.quantity }}x {{ item.name }} ({{ "%.2f"|format(item.price) }} {{ currency }})
+{% endfor -%}
+
+Total: {{ order.total|round(2) }} {{ currency }}
+{% endfilter %}

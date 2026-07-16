@@ -1,0 +1,8 @@
+list(APPEND my_list alpha beta gamma)
+list(LENGTH my_list list_size)
+list(GET my_list 0 first_item)
+list(REMOVE_ITEM my_list beta)
+list(SORT my_list ORDER DESCENDING)
+list(JOIN my_list ", " joined)
+list(TRANSFORM my_list TOUPPER)
+list(FILTER my_list INCLUDE REGEX "^A")

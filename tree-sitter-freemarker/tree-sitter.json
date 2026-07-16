@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "freemarker",
+      "camelcase": "Freemarker",
+      "scope": "text.html.ftl",
+      "path": ".",
+      "file-types": [
+        "ftl"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "ftl|freemarker"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "FreeMarker template grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Andrea Debernardi"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/debba/tree-sitter-freemarker"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

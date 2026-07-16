@@ -1,0 +1,25 @@
+# Bang (destructive), predicate, setter and operator method names.
+class Collection[T]
+  def sort!: () -> self
+
+  def map!: () { (T) -> T } -> self
+
+  def empty?: () -> bool
+
+  def include?: (T item) -> bool
+
+  def name=: (String value) -> void
+
+  # Operator method names, including != and the backtick method.
+  def ==: (untyped other) -> bool
+
+  def !=: (untyped other) -> bool
+
+  def <=>: (self other) -> Integer?
+
+  def []: (Integer index) -> T
+
+  def []=: (Integer index, T value) -> void
+
+  def self?.`: (String command) -> String
+end

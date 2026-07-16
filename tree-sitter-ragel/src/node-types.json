@@ -1,0 +1,1471 @@
+[
+  {
+    "type": "_statement",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "import_spec",
+        "named": true
+      },
+      {
+        "type": "include_spec",
+        "named": true
+      },
+      {
+        "type": "machine_decl",
+        "named": true
+      },
+      {
+        "type": "machine_def",
+        "named": true
+      },
+      {
+        "type": "machine_inst",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "char_class",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ctrl_code",
+          "named": true
+        },
+        {
+          "type": "escape",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "range",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "combine",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "|",
+            "named": false
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "concatenate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "hex",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        },
+        {
+          "type": "signed",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "uint",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "combine",
+          "named": true
+        },
+        {
+          "type": "concatenate",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "hex",
+          "named": true
+        },
+        {
+          "type": "intersect",
+          "named": true
+        },
+        {
+          "type": "join",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        },
+        {
+          "type": "signed",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        },
+        {
+          "type": "uint",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "import_spec",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "include_spec",
+    "named": true,
+    "fields": {
+      "machine": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "intersect",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "&",
+            "named": false
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "join",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "combine",
+          "named": true
+        },
+        {
+          "type": "concatenate",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "hex",
+          "named": true
+        },
+        {
+          "type": "intersect",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        },
+        {
+          "type": "signed",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        },
+        {
+          "type": "uint",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "hex",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        },
+        {
+          "type": "signed",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "uint",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "limits",
+    "named": true,
+    "fields": {
+      "exactly": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "uint",
+            "named": true
+          }
+        ]
+      },
+      "maximum": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "uint",
+            "named": true
+          }
+        ]
+      },
+      "minimum": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "uint",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "literal",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "machine_decl",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "machine_def",
+    "named": true,
+    "fields": {
+      "expr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "join",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "machine_inst",
+    "named": true,
+    "fields": {
+      "expr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "join",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "negate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "ctrl_code",
+          "named": true
+        },
+        {
+          "type": "escape",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "hex",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "range",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "signed",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "uint",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range",
+    "named": true,
+    "fields": {
+      "high": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ctrl_code",
+            "named": true
+          },
+          {
+            "type": "escape",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          }
+        ]
+      },
+      "low": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ctrl_code",
+            "named": true
+          },
+          {
+            "type": "escape",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "regex",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "any",
+          "named": true
+        },
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "ctrl_code",
+          "named": true
+        },
+        {
+          "type": "escape",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "repeat",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "any",
+          "named": true
+        },
+        {
+          "type": "char_class",
+          "named": true
+        },
+        {
+          "type": "ctrl_code",
+          "named": true
+        },
+        {
+          "type": "escape",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "hex",
+          "named": true
+        },
+        {
+          "type": "limits",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "repeat",
+          "named": true
+        },
+        {
+          "type": "signed",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "uint",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "signed",
+    "named": true,
+    "fields": {
+      "sign": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "uint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "specification",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "subtract",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "--",
+            "named": false
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_class",
+            "named": true
+          },
+          {
+            "type": "combine",
+            "named": true
+          },
+          {
+            "type": "concatenate",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "hex",
+            "named": true
+          },
+          {
+            "type": "intersect",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "negate",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "signed",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          },
+          {
+            "type": "uint",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "**",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "--",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ":=",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "any",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "ctrl_code",
+    "named": true
+  },
+  {
+    "type": "escape",
+    "named": true
+  },
+  {
+    "type": "hex",
+    "named": true
+  },
+  {
+    "type": "i",
+    "named": false
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "include",
+    "named": false
+  },
+  {
+    "type": "machine",
+    "named": false
+  },
+  {
+    "type": "quote",
+    "named": true
+  },
+  {
+    "type": "uint",
+    "named": true
+  },
+  {
+    "type": "word",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]

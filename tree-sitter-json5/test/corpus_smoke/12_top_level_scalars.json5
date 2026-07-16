@@ -1,0 +1,2 @@
+// A bare top-level string is valid JSON5
+'just a lonely top-level string'

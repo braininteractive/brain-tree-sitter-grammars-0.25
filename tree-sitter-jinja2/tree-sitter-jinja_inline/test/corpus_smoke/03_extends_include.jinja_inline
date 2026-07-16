@@ -1,0 +1,3 @@
+# extends "base.html"
+# include "partials/nav.html" ignore missing with context
+# include ["theme.html", "default.html"]

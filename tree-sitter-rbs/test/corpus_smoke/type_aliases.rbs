@@ -1,0 +1,16 @@
+# Type alias declarations, including generic aliases.
+type id = Integer
+
+type name = String
+
+type json = String | Integer | bool | nil | Array[json] | Hash[String, json]
+
+type pair[A, B] = [A, B]
+
+type callback[T] = ^(T) -> void
+
+type result[T] = { ok: bool, value: T?, error: String? }
+
+class Uses
+  def process: (json input) -> result[String]
+end
