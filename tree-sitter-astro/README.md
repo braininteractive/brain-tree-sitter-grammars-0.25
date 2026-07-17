@@ -1,7 +1,7 @@
 # tree-sitter-astro (fork)
 
 > **Provenance (fork):** forked from <https://github.com/virchau13/tree-sitter-astro>
-> (commit `213f6e6f9e0d5da5cb43b95a5a939d5d78dc1b5c`, 2025-04-24).
+> (commit `213f6e6973d9b456c6e50e86f19f66877e7ef0ee`, 2025-04-24).
 > **Changes vs upstream:** full 0.25-line modernization — upstream was 0.20-era.
 > `parser.c` regenerated with tree-sitter-cli 0.25.10 (ABI 14 -> 15); added
 > `tree-sitter.json` (required by CLI 0.25); `bindings/rust/lib.rs` rewritten from the

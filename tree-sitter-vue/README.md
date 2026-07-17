@@ -1,7 +1,7 @@
 # tree-sitter-vue (fork)
 
 > **Provenance (fork):** forked from <https://github.com/tree-sitter-grammars/tree-sitter-vue>
-> (commit `ce8011a06cec89b64c2fdd8f2c68cd0c1e6b6bcd`, 2026-01-24).
+> (commit `ce8011a414fdf8091f4e4071752efc376f4afb08`, 2026-01-24).
 > **Changes vs upstream:** upstream had already regenerated `parser.c` at ABI 15 and shipped
 > a modern `LanguageFn` `lib.rs`/`build.rs`, but `Cargo.toml` still declared the legacy
 > `tree-sitter = "~0.20.10"` hard dependency (crate could not build against a 0.25 runtime).
