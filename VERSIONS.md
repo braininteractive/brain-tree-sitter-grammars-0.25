@@ -1,6 +1,6 @@
 # VERSIONS.md — Grammar Manifest
 
-**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.3`** (fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
+**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.4`** (adds Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
 
 ## Section F — crate-replacement forks (added 2026-07-17, tag `v0.25.0-fork.2`)
 
@@ -16,6 +16,14 @@ Drop-in replacements for weak/stale community crates. Package names kept verbati
 | tree-sitter-sql | `tree-sitter-sequel` | DerekStride/tree-sitter-sql @ `c2e1e08` (2026-03-02) | 15 (pin-style) | 513/513 upstream, 12-file smoke 0% | `tree-sitter-sequel 0.3` (pin) |
 
 Notes: `cmake`, `hcl`, `r` (raw-git-dep families) were already in the monorepo (Section A). The official `tree-sitter-go` crate needs no fork — a consumer resolving both 0.23 and 0.25 simultaneously is a consumer-side pin conflict, not a grammar problem.
+
+## Section G — new-language forks (added 2026-07-17, tag `v0.25.0-fork.4`)
+
+| Grammar (dir) | Crate name | Upstream rev forked | ABI | Corpus | Notes |
+| --- | --- | --- | --- | --- | --- |
+| tree-sitter-zig | `tree-sitter-zig` | tree-sitter-grammars/tree-sitter-zig @ `6479aa1` (2025-09-10) | 15 (pin-style; no scanner) | no upstream corpus at this rev; 12-file smoke 0% | crates.io release is 1.1.2/Dec-2024 — fork tracks the fresher repo |
+| tree-sitter-nim | `tree-sitter-nim` | alaviss/tree-sitter-nim @ `ac72ba3` (2026-07-03) | 14→15 + LanguageFn binding modernization | 74/74 upstream, 12-file smoke 0% | upstream publishes NO crates.io crate; MPL-2.0 |
+| tree-sitter-dart | `tree-sitter-dart` | UserNobody14/tree-sitter-dart @ `be07cf7` (2026-07-06) | 15 + LanguageFn binding modernization (was 0.22-era) | 197/197 upstream, 12-file smoke 0% | canonical repo; crates.io 0.2.0 tracks a side-fork |
 
 All grammars target the tree-sitter **0.25** runtime.
 "0.26-ready?" = regenerated at ABI 15 with `tree-sitter.json` present (loads on newer runtimes); definitive confirmation pending a CLI-0.26 regen pass.
