@@ -1,0 +1,10 @@
+<button id="btn">count</button>
+
+<script>
+  const btn = document.getElementById('btn');
+  let n = 0;
+  btn?.addEventListener('click', () => {
+    n += 1;
+    btn.textContent = `count ${n}`;
+  });
+</script>

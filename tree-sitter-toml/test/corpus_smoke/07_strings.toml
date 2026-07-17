@@ -1,0 +1,9 @@
+basic = "I'm a string. \"quoted\", tab: \t"
+literal = 'C:\Users\nodody\templates'
+multiline = """
+Roses are red
+Violets are blue"""
+multiline_literal = '''
+The first newline is
+trimmed in raw strings.
+'''

@@ -1,0 +1,11 @@
+int1 = +99
+int2 = -17
+hex = 0xDEADBEEF
+oct = 0o755
+bin = 0b11010110
+float1 = 1e6
+float2 = -2E-2
+float3 = 6.626e-34
+sep = 1_000_000
+inf = inf
+nan = nan

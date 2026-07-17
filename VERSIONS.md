@@ -1,6 +1,21 @@
 # VERSIONS.md — Grammar Manifest
 
-**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `tree-sitter-<lang> = { git = "<monorepo-url>", tag = "v0.25.0-fork.1" }` — cargo locates the crate inside the repo by package name. The per-grammar tags listed below predate the monorepo merge; the authoritative tag is now the monorepo-wide one. (Per-repo fork histories are archived locally, not published.)
+**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.2`** (adds the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
+
+## Section F — crate-replacement forks (added 2026-07-17, tag `v0.25.0-fork.2`)
+
+Drop-in replacements for weak/stale community crates. Package names kept verbatim from upstream so a consumer only changes the dependency *source*, never the import.
+
+| Grammar (dir) | Crate name | Upstream rev forked | ABI | Corpus | Replaces crates.io dep |
+| --- | --- | --- | --- | --- | --- |
+| tree-sitter-astro | `tree-sitter-astro` | virchau13/tree-sitter-astro @ `213f6e6` (2025-04-24) | 14→15 + full binding modernization (was 0.20-era) | 22/22 upstream, 12-file smoke 0% | `tree-sitter-astro-next 0.1.1` |
+| tree-sitter-svelte | `tree-sitter-svelte-ng` | tree-sitter-grammars/tree-sitter-svelte @ `ae5199d` (2024-10-19) | 14→15 | 45/45 upstream, 12-file smoke 0% | `tree-sitter-svelte-next 0.1.1` |
+| tree-sitter-vue | `tree-sitter-vue` | tree-sitter-grammars/tree-sitter-vue @ `ce8011a` (2026-01-24) | 15 (fixed broken 0.20 Cargo dep — crate could not build on 0.25) | 10/10 upstream, 12-file smoke 0% | `tree-sitter-vue-updated 0.1` |
+| tree-sitter-kotlin | `tree-sitter-kotlin-ng` | tree-sitter-grammars/tree-sitter-kotlin @ `3dea6df` (2025-01-16) | 15 (pin-style) | 22/22 upstream, 12-file smoke 0% | `tree-sitter-kotlin-ng 1.1` (pin) |
+| tree-sitter-toml | `tree-sitter-toml-ng` | tree-sitter-grammars/tree-sitter-toml @ `64b5683` (2024-12-03) | 14→15 | 18/18 upstream, 12-file smoke 0% | `tree-sitter-toml-ng 0.7` (pin) |
+| tree-sitter-sql | `tree-sitter-sequel` | DerekStride/tree-sitter-sql @ `c2e1e08` (2026-03-02) | 15 (pin-style) | 513/513 upstream, 12-file smoke 0% | `tree-sitter-sequel 0.3` (pin) |
+
+Notes: `cmake`, `hcl`, `r` (raw-git-dep families) were already in the monorepo (Section A). The official `tree-sitter-go` crate needs no fork — a consumer resolving both 0.23 and 0.25 simultaneously is a consumer-side pin conflict, not a grammar problem.
 
 All grammars target the tree-sitter **0.25** runtime.
 "0.26-ready?" = regenerated at ABI 15 with `tree-sitter.json` present (loads on newer runtimes); definitive confirmation pending a CLI-0.26 regen pass.

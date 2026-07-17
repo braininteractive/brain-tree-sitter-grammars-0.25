@@ -1,0 +1,12 @@
+---
+const rows = ['a', 'b'];
+---
+
+<>
+  {rows.map((r) => (
+    <Fragment>
+      <dt>{r}</dt>
+      <dd>{r.toUpperCase()}</dd>
+    </Fragment>
+  ))}
+</>

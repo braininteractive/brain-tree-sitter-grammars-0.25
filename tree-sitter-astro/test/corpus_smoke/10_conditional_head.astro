@@ -1,0 +1,13 @@
+---
+const prod = import.meta.env.PROD;
+---
+
+<html lang="en">
+  <head>
+    <title>Site</title>
+    {prod && <meta name="robots" content="index,follow" />}
+  </head>
+  <body>
+    <main>ok</main>
+  </body>
+</html>

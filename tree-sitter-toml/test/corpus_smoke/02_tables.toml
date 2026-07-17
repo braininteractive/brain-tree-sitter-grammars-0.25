@@ -1,0 +1,7 @@
+[server]
+host = "0.0.0.0"
+port = 8080
+
+[server.tls]
+cert = "/etc/ssl/cert.pem"
+key = "/etc/ssl/key.pem"

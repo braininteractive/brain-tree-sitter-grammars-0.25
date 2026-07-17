@@ -1,0 +1,7 @@
+# top-level comment
+key = "value" # inline comment
+
+[section] # section comment
+# full-line inside section
+other = 1
+empty = ""

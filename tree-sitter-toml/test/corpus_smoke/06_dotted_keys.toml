@@ -1,0 +1,7 @@
+physical.color = "orange"
+physical.shape = "round"
+site."google.com" = true
+
+[fruit]
+apple.color = "red"
+apple.taste.sweet = true

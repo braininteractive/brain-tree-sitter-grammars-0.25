@@ -1,0 +1,8 @@
+ports = [8000, 8001, 8002]
+hosts = ["alpha", "beta"]
+nested = [[1, 2], [3, 4, 5]]
+mixed_layout = [
+  "long",
+  "multiline",
+  "array",
+]
