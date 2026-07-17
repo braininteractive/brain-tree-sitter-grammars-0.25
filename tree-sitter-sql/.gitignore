@@ -1,3 +1,5 @@
+# NOTE (fork): generated src files (parser.c, grammar.json, node-types.json,
+# tree_sitter headers) ARE committed in this fork — consumers build from git.
 ## Custom
 
 tmp/
@@ -11,9 +13,6 @@ build
 package-lock.json
 /target/
 /.build/
-/src/tree_sitter/
-/src/parser.c
-/src/*.json
 
 ## Generated Entries
 
