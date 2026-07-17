@@ -166,13 +166,12 @@ These are documented in detail in
   as `a + b` rather than splitting into two statements. Idiomatic
   Groovy places continuation operators at the end of the previous
   line.
-- **Named arguments in parenthesis-free command calls** -- commands
-  with named arguments (e.g. `sh script: 'ls', returnStdout: true`,
-  common in Jenkins pipelines) are not parsed as named arguments.
-  An experimental extension supporting them regressed plain command
-  calls such as `agent any` / `print numbers` (the same ambiguity
-  upstream Groovy grammars defer on) and was reverted. Use the
-  parenthesised form `sh(script: 'ls', returnStdout: true)` instead.
+- ~~Named arguments in parenthesis-free command calls~~ **Supported
+  since 2026-07-17**: `sh script: 'ls', returnStdout: true` parses as
+  a `command_chain` with `named_argument` children (GLR fork with
+  dynamic precedence on the named-argument rule; the fork dies without
+  a `:`, so plain `agent any` / `print numbers` are unaffected —
+  both pinned by corpus regression tests).
 
 ## Contributing
 

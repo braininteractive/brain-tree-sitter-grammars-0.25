@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/
 
 ## [Unreleased]
 
+### Added
+
+- Named arguments in parenthesis-free command calls
+  (`sh script: 'ls', returnStdout: true`, `archiveArtifacts
+  artifacts: 'x'`) parse as `command_chain` with `named_argument`
+  children. Implemented as a GLR fork (`command_chain` /
+  `_expression` / `_type` conflicts) with dynamic precedence on the
+  new `command_named_argument` rule, so the fork only survives when
+  a `:` follows the key — plain commands (`agent any`,
+  `print numbers`) and typed method declarations with `throws` are
+  unaffected, pinned by corpus regression tests.
+
 ## [0.2.2] - 2026-06-04
 
 ### Fixed

@@ -1,6 +1,6 @@
 # VERSIONS.md — Grammar Manifest
 
-**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.2`** (adds the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
+**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.3`** (fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
 
 ## Section F — crate-replacement forks (added 2026-07-17, tag `v0.25.0-fork.2`)
 
@@ -41,9 +41,9 @@ Upstream PR links to be filled when PRs are opened (blocked on GitHub auth).
 | stylus | — | — | none found (no tree-sitter stylus grammar exists) — **DROPPED 2026-07-16** (commissioning out of scope; revisit if a community grammar appears) | — | — |
 | freemarker | v0.25.0-fork.1 | 15 | debba/tree-sitter-freemarker @ `36bb293` | pending (bindings finished) | yes |
 | sparql | v0.25.0-fork.1 | 15 | GordianDziwis/tree-sitter-sparql @ `1ef52d3` | pending | yes |
-| vyper | v0.25.0-fork.1 | 15 | madlabman/tree-sitter-vyper @ `e4d43a8` | pending (scanner build fix) | yes (Rust crate; CLI cannot load C++ scanner) |
+| vyper | v0.25.0-fork.1 | 15 | madlabman/tree-sitter-vyper @ `e4d43a8` | pending (scanner build fix + C port) | yes — scanner ported C++→C (2026-07-17), CLI loads it (74/74 parses) |
 | cobol | v0.25.0-fork.1 | 15 | yutaro-sakamoto/tree-sitter-cobol @ `e99dbdc` | pending | yes |
-| abap | v0.25.0-fork.1 | 15 | mkoval1/tree-sitter-abap @ `c7604df` | pending — ⚠️ upstream has no LICENSE, hold publish | yes |
+| abap | v0.25.0-fork.1 | 15 | mkoval1/tree-sitter-abap @ `c7604df` | pending | yes — LICENSE materialized 2026-07-17 from upstream's MIT SPDX declaration in Cargo.toml (see README licensing note) |
 | abap (D-extension) | (same tag, moved to `6a15e47`) | 15 | + FORM/ENDFORM, PERFORM (incl. `name(prog)`/IN PROGRAM/IF FOUND), ELSE/ELSEIF, CASE/WHEN, ordering comparisons; 105/105 corpus | pending | yes |
 | rpgle | v0.25.0-fork.1 | 15 | extracted from mayflower/rpg-explainer @ `a1a8960` (path `tree-sitter-rpg/`, grammar from `718f7d5`) | pending | yes |
 | hlasm (ibmhlasm) | v0.25.0-fork.1 | 15 | janus-llm/tree-sitter-ibmhlasm @ `5f7ef6f` | pending (incl. lib.rs fix) | yes |
@@ -117,7 +117,7 @@ _Pending sweep research: docs+tooling (rst/asciidoc/sass/just/nu/vim/elisp), ape
 | vim | **forked** | tree-sitter-grammars/tree-sitter-vim @ `039c8d0` (2026-07-12) | ABI 15, LanguageFn, external scanner, 13-file corpus 0 errors. | yes |
 | cairo | **forked** | starkware-libs/tree-sitter-cairo @ `b04ffb8` (2026-06-14) | Cairo 2.x/Starknet. Fixed Cargo (was `tree-sitter` hard dep, v0.0.1, wrong repo URL); 12-file corpus 0 errors incl. contracts/interfaces/generics. | yes |
 | move | **forked** | (agent-tagged) | ABI 15, LanguageFn, 12-file corpus, tests green, tagged. | yes |
-| groovy | **published** — tag `v0.25.0-fork.1` @ `8073fed` (2026-07-16) | dekobon standalone grammar (synthesises murtaza64 + amaanq) | Clean-passing base committed and tagged; corpus + stress tests green. Named-argument commands documented as known gap in README (experimental extension preserved in `stash@{0}`; proper fix = the ambiguity upstream itself deferred). | yes |
+| groovy | **published** — tag `v0.25.0-fork.1` @ `8073fed` (2026-07-16) | dekobon standalone grammar (synthesises murtaza64 + amaanq) | Clean-passing base committed and tagged; corpus + stress tests green. **Named-argument commands SUPPORTED since 2026-07-17** (GLR fork + dynamic precedence; 528/528 tests incl. new regression pins for `agent any` and typed-`throws` methods). | yes |
 
 ### Section D research (final brief) — occurring-in-repos, availability unconfirmed
 

@@ -66,8 +66,14 @@ replaced by a supported one.
 ## Licensing note
 
 Upstream contains no LICENSE file; its `Cargo.toml`/`pyproject.toml`
-declare MIT while `package.json` declares ISC. Kept verbatim; needs
-upstream clarification before publishing.
+declare MIT while `package.json` carries the scaffold-default ISC. Both
+are permissive and materially equivalent. **Resolution (2026-07-17):**
+this fork ships a [LICENSE](LICENSE) materializing the MIT text per the
+author's explicit `license = "MIT"` SPDX declaration in Cargo.toml,
+with a provenance note inside the file. If upstream ever publishes an
+authoritative license file, it supersedes ours; an upstream issue
+asking for clarification remains worthwhile before any *registry*
+publication (git consumption is fine).
 
 ## Maintenance & support
 

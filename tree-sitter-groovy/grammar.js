@@ -123,6 +123,17 @@ module.exports = grammar({
     // declaration.
     [$._expression, $.qualified_type],
 
+    // §5.5 / divergence #5 — after a command receiver, a lookahead
+    // identifier may be a named-argument key (`sh script: 'ls'`) or
+    // the start of the next statement (`agent any`). GLR explores
+    // both; the named-argument fork survives only if a `:` follows,
+    // and command_chain's prec.dynamic then outranks the
+    // two-expression-statements parse. `_type` joins because a bare
+    // identifier is also a candidate type at statement start.
+    [$.command_chain, $._expression, $._type],
+    [$.command_chain, $._expression],
+    [$.command_chain, $._type],
+
     // §3.2.2 — `_cast_type` overlaps `_type` on identifier / array /
     // generic alternatives; only the dotted path diverges. The
     // companion three-way conflict pulls in `_dotted_type` so the
@@ -204,11 +215,11 @@ module.exports = grammar({
     // (comma-separated literal arguments per Gradle / Jenkins DSL
     // idioms). Chained `foo bar baz` and complex argument shapes
     // land later. Closes a subset of murtaza64 #5.
-    command_chain: $ => prec(2, seq(
+    command_chain: $ => seq(
       field('receiver', $.identifier),
       field('argument', $._command_argument),
       repeat(seq(',', field('argument', $._command_argument))),
-    )),
+    ),
 
     _command_argument: $ => choice(
       $.string_literal,
@@ -216,7 +227,22 @@ module.exports = grammar({
       $.boolean_literal,
       $.null_literal,
       $.closure,
+      // §5.5 / divergence #5 — named arguments in command position
+      // (`sh script: 'ls', returnStdout: true`, `archiveArtifacts
+      // artifacts: 'x'`): the dominant Jenkins/Gradle idiom. Aliased
+      // to named_argument so consumers see one kind. The key is a
+      // bare identifier; prec.dynamic lets the GLR fork beat the
+      // expression_statement + labeled_statement mis-parse only when
+      // a `:` actually follows the key — plain `foo bar` commands
+      // never reach this rule because the fork dies without a colon.
+      alias($.command_named_argument, $.named_argument),
     ),
+
+    command_named_argument: $ => prec.dynamic(1, seq(
+      field('key', $.identifier),
+      ':',
+      field('value', $._expression),
+    )),
 
     // §5.3 — `label: stmt`. Required only at statement-start
     // position; map_entries (which share `:`) are inside `[…]`

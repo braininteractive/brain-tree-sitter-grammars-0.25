@@ -58,7 +58,7 @@ Pending for all items: push to GitHub org + tagged release + upstream PR (blocke
 ## Decisions needed before/at publish
 
 1. **GitHub org name** + `gh auth login` (blocks everything).
-2. **abap**: publish despite missing upstream license, hold until upstream clarifies, or skip.
+2. **abap**: ~~missing upstream license~~ **RESOLVED 2026-07-17** — LICENSE file materialized from upstream's explicit `license = "MIT"` SPDX declaration in Cargo.toml, with a provenance note in the file and README; ISC in package.json is scaffold-default. Registry publication should still wait for upstream clarification; git consumption is fine.
 
 ### Resolved 2026-07-16
 

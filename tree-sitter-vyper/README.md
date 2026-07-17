@@ -7,14 +7,15 @@ tree-sitter-vyper
 > `LanguageFn` API (`pub const LANGUAGE`); `tree-sitter` moved to a dev-dependency;
 > `parser.c` regenerated with tree-sitter-cli 0.25.10 (ABI 14 -> 15; a minimal
 > `tree-sitter.json` was added because the 0.25 CLI requires it for ABI 15);
-> `bindings/rust/build.rs` now compiles the external scanner (`src/scanner.cc`),
+> `bindings/rust/build.rs` now compiles the external scanner,
 > which upstream left commented out, so the Rust crate links; added a synthetic
 > smoke-test corpus (`test/corpus_smoke/`) and `tests/smoke.rs`. No grammar-rule
 > changes.
-> **Known limitation:** the external scanner is C++ (`scanner.cc`); tree-sitter CLI
-> 0.22+ no longer compiles C++ scanners, so `tree-sitter parse`/`tree-sitter test`
-> cannot load this grammar. The Rust crate is unaffected (build.rs compiles the
-> scanner via `cc`). Porting the scanner to C is left to a future change.
+> **Scanner port (2026-07-17):** upstream's C++ scanner (`scanner.cc`) has been
+> ported to C (`src/scanner.c`) — a faithful translation of the Python-style
+> INDENT/DEDENT + string-delimiter logic. tree-sitter CLI 0.22+ (which cannot
+> compile C++ scanners) now loads this grammar: `tree-sitter test` runs 74/74
+> parses at 100%. The former "CLI cannot load" limitation is resolved.
 > **Rebase policy:** binding-only diff, rebased onto upstream when it moves; retired if
 > upstream ships an equivalent 0.25 binding.
 > **Upstream PR:** pending (link will be added here once opened).
