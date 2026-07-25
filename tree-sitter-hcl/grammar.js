@@ -8,4 +8,4 @@
 
 const make_grammar = require('./make_grammar');
 
-module.exports = make_grammar('hcl');
+module.exports = make_grammar('hcl_ng');

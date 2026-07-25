@@ -11,6 +11,7 @@ repository = "https://github.com/tree-sitter-grammars/tree-sitter-kotlin"
 edition = "2021"
 autoexamples = false
 
+links = "tree_sitter_kotlin_ng"
 build = "bindings/rust/build.rs"
 include = [
   "bindings/rust/*",

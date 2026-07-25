@@ -1,3 +1,11 @@
+> **C-symbol rename (2026-07-17, fork.6):** grammar name changed `hcl` -> `hcl_ng`, so the
+> exported C symbols are now `tree_sitter_hcl_ng` / `tree_sitter_hcl_ng_external_scanner_*`,
+> and the crate declares `links = "tree_sitter_hcl_ng"`. Reason: crates.io `tree-sitter-hcl`
+> (pulled transitively by ast-grep-language) exports the same `tree_sitter_hcl` symbol — the
+> identical latent link-time collision that silently broke kotlin. Rust consumers are
+> unaffected (`tree_sitter_hcl::LANGUAGE` as before); C/FFI consumers must use the new
+> symbol. Node kinds unchanged; corpus 102/102.
+
 # tree-sitter-hcl
 
 > **Provenance (fork):** forked from <https://github.com/MichaHoffmann/tree-sitter-hcl>

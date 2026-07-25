@@ -1,8 +1,8 @@
 {
   "grammars": [
     {
-      "name": "hcl",
-      "camelcase": "HCL",
+      "name": "hcl_ng",
+      "camelcase": "HCLNg",
       "scope": "source.hcl",
       "path": ".",
       "file-types": [

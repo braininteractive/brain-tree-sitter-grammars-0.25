@@ -390,28 +390,28 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
     return false;
 }
 
-void *tree_sitter_hcl_external_scanner_create() {
+void *tree_sitter_hcl_ng_external_scanner_create() {
     Scanner *scanner = calloc(1, sizeof(Scanner));
     scanner->context_stack.data = calloc(1, sizeof(Context));
     return scanner;
 }
 
-unsigned tree_sitter_hcl_external_scanner_serialize(void *payload, char *buffer) {
+unsigned tree_sitter_hcl_ng_external_scanner_serialize(void *payload, char *buffer) {
     Scanner *scanner = (Scanner *)payload;
     return serialize(scanner, buffer);
 }
 
-void tree_sitter_hcl_external_scanner_deserialize(void *payload, const char *buffer, unsigned length) {
+void tree_sitter_hcl_ng_external_scanner_deserialize(void *payload, const char *buffer, unsigned length) {
     Scanner *scanner = (Scanner *)payload;
     deserialize(scanner, buffer, length);
 }
 
-bool tree_sitter_hcl_external_scanner_scan(void *payload, TSLexer *lexer, const bool *valid_symbols) {
+bool tree_sitter_hcl_ng_external_scanner_scan(void *payload, TSLexer *lexer, const bool *valid_symbols) {
     Scanner *scanner = (Scanner *)payload;
     return scan(scanner, lexer, valid_symbols);
 }
 
-void tree_sitter_hcl_external_scanner_destroy(void *payload) {
+void tree_sitter_hcl_ng_external_scanner_destroy(void *payload) {
     Scanner *scanner = (Scanner *)payload;
     for (uint32_t i = 0; i < scanner->context_stack.len; i++) {
         STRING_FREE(scanner->context_stack.data[i].heredoc_identifier);

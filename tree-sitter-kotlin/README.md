@@ -15,7 +15,7 @@
 > `tree_sitter_kotlin_ng_external_scanner_*`. Reason: crates.io's `tree-sitter-kotlin-sg`
 > (pulled transitively by ast-grep-language) exports the same `tree_sitter_kotlin` symbol;
 > at link time the duplicate resolved to the ABI-14 sg parser and silently broke this
-> grammar (0 symbols extracted). The rename makes the two crates coexist. Rust consumers
+> grammar (0 symbols extracted). The rename makes the two crates coexist, and `links = "tree_sitter_kotlin_ng"` (fork.6) turns any future duplicate into a hard cargo build error instead of a silent mislink. Rust consumers
 > are unaffected (`tree_sitter_kotlin_ng::LANGUAGE` as before); C/FFI consumers must use
 > the new symbol. Node kinds are unchanged.
 > **Rebase policy:** binding/tests-only diff, rebased onto upstream when it moves; retired if
