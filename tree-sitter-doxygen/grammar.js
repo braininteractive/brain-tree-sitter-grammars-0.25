@@ -25,6 +25,9 @@ module.exports = grammar({
     token(choice(
       // Skip over stars at the beginnings of lines
       seq(/\n/, /[ \t]*/, repeat(seq('*', /[ \t]*/))),
+      // Skip over `///` / `//!` prefixes at the beginnings of
+      // continuation lines in single-line comment blocks
+      seq(/\n/, /[ \t]*/, repeat1(seq(/\/\/+!?<?/, /[ \t]*/))),
       /\s/,
     )),
   ],
@@ -220,9 +223,13 @@ module.exports = grammar({
 
     _text: _ => token(prec(-1, /[^*{}@\\\s][^*!{}\\\n]*([^*/{}\\\n][^*{}\\\n]*\*+)*/)),
 
-    _singleline_begin: _ => token(seq('//', optional('!'), optional('<'))),
+    // `//`, `///`, `//!`, `///<`, `//!<` — repeat('/') covers the
+    // triple-slash form used by C++/C#/Rust-style doc comments.
+    _singleline_begin: _ => token(seq('//', repeat('/'), optional('!'), optional('<'))),
 
-    _multiline_begin: _ => token(seq('/', repeat(choice('*', '/')), optional('!'), optional('<'))),
+    // Anchored on a literal `/*` so `///` can never lex as a
+    // multiline opener (which then demanded a `*/` that never comes).
+    _multiline_begin: _ => token(seq('/*', repeat(choice('*', '/')), optional('!'), optional('<'))),
 
     _multiline_end: $ => choice('/', '*/'),
 

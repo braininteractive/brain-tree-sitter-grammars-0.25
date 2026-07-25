@@ -1,0 +1,27 @@
+================================================================================
+Triple-slash doc comment with tags
+================================================================================
+/// Computes the frobnication index.
+/// @param x the input value
+/// @return the frobnicated result
+--------------------------------------------------------------------------------
+
+(document
+  (brief_header
+    (brief_description))
+  (tag
+    (tag_name)
+    (identifier)
+    (description))
+  (tag
+    (tag_name)
+    (description)))
+
+================================================================================
+Triple-slash with trailing-member form
+================================================================================
+///< inline member doc
+--------------------------------------------------------------------------------
+
+(document
+  (description))

@@ -19,7 +19,7 @@ const PREC = {
 };
 
 module.exports = grammar({
-  name: 'kotlin',
+  name: 'kotlin_ng',
 
   conflicts: $ => [
     [$.class_body, $.enum_class_body],

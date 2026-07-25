@@ -2,8 +2,8 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
-      "name": "kotlin",
-      "camelcase": "Kotlin",
+      "name": "kotlin_ng",
+      "camelcase": "KotlinNg",
       "scope": "source.kotlin",
       "file-types": [
         "kt",

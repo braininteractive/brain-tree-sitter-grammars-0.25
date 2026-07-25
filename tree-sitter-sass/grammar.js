@@ -348,7 +348,9 @@ module.exports = grammar({
         '@each',
         sep1(',', alias($.variable_identifier, $.variable)),
         'in',
-        $._value,
+        // Bare comma lists are valid iterables (`@each $a in x, y, z`)
+        // — Sass lists need no brackets in this position.
+        sep1(',', $._value),
         $._newline,
         optional($.block),
       ),

@@ -9,6 +9,11 @@
 > (`test/corpus_smoke/`) and `tests/smoke.rs`. No grammar-rule changes.
 > **Rebase policy:** binding-only diff, rebased onto upstream when it moves; retired if
 > upstream ships an equivalent 0.25 binding.
+> **/// support (2026-07-17, fork.5):** triple-slash doc comments (`///`, `//!`, `///<`)
+> now parse — upstream's multiline opener token also matched `///` and then demanded a
+> `*/` terminator, erroring every triple-slash block. Opener anchored on literal `/*`,
+> single-line opener extended with `repeat('/')`, and continuation-line `///` prefixes
+> skipped like leading `*`s. Upstream corpus still 33/33 + 2 new regression tests.
 > **Upstream PR:** pending (link will be added here once opened).
 
 [![Build Status](https://github.com/amaanq/tree-sitter-doxygen/actions/workflows/ci.yml/badge.svg)](https://github.com/amaanq/tree-sitter-doxygen/actions/workflows/ci.yml)

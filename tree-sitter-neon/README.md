@@ -1,3 +1,8 @@
+> **Comma-less multiline entities (2026-07-17, fork.5):** entity arguments may now be
+> separated by line breaks as well as commas (`Foo\Bar(\n  arg1\n  arg2\n)`) — the
+> external scanner is consulted at separator positions inside the parens. Previously
+> adjacent args silently fused into one plain_scalar. Corpus 11/11 incl. regression test.
+
 # tree-sitter-neon
 
 > **Provenance (fork):** forked from <https://github.com/shubhamdhaboya/tree-sitter-neon>

@@ -10,6 +10,14 @@
 > corpus (`test/corpus_smoke/`, 12 files) and `tests/smoke.rs`. No grammar-rule changes.
 > Package name `tree-sitter-kotlin-ng` kept verbatim — drop-in replacement for the
 > crates.io release. Upstream corpus: 22/22; smoke corpus: 0.00% error nodes.
+> **C-symbol rename (2026-07-17, fork.5):** grammar name changed `kotlin` -> `kotlin_ng`,
+> so the exported C symbols are now `tree_sitter_kotlin_ng` /
+> `tree_sitter_kotlin_ng_external_scanner_*`. Reason: crates.io's `tree-sitter-kotlin-sg`
+> (pulled transitively by ast-grep-language) exports the same `tree_sitter_kotlin` symbol;
+> at link time the duplicate resolved to the ABI-14 sg parser and silently broke this
+> grammar (0 symbols extracted). The rename makes the two crates coexist. Rust consumers
+> are unaffected (`tree_sitter_kotlin_ng::LANGUAGE` as before); C/FFI consumers must use
+> the new symbol. Node kinds are unchanged.
 > **Rebase policy:** binding/tests-only diff, rebased onto upstream when it moves; retired if
 > upstream ships an equivalent 0.25-line release.
 > **Upstream PR:** n/a (no code change).

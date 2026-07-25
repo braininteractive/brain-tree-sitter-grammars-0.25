@@ -1,6 +1,6 @@
 # VERSIONS.md — Grammar Manifest
 
-**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.4`** (adds Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
+**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.5`** (fix set 2: kotlin C-symbol rename `tree_sitter_kotlin`->`tree_sitter_kotlin_ng` to end the link-time collision with crates.io `tree-sitter-kotlin-sg`; doxygen `///` support; sass `@each` bare comma-lists; neon comma-less multiline entities; `v0.25.0-fork.4` added Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
 
 ## Section F — crate-replacement forks (added 2026-07-17, tag `v0.25.0-fork.2`)
 
@@ -11,7 +11,7 @@ Drop-in replacements for weak/stale community crates. Package names kept verbati
 | tree-sitter-astro | `tree-sitter-astro` | virchau13/tree-sitter-astro @ `213f6e6` (2025-04-24) | 14→15 + full binding modernization (was 0.20-era) | 22/22 upstream, 12-file smoke 0% | `tree-sitter-astro-next 0.1.1` |
 | tree-sitter-svelte | `tree-sitter-svelte-ng` | tree-sitter-grammars/tree-sitter-svelte @ `ae5199d` (2024-10-19) | 14→15 | 45/45 upstream, 12-file smoke 0% | `tree-sitter-svelte-next 0.1.1` |
 | tree-sitter-vue | `tree-sitter-vue` | tree-sitter-grammars/tree-sitter-vue @ `ce8011a` (2026-01-24) | 15 (fixed broken 0.20 Cargo dep — crate could not build on 0.25) | 10/10 upstream, 12-file smoke 0% | `tree-sitter-vue-updated 0.1` |
-| tree-sitter-kotlin | `tree-sitter-kotlin-ng` | tree-sitter-grammars/tree-sitter-kotlin @ `3dea6df` (2025-01-16) | 15 (pin-style) | 22/22 upstream, 12-file smoke 0% | `tree-sitter-kotlin-ng 1.1` (pin) |
+| tree-sitter-kotlin | `tree-sitter-kotlin-ng` | tree-sitter-grammars/tree-sitter-kotlin @ `3dea6df` (2025-01-16) | 15 | 22/22 upstream, 12-file smoke 0% | `tree-sitter-kotlin-ng 1.1` (pin). **fork.5: C symbol renamed to `tree_sitter_kotlin_ng`** (grammar name `kotlin_ng`) so it coexists with `tree-sitter-kotlin-sg`'s `tree_sitter_kotlin` in one binary; Rust API unchanged, node kinds unchanged |
 | tree-sitter-toml | `tree-sitter-toml-ng` | tree-sitter-grammars/tree-sitter-toml @ `64b5683` (2024-12-03) | 14→15 | 18/18 upstream, 12-file smoke 0% | `tree-sitter-toml-ng 0.7` (pin) |
 | tree-sitter-sql | `tree-sitter-sequel` | DerekStride/tree-sitter-sql @ `c2e1e08` (2026-03-02) | 15 (pin-style) | 513/513 upstream, 12-file smoke 0% | `tree-sitter-sequel 0.3` (pin) |
 
@@ -100,7 +100,7 @@ _Pending research: slim, nunjucks, mdx, marko; jinja2-proper fork (final brief C
 | Language | Verdict | Repo / rev | Notes | 0.26-ready? |
 | --- | --- | --- | --- | --- |
 | jsdoc | **adopt-as-is** | tree-sitter/tree-sitter-jsdoc @ `658d18d` (official, v0.25.0) | ABI 15, modern LanguageFn. Injection target for JS/TS `/** */` comments. | yes |
-| doxygen | **forked** — tag `v0.25.0-fork.1` @ `366b987` | tree-sitter-grammars/tree-sitter-doxygen @ `ccd998f` (2024-06-09) | Was 0.20-era legacy binding, ABI 14 → 15, LanguageFn, injections.scm preserved + exported. 33/33 upstream corpus, 12-file smoke 0%. Gap: `///` triple-slash comments unsupported upstream (ERROR node) — upstream-issue material. | yes |
+| doxygen | **forked** — tag `v0.25.0-fork.1` @ `366b987` | tree-sitter-grammars/tree-sitter-doxygen @ `ccd998f` (2024-06-09) | Was 0.20-era legacy binding, ABI 14 → 15, LanguageFn, injections.scm preserved + exported. **fork.5: `///`/`//!`/`///<` triple-slash comments now parse** (multiline opener anchored on `/*`; continuation `///` prefixes skipped). 35/35 corpus incl. 2 regression tests. | yes |
 | comment | **adopt-as-is** | stsewd/tree-sitter-comment @ `66272d2` (2025-12-16, v0.3.0) | ABI 15, LanguageFn. (Worklist's org attribution was wrong — still lives under stsewd, active.) Ships NO queries dir — consumers supply their own. | yes |
 | regex | **adopt-as-is** | tree-sitter/tree-sitter-regex @ `b2ac15e` (official, 0.25.0) | ABI 15, LanguageFn. Lookarounds/backrefs/unicode-props verified clean. | yes |
 
@@ -114,13 +114,13 @@ _Pending sweep research: docs+tooling (rst/asciidoc/sass/just/nu/vim/elisp), ape
 | elvish | **forked** — tag `v0.25.0-fork.1` @ `a7bf5ca` | elves/tree-sitter-elvish @ `5e7210d` (2023-07-17) | ABI 15, LanguageFn, 12-file corpus, tests green. | yes |
 | velocity | **none-found** | — | No tree-sitter grammar for Apache Velocity/VTL exists (GitHub/nvim/Helix/Zed all empty; only the official JavaCC parser). Not built (rule 5). | — |
 | rbs | **adopt-as-is** | joker1007/tree-sitter-rbs @ `5282e2f` (2025-11-14) | ABI 15, LanguageFn, tree-sitter.json, full grammar + queries; verified loads on 0.25. (Minor: keeps `tree-sitter` in `[dependencies]` not dev-only — builds fine; not worth a fork.) | yes |
-| neon | **forked** — tag `v0.25.0-fork.1` @ `8d791cb` | shubhamdhaboya/tree-sitter-neon @ `20a06e9` (2026-05-29) | Real grammar (INDENT/DEDENT scanner) but no Rust crate (bindings gitignored). Added full bindings, ABI 15, 12-file corpus 0%, 10/10 upstream corpus. Gap: comma-less multiline entities need explicit `,`. | yes |
+| neon | **forked** — tag `v0.25.0-fork.1` @ `8d791cb` | shubhamdhaboya/tree-sitter-neon @ `20a06e9` (2026-05-29) | Real grammar (INDENT/DEDENT scanner) but no Rust crate (bindings gitignored). Added full bindings, ABI 15, 12-file corpus 0%, 10/10 upstream corpus. **fork.5: comma-less multiline entity arguments now parse** (line break = separator; 11/11 incl. regression test). | yes |
 
 ### Recovered stalled-agent repos (finished manually; UNCOMMITTED — user commits/tags)
 
 | Language | Verdict | Repo / rev | Notes | 0.26-ready? |
 | --- | --- | --- | --- | --- |
-| sass (indented) | **forked** (C7) | bajrangCoder/tree-sitter-sass @ `fb280c4` (2026-01-18) | Indented `.sass` grammar **does exist** (parses indented 0-err, rejects braced) — resolves C7 without SCSS-adaptation. Built full Rust bindings from scratch (upstream had none), 12-file corpus 0 errors. Gap: `@each` comma lists don't parse. | yes |
+| sass (indented) | **forked** (C7) | bajrangCoder/tree-sitter-sass @ `fb280c4` (2026-01-18) | Indented `.sass` grammar **does exist** (parses indented 0-err, rejects braced) — resolves C7 without SCSS-adaptation. Built full Rust bindings from scratch (upstream had none), 12-file corpus 0 errors. **fork.5: `@each` bare comma-list iterables now parse** (43/43 incl. regression test). | yes |
 | rst | **forked** | stsewd/tree-sitter-rst @ `a60f107` (2026-06-09) | ABI 15, LanguageFn, 12-file corpus 0 errors. | yes |
 | vim | **forked** | tree-sitter-grammars/tree-sitter-vim @ `039c8d0` (2026-07-12) | ABI 15, LanguageFn, external scanner, 13-file corpus 0 errors. | yes |
 | cairo | **forked** | starkware-libs/tree-sitter-cairo @ `b04ffb8` (2026-06-14) | Cairo 2.x/Starknet. Fixed Cargo (was `tree-sitter` hard dep, v0.0.1, wrong repo URL); 12-file corpus 0 errors incl. contracts/interfaces/generics. | yes |

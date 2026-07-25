@@ -1,0 +1,24 @@
+==================
+Comma-less multiline entity
+==================
+
+services:
+	- Foo\Bar(
+		arg1
+		arg2
+	)
+
+---
+
+(document
+  (block_mapping
+    (block_mapping_pair
+      key: (identifier)
+      value: (block_sequence
+        (block_sequence_item
+          value: (entity
+            name: (identifier)
+            key: (plain_scalar
+              (identifier))
+            key: (plain_scalar
+              (identifier))))))))

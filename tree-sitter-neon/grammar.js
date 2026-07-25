@@ -136,12 +136,22 @@ module.exports = grammar({
     entity: ($) =>
       prec.left(2, seq($._entity_call, repeat($._entity_call))),
 
+    // Arguments separate on `,` OR on a line break (comma-less multiline
+    // entities are valid NEON). Naming $._newline as a separator makes the
+    // external scanner get consulted inside the parens at separator
+    // positions, where it emits NEWLINE for the line break that the
+    // whitespace extra would otherwise swallow (which used to fuse
+    // adjacent args into one plain_scalar).
     _entity_call: ($) =>
       seq(
         field("name", choice($.identifier, $.string)),
         "(",
         optional(
-          seq($._flow_item, repeat(seq(",", $._flow_item)), optional(",")),
+          seq(
+            $._flow_item,
+            repeat(seq(choice(",", $._newline), $._flow_item)),
+            optional(choice(",", $._newline)),
+          ),
         ),
         ")",
       ),

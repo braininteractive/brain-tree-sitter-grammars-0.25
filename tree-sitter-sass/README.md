@@ -1,3 +1,7 @@
+
+> **@each comma-list fix (2026-07-17, fork.5):** `@each $x in a, b, c` (bare comma-list
+> iterable) now parses — the iterable position accepts `sep1(',', value)`. Corpus 43/43
+> incl. new regression test; the former "@each comma lists don't parse" gap is closed.
 # tree-sitter-sass
 
 > **Provenance (fork):** forked from <https://github.com/bajrangCoder/tree-sitter-sass>
