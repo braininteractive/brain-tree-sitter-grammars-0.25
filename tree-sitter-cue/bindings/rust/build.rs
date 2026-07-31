@@ -5,6 +5,9 @@ fn main() {
     c_config.include(src_dir);
     c_config
         .flag_if_supported("-Wno-unused-parameter")
+        .flag_if_supported("-Wno-unused-function")
+        .flag_if_supported("-Wno-unused-variable")
+        .flag_if_supported("-Wno-sign-compare")
         .flag_if_supported("-Wno-unused-but-set-variable")
         .flag_if_supported("-Wno-trigraphs");
     let parser_path = src_dir.join("parser.c");
