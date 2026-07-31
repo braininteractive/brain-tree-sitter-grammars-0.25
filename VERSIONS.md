@@ -1,6 +1,6 @@
 # VERSIONS.md — Grammar Manifest
 
-**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.6`** (collision hardening: hcl C symbols renamed `tree_sitter_hcl`->`tree_sitter_hcl_ng` — same ast-grep latent collision as kotlin — and `links = "..."` keys added to both kotlin-ng and hcl so any future duplicate native symbol is a hard cargo error; `v0.25.0-fork.5` = fix set 2: kotlin C-symbol rename `tree_sitter_kotlin`->`tree_sitter_kotlin_ng` to end the link-time collision with crates.io `tree-sitter-kotlin-sg`; doxygen `///` support; sass `@each` bare comma-lists; neon comma-less multiline entities; `v0.25.0-fork.4` added Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
+**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.7`** (adds Section H: swift, nix, crystal, graphql; `v0.25.0-fork.6` = collision hardening: hcl C symbols renamed `tree_sitter_hcl`->`tree_sitter_hcl_ng` — same ast-grep latent collision as kotlin — and `links = "..."` keys added to both kotlin-ng and hcl so any future duplicate native symbol is a hard cargo error; `v0.25.0-fork.5` = fix set 2: kotlin C-symbol rename `tree_sitter_kotlin`->`tree_sitter_kotlin_ng` to end the link-time collision with crates.io `tree-sitter-kotlin-sg`; doxygen `///` support; sass `@each` bare comma-lists; neon comma-less multiline entities; `v0.25.0-fork.4` added Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
 
 ## Section F — crate-replacement forks (added 2026-07-17, tag `v0.25.0-fork.2`)
 
@@ -16,6 +16,15 @@ Drop-in replacements for weak/stale community crates. Package names kept verbati
 | tree-sitter-sql | `tree-sitter-sequel` | DerekStride/tree-sitter-sql @ `c2e1e08` (2026-03-02) | 15 (pin-style) | 513/513 upstream, 12-file smoke 0% | `tree-sitter-sequel 0.3` (pin) |
 
 Notes: `cmake`, `hcl`, `r` (raw-git-dep families) were already in the monorepo (Section A). The official `tree-sitter-go` crate needs no fork — a consumer resolving both 0.23 and 0.25 simultaneously is a consumer-side pin conflict, not a grammar problem.
+
+## Section H — new-language forks (added 2026-07-31, tag `v0.25.0-fork.7`)
+
+| Grammar (dir) | Crate name | Upstream rev forked | ABI | Corpus | Notes |
+| --- | --- | --- | --- | --- | --- |
+| tree-sitter-swift | `tree-sitter-swift` | alex-pinkus/tree-sitter-swift @ `28fe3a8` (2026-07-04) | 15 (parser.c generated + committed by fork — upstream ships none in git) | 250/250 upstream, 12-file smoke 0% | "stuck on 0.21" was stale; upstream active. Unblocks V27.4 |
+| tree-sitter-nix | `tree-sitter-nix` | nix-community/tree-sitter-nix @ `3d0173d` (2026-06-25) | 13→15 | 54/54 parse corpus, 12-file smoke 0% (1 pre-existing upstream highlight-query drift, documented) | |
+| tree-sitter-crystal | `tree-sitter-crystal` | crystal-lang-tools/tree-sitter-crystal @ `50ca9e6` (2025-10-12) | 15 (pin-style; upstream regenerated with CLI 0.25.10) | 254/254 upstream, 12-file smoke 0% | upstream dev-dep couldn't load own parser — fixed in fork |
+| tree-sitter-graphql | `tree-sitter-graphql` | bkegley/tree-sitter-graphql @ `5e66e96` (2021-05-10, de-facto grammar; spec stable) | 13→15 + full binding modernization (was 0.17-era) | 3/3 upstream, 12-file smoke 0% | replaces the javascript surrogate |
 
 ## Section G — new-language forks (added 2026-07-17, tag `v0.25.0-fork.4`)
 

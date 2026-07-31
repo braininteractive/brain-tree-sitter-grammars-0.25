@@ -1,0 +1,15 @@
+interface Node {
+  id: ID!
+}
+
+interface Timestamped {
+  createdAt: String!
+}
+
+type Post implements Node & Timestamped {
+  id: ID!
+  createdAt: String!
+  title: String!
+}
+
+union SearchResult = User | Post | Comment

@@ -1,0 +1,16 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  user(id: ID!): User
+  posts(first: Int, after: String): PostConnection!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String
+  posts: [Post!]!
+}

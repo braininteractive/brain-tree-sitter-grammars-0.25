@@ -1,0 +1,9 @@
+# Top-level comment
+"""
+Block description for the type.
+Supports multiple lines.
+"""
+type Widget {
+  "Single-line description"
+  id: ID! # trailing comment
+}

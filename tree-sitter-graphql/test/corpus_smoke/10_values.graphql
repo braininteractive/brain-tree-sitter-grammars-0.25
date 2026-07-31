@@ -1,0 +1,13 @@
+query Defaults(
+  $int: Int = 42
+  $float: Float = 3.14
+  $str: String = "hello"
+  $bool: Boolean = true
+  $list: [Int!] = [1, 2, 3]
+  $obj: FilterInput = { field: "age", op: GTE, value: 18 }
+  $nullable: String = null
+) {
+  search(filter: $obj) {
+    id
+  }
+}

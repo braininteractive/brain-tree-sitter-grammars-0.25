@@ -1,0 +1,17 @@
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+input PostInput {
+  title: String!
+  body: String
+  tags: [String!]
+  visibility: Visibility = PUBLIC
+}
+
+enum Visibility {
+  PUBLIC
+  PRIVATE
+}

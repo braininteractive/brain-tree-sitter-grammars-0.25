@@ -1,0 +1,23 @@
+{
+  "grammars": [
+    {
+      "name": "graphql",
+      "camelcase": "Graphql",
+      "scope": "source.graphql",
+      "path": ".",
+      "file-types": ["graphql", "gql"],
+      "injection-regex": "graphql|gql"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "GraphQL grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/bkegley/tree-sitter-graphql"
+    }
+  },
+  "bindings": {
+    "rust": true
+  }
+}

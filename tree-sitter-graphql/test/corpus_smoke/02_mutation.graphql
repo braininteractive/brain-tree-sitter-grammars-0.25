@@ -1,0 +1,9 @@
+mutation CreatePost($input: PostInput!, $draft: Boolean = false) {
+  createPost(input: $input, draft: $draft) {
+    id
+    title
+    author {
+      id
+    }
+  }
+}

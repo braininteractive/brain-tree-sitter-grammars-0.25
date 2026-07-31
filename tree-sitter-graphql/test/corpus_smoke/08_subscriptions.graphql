@@ -1,0 +1,9 @@
+subscription OnCommentAdded($postId: ID!) {
+  commentAdded(postId: $postId) {
+    id
+    content
+    author {
+      name
+    }
+  }
+}

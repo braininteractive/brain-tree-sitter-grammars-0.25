@@ -1,0 +1,10 @@
+scalar DateTime
+scalar JSON
+
+extend type Query {
+  serverTime: DateTime!
+}
+
+extend schema {
+  subscription: Subscription
+}

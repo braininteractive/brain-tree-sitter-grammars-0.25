@@ -1,0 +1,13 @@
+query GetUser($id: ID!) {
+  user(id: $id) {
+    name
+    email
+    friends(first: 10) {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}

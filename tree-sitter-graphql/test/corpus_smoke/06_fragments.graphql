@@ -1,0 +1,16 @@
+query WithFragments {
+  me {
+    ...UserFields
+    ... on Admin {
+      permissions
+    }
+    ... @include(if: true) {
+      lastLogin
+    }
+  }
+}
+
+fragment UserFields on User {
+  id
+  name
+}

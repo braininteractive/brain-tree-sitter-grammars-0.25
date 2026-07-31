@@ -1,0 +1,14 @@
+# NOTE (fork): generated src sources ARE committed here — consumers build from git.
+node_modules
+*.swp
+/build
+Cargo.lock
+/target/*
+*.a
+*.dylib
+*.so
+*.o
+bindings/c/*.h
+bindings/c/tree-sitter-*.pc
+.vscode/
+/.build

@@ -1,0 +1,17 @@
+query Kitchen($representations: [_Any!]!) @cached(ttl: 60) {
+  _entities(representations: $representations) {
+    __typename
+    ... on Product {
+      sku
+      dimensions {
+        width
+        height
+      }
+    }
+  }
+  __schema {
+    types {
+      name
+    }
+  }
+}

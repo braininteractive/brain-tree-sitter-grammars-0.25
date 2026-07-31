@@ -1,0 +1,8 @@
+directive @deprecated(reason: String = "No longer supported") on FIELD_DEFINITION | ENUM_VALUE
+
+directive @auth(requires: Role!) on OBJECT | FIELD_DEFINITION
+
+type Account @auth(requires: ADMIN) {
+  balance: Float @deprecated(reason: "Use balanceV2")
+  balanceV2: Money!
+}
