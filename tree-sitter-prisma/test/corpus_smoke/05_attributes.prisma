@@ -1,0 +1,11 @@
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique @db.Text
+  expiresAt DateTime
+  data      Json     @default("{}")
+  bytes     Bytes?
+  amount    Decimal  @db.Decimal(10, 2)
+
+  @@map("sessions")
+  @@unique([token, expiresAt])
+}

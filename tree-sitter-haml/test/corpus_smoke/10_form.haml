@@ -1,0 +1,6 @@
+= form_with model: @post do |f|
+  .field
+    = f.label :title
+    = f.text_field :title, class: "input"
+  .actions
+    = f.submit "Save"

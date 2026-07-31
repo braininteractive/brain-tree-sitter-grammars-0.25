@@ -1,0 +1,14 @@
+model Invoice {
+  id     Int    @id
+  number String
+
+  @@schema("billing")
+}
+
+model Payment {
+  id        Int @id
+  invoiceId Int
+
+  @@schema("billing")
+  @@index([invoiceId], name: "payment_invoice_idx")
+}

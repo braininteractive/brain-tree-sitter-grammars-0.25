@@ -1,0 +1,25 @@
+$themes: light, dark, contrast;
+
+@each $theme in $themes {
+  .theme-#{$theme} {
+    border-color: currentColor;
+  }
+}
+
+@for $i from 1 through 4 {
+  .col-#{$i} {
+    width: percentage($i * 0.25);
+  }
+}
+
+@if $spacing == null {
+  .fallback { margin: 0; }
+} @else {
+  .spaced { margin: 8px; }
+}
+
+$j: 0;
+@while $j < 2 {
+  .w-#{$j} { z-index: $j; }
+  $j: $j + 1;
+}

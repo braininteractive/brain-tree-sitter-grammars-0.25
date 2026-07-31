@@ -1,0 +1,10 @@
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum Status {
+  DRAFT     @map("draft")
+  PUBLISHED @map("published")
+}

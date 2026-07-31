@@ -1,0 +1,6 @@
+<%
+  totals = orders.map do |o|
+    o.amount * (1 + tax_rate)
+  end
+%>
+<%= totals.sum %>

@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - master
+    paths:
+      - grammar.js
+      - src/**
+      - bindings/**
+      - queries/**
+      - test/**
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+      - uses: tree-sitter/setup-action/cli@v2
+      - run: tree-sitter generate
+      - run: tree-sitter test
+      - name: C unit tests (regex heuristic)
+        if: runner.os != 'Windows'
+        run: |
+          cc -std=c11 -Wall -Werror -I src test/c/test_intuit_more.c -o tsp_ctest
+          ./tsp_ctest

@@ -1,0 +1,7 @@
+@import "./variables";
+@import "mixins";
+
+.badge {
+  background: lighten(#336699, 20%);
+  border-color: $primary;
+}

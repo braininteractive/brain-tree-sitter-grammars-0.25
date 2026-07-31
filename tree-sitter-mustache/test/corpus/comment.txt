@@ -1,0 +1,27 @@
+========
+Comments
+========
+
+{{!Comment}}
+
+---
+
+(template
+  (comment_statement
+    (_start_delimiter)
+    (_end_delimiter)))
+
+========
+Multiline comments
+========
+
+{{!
+Multiline
+Comment}}
+
+---
+
+(template
+  (comment_statement
+    (_start_delimiter)
+    (_end_delimiter)))

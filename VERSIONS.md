@@ -1,6 +1,6 @@
 # VERSIONS.md — Grammar Manifest
 
-**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.7`** (adds Section H: swift, nix, crystal, graphql; `v0.25.0-fork.6` = collision hardening: hcl C symbols renamed `tree_sitter_hcl`->`tree_sitter_hcl_ng` — same ast-grep latent collision as kotlin — and `links = "..."` keys added to both kotlin-ng and hcl so any future duplicate native symbol is a hard cargo error; `v0.25.0-fork.5` = fix set 2: kotlin C-symbol rename `tree_sitter_kotlin`->`tree_sitter_kotlin_ng` to end the link-time collision with crates.io `tree-sitter-kotlin-sg`; doxygen `///` support; sass `@each` bare comma-lists; neon comma-less multiline entities; `v0.25.0-fork.4` added Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
+**Publication model (2026-07-16):** the whole collection ships as a **single monorepo** — one grammar per top-level `tree-sitter-<lang>/` directory. Rust consumption: `<crate-name> = { git = "<monorepo-url>", tag = "v0.25.0-fork.2" }` — cargo locates the crate inside the repo by package name (crate names can differ from directory names; see the tables). The per-grammar tags listed below predate the monorepo merge; the authoritative tag is the monorepo-wide one — **latest: `v0.25.0-fork.8`** (adds Section I: 15 grammars — julia, fsharp (`tree-sitter-fsharp`, dual w/ LANGUAGE_SIGNATURE), perl (`ts-parser-perl`), powershell, elm, d, lua 0.5-line, md 0.5.3-line (dual block+inline), scss (modernized), prisma (`tree-sitter-prisma-io`), properties, jsonc-adjacent embedded-template (ERB/EJS), mustache, haml, commonlisp (`LANGUAGE_COMMONLISP`) — plus cmake and r regenerated to ABI 15, making the whole collection uniformly ABI 15; `v0.25.0-fork.7` added Section H: swift, nix, crystal, graphql; `v0.25.0-fork.6` = collision hardening: hcl C symbols renamed `tree_sitter_hcl`->`tree_sitter_hcl_ng` — same ast-grep latent collision as kotlin — and `links = "..."` keys added to both kotlin-ng and hcl so any future duplicate native symbol is a hard cargo error; `v0.25.0-fork.5` = fix set 2: kotlin C-symbol rename `tree_sitter_kotlin`->`tree_sitter_kotlin_ng` to end the link-time collision with crates.io `tree-sitter-kotlin-sg`; doxygen `///` support; sass `@each` bare comma-lists; neon comma-less multiline entities; `v0.25.0-fork.4` added Section G: zig, nim, dart; `v0.25.0-fork.3` = fix set: groovy named-args, vyper C scanner, abap LICENSE; `v0.25.0-fork.2` added the Section F crate-replacement forks; `v0.25.0-fork.1` = the original 48-grammar set). (Per-repo fork histories are archived locally, not published.)
 
 ## Section F — crate-replacement forks (added 2026-07-17, tag `v0.25.0-fork.2`)
 
@@ -16,6 +16,28 @@ Drop-in replacements for weak/stale community crates. Package names kept verbati
 | tree-sitter-sql | `tree-sitter-sequel` | DerekStride/tree-sitter-sql @ `c2e1e08` (2026-03-02) | 15 (pin-style) | 513/513 upstream, 12-file smoke 0% | `tree-sitter-sequel 0.3` (pin) |
 
 Notes: `cmake`, `hcl`, `r` (raw-git-dep families) were already in the monorepo (Section A). The official `tree-sitter-go` crate needs no fork — a consumer resolving both 0.23 and 0.25 simultaneously is a consumer-side pin conflict, not a grammar problem.
+
+## Section I — batch forks (added 2026-07-31, tag `v0.25.0-fork.8`)
+
+| Grammar (dir) | Crate name | Upstream @ rev | ABI | Corpus |
+| --- | --- | --- | --- | --- |
+| tree-sitter-lua | `tree-sitter-lua` | tree-sitter-grammars @ `10fe005` (2026-02-26) | 15 (pin) | 44/44 |
+| tree-sitter-md | `tree-sitter-md` | tree-sitter-grammars/tree-sitter-markdown @ `a0a00f8` (2026-07-19) | 15 (pin; dual LANGUAGE/INLINE_LANGUAGE) | 322/322 + 337 inline (8 extension-gated) |
+| tree-sitter-julia | `tree-sitter-julia` | tree-sitter (official) @ `e0f9dcd` (2025-11-08) | 15 (pin) | 63/63 |
+| tree-sitter-fsharp | `tree-sitter-fsharp` | ionide @ `789d8ea` (2026-07-30) | 15 (pin; dual LANGUAGE_FSHARP/LANGUAGE_SIGNATURE) | 529/529 |
+| tree-sitter-perl | `ts-parser-perl` | tree-sitter-perl @ `c3e17b3` (2026-06-30) | 15 (parser.c committed by fork) | 294/294 |
+| tree-sitter-powershell | `tree-sitter-powershell` | airbus-cert @ `e7bd348` (2026-07-10) | 15 (pin; doctest fix) | 147/147 |
+| tree-sitter-elm | `tree-sitter-elm` | elm-tooling @ `e1e8fea` (2026-07-20) | 15 (pin) | 120/120 |
+| tree-sitter-d | `tree-sitter-d` | gdamore @ `64f2793` (2026-06-19) | 14→15 | 223/223 |
+| tree-sitter-prisma | `tree-sitter-prisma-io` | victorhqc @ `3556b2c` (2025-10-02) | 15 (pin) | 26/26 |
+| tree-sitter-properties | `tree-sitter-properties` | tree-sitter-grammars @ `6310671` (2025-07-14) | 14→15 | 5/5 |
+| tree-sitter-embedded-template | `tree-sitter-embedded-template` | tree-sitter (official) @ `3499d85` (2025-08-31) | 15 (pin; covers ERB + EJS) | 7/7 |
+| tree-sitter-mustache | `tree-sitter-mustache` | TheLeoP @ `0f1f3cf` (2025-12-18) | 15 (pin; dev-dep fix) | 20/20 |
+| tree-sitter-haml | `tree-sitter-haml` | vitallium @ `3ea1526` (2026-02-03) | 15 (pin) | 89/89 |
+| tree-sitter-commonlisp | `tree-sitter-commonlisp` | theHamsta @ `3232350` (2025-03-16) | 14→15 (const LANGUAGE_COMMONLISP) | 43/43 |
+| tree-sitter-scss | `tree-sitter-scss` | tree-sitter-grammars @ `2ef6d42` (2026-03-26) | 14→15 + binding modernization | 56/56 (module-system gaps documented) |
+
+Also in fork.8: **cmake** and **r** regenerated 14→15 (66/66 and 99/99) — the collection is now uniformly ABI 15.
 
 ## Section H — new-language forks (added 2026-07-31, tag `v0.25.0-fork.7`)
 

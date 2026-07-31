@@ -1,0 +1,143 @@
+========
+Section simple
+========
+
+{{#name}}{{/name}}
+
+---
+
+(template
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
+
+========
+Section identifier
+========
+
+{{#name}}{{first}}{{/name}}
+
+---
+
+(template
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (interpolation_statement
+      (start_delimiter)
+      (identifier)
+      (end_delimiter))
+    (section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
+
+========
+Section erroneous end tag
+========
+
+{{#name}}
+{{first}}
+{{/other}}
+
+---
+
+(template
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (interpolation_statement
+      (start_delimiter)
+      (identifier)
+      (end_delimiter))
+    (section_end
+      (start_delimiter)
+      (erroneous_tag_name)
+      (end_delimiter))))
+
+========
+Nested sections
+========
+
+{{#a}}
+{{one}}
+{{#b}}
+{{#c}}
+{{three}}
+{{/c}}
+{{two}}
+{{/b}}
+{{/a}}
+
+---
+
+(template
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (interpolation_statement
+      (start_delimiter)
+      (identifier)
+      (end_delimiter))
+    (section
+      (section_begin
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter))
+      (section
+        (section_begin
+          (start_delimiter)
+          (tag_name)
+          (end_delimiter))
+        (interpolation_statement
+          (start_delimiter)
+          (identifier)
+          (end_delimiter))
+        (section_end
+          (start_delimiter)
+          (tag_name)
+          (end_delimiter)))
+      (interpolation_statement
+        (start_delimiter)
+        (identifier)
+        (end_delimiter))
+      (section_end
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter)))
+    (section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
+
+
+========
+Inverted section
+========
+
+{{^name}}{{/name}}
+
+---
+
+(template
+  (inverted_section
+    (inverted_section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (inverted_section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))

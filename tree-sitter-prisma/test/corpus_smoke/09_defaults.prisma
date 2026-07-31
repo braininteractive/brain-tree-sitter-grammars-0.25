@@ -1,0 +1,8 @@
+model Defaults {
+  id      Int      @id @default(autoincrement())
+  uuid    String   @default(uuid())
+  flag    Boolean  @default(false)
+  score   Float    @default(0.5)
+  tags    String[] @default([])
+  when    DateTime @default(dbgenerated("NOW()"))
+}

@@ -1,0 +1,7 @@
+<% if user.admin? %>
+  <span class="badge">Admin</span>
+<% elsif user.editor? %>
+  <span>Editor</span>
+<% else %>
+  <span>Viewer</span>
+<% end %>

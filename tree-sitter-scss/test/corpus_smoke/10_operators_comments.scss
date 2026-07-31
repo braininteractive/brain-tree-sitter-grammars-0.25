@@ -1,0 +1,13 @@
+// Line comment
+/* Block
+   comment */
+
+.math {
+  width: (100% / 3) - 10px;
+  height: 20px + 1em;
+  opacity: if(true, 1, 0);
+}
+
+$negated: not false;
+$combined: true and false or true;
+$compared: 3 > 2;

@@ -1,0 +1,12 @@
+# NOTE (fork): generated src files ARE committed — consumers build from git.
+Cargo.lock
+node_modules
+build
+*.log
+/target/
+*.a
+*.dylib
+*.so
+*.o
+tree-sitter-perl.wasm
+log.html

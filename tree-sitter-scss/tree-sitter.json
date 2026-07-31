@@ -1,0 +1,23 @@
+{
+  "grammars": [
+    {
+      "name": "scss",
+      "camelcase": "Scss",
+      "scope": "source.css.scss",
+      "path": ".",
+      "file-types": ["scss"],
+      "injection-regex": "scss"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "SCSS grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/tree-sitter-grammars/tree-sitter-scss"
+    }
+  },
+  "bindings": {
+    "rust": true
+  }
+}

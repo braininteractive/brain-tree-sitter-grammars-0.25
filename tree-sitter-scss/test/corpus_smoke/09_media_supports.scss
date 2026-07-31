@@ -1,0 +1,15 @@
+.sidebar {
+  width: 300px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  @supports (display: grid) {
+    display: grid;
+  }
+}
+
+@media screen and (min-width: 992px), print {
+  body { font-size: 14px; }
+}

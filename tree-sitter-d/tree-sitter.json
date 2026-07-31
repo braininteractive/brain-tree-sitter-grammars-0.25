@@ -1,0 +1,23 @@
+{
+  "grammars": [
+    {
+      "name": "d",
+      "camelcase": "D",
+      "scope": "source.d",
+      "path": ".",
+      "file-types": ["d", "di"],
+      "injection-regex": "^d$"
+    }
+  ],
+  "metadata": {
+    "version": "0.25.0",
+    "license": "MIT",
+    "description": "D grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/gdamore/tree-sitter-d"
+    }
+  },
+  "bindings": {
+    "rust": true
+  }
+}

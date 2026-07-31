@@ -1,0 +1,19 @@
+.card {
+  padding: 1rem;
+
+  .title {
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.featured {
+    border: 2px solid gold;
+  }
+
+  .body p {
+    line-height: 1.5;
+  }
+}

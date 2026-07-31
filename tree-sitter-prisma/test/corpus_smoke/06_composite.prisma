@@ -1,0 +1,11 @@
+type Address {
+  street String
+  city   String
+  zip    String
+}
+
+model Customer {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  address Address
+  backup  Address?
+}

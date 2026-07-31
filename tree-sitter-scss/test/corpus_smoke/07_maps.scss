@@ -1,0 +1,14 @@
+$sizes: 4px 8px 16px;
+$names: "sm", "md", "lg";
+
+@mixin respond($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.container {
+  @include respond(768px) {
+    max-width: 720px;
+  }
+}

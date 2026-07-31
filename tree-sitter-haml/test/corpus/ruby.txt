@@ -1,0 +1,355 @@
+================================================================================
+Tag with the Ruby hash
+================================================================================
+
+%a{:title => @title, :href => href}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (ruby_attributes))))
+
+================================================================================
+Tag with the buffered code
+================================================================================
+
+%p= "hello"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (ruby_block_output
+      (ruby_code))))
+
+================================================================================
+Tag with the buffered code that has spaces inside
+================================================================================
+
+%p= ['hi', 'there', 'reader!'].join " "
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (ruby_block_output
+      (ruby_code))))
+
+================================================================================
+Tag with the child Ruby hashes
+================================================================================
+
+.book-info{:data => {:book => {:id => 123, :genre => 'programming'}, :category => 7}}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (class
+      (class_name))
+    (attributes
+      (ruby_attributes))))
+
+================================================================================
+Tag with the child Ruby hashes v2
+================================================================================
+
+%div{:id => ['Article', @article.number], :class => ['article', 'entry', @article.visibility]}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (ruby_attributes))))
+
+================================================================================
+Only evaluated Ruby code
+================================================================================
+
+= "simple text"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_output
+    (ruby_code)))
+
+================================================================================
+Only running Ruby code
+================================================================================
+
+- @variable = 'test'
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_run
+    (ruby_code)))
+
+================================================================================
+Both running and evaluated Ruby code
+================================================================================
+
+- @variable = 'test'
+= @variable
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_run
+    (ruby_code))
+  (ruby_block_output
+    (ruby_code)))
+
+================================================================================
+Simple conditional
+================================================================================
+
+- if true
+  %p= foo
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_run
+    (ruby_code)
+    (tag
+      (tag_name)
+      (ruby_block_output
+        (ruby_code)))))
+
+================================================================================
+Ruby code stretched over multiple lines
+================================================================================
+
+= link_to_remote "Add to cart",
+    :url => { :action => "add", :id => product.id },
+    :update => { :success => "cart", :failure => "error" }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_output
+    (ruby_code)))
+
+================================================================================
+HTML-like attributes with Ruby interpolation inside
+================================================================================
+
+%span(class="widget_#{@widget.number}")
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (html_attributes
+        (attribute
+          (attribute_name)
+          (quoted_attribute_value
+            (attribute_value)
+            (ruby_interpolation
+              (ruby_expression))))))))
+
+================================================================================
+HTML-like attributes with Ruby value references
+================================================================================
+
+%input(foo=lvar bar=$gvar baz=@ivar waz=@@cvar lol=CONSTANT)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (html_attributes
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_local_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_global_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_instance_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_class_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_constant)))))))
+
+================================================================================
+HTML-like attributes with Ruby value refrences and hash attributes
+================================================================================
+
+%input(foo=lvar bar=$gvar baz=@ivar waz=@@cvar lol=CONSTANT){
+  asd: $hello
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (html_attributes
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_local_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_global_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_instance_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_class_variable)))
+        (attribute
+          (attribute_name)
+          (ruby_value_ref
+            (ruby_constant))))
+      (ruby_attributes))))
+
+================================================================================
+Unescaped Ruby output with !=
+================================================================================
+
+!= "<strong>Bold text</strong>"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_output_nuke
+    (ruby_code)))
+
+================================================================================
+Sanitized Ruby output with &=
+================================================================================
+
+&= user_input
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_sanitized
+    (ruby_code)))
+
+================================================================================
+Preserved Ruby output with ~
+================================================================================
+
+~ "Line 1\nLine 2"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_preserve
+    (ruby_code)))
+
+================================================================================
+Tag with unescaped Ruby output
+================================================================================
+
+%p!= raw_html
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (ruby_block_output_nuke
+      (ruby_code))))
+
+================================================================================
+Tag with sanitized Ruby output
+================================================================================
+
+%p&= user_input
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (ruby_block_sanitized
+      (ruby_code))))
+
+================================================================================
+Tag with preserved Ruby output
+================================================================================
+
+%pre~ multiline_text
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (ruby_block_preserve
+      (ruby_code))))
+
+================================================================================
+Ruby interpolation with nested braces
+================================================================================
+
+%span(class="widget_#{@widget.number}")
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (html_attributes
+        (attribute
+          (attribute_name)
+          (quoted_attribute_value
+            (attribute_value)
+            (ruby_interpolation
+              (ruby_expression))))))))
+
+================================================================================
+Ruby interpolation with hash literal
+================================================================================
+
+%p This is #{ {foo: "bar"} } cool
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (verbatim_string)))
+
+================================================================================
+Ruby interpolation with block
+================================================================================
+
+%p Numbers: #{ arr.map{|x| x * 2} }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (tag_name)
+    (verbatim_string)))

@@ -1,0 +1,213 @@
+================================================================================
+app/views/events/_event.html.haml
+================================================================================
+
+- if event.visible_to_user?(current_user)
+  .event-item.gl-border-bottom-0.gl-pb-3{ class: current_path?('users#activity') ? 'user-profile-activity gl-pl-7!' : 'project-activity-item' }
+    .event-item-timestamp.gl-font-sm
+      #{time_ago_with_tooltip(event.created_at)}
+      - if event.imported?
+        %span &middot;
+        = render "import/shared/imported_badge", text_only: true, importable: _('event')
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_run
+    (ruby_code)
+    (tag
+      (class
+        (class_name))
+      (class
+        (class_name))
+      (class
+        (class_name))
+      (attributes
+        (ruby_attributes))
+      (tag
+        (class
+          (class_name))
+        (class
+          (class_name))
+        (ruby_interpolation
+          (ruby_expression))
+        (ruby_block_run
+          (ruby_code)
+          (tag
+            (tag_name)
+            (verbatim_string))
+          (ruby_block_output
+            (ruby_code)))))))
+
+================================================================================
+Nav
+================================================================================
+
+#content
+  .title
+    %h1= @title
+    = link_to 'Home', home_url
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (id)
+    (tag
+      (class
+        (class_name))
+      (tag
+        (tag_name)
+        (ruby_block_output
+          (ruby_code)))
+      (ruby_block_output
+        (ruby_code)))))
+
+================================================================================
+app/views/layouts/application.html.haml
+================================================================================
+
+- page_classes = page_class << @html_class
+- page_classes = [user_application_color_mode, user_application_theme, page_classes.flatten.compact]
+- body_classes = [user_tab_width, @body_class, client_class_list, *custom_diff_color_classes]
+
+!!! 5
+%html{ lang: I18n.locale, class: page_classes }
+  = render "layouts/head"
+  %body{ class: body_classes, data: body_data }
+    = render "layouts/init_auto_complete" if @gfm_form
+    = render "layouts/init_client_detection_flags"
+    = render 'peek/bar'
+    = header_message
+
+    - if !current_user
+      = render partial: "layouts/header/super_sidebar_logged_out"
+    = render 'layouts/page', sidebar: sidebar, nav: nav
+    = footer_message
+
+    = render 'layouts/img_loader'
+
+    = render 'layouts/published_experiments'
+    = yield :scripts_body
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_run
+    (ruby_code))
+  (ruby_block_run
+    (ruby_code))
+  (ruby_block_run
+    (ruby_code))
+  (doctype
+    (doctype_version))
+  (tag
+    (tag_name)
+    (attributes
+      (ruby_attributes))
+    (ruby_block_output
+      (ruby_code))
+    (tag
+      (tag_name)
+      (attributes
+        (ruby_attributes))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_run
+        (ruby_code)
+        (ruby_block_output
+          (ruby_code)))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code)))))
+
+================================================================================
+app/views/dashboard/merge_requests.html.haml
+================================================================================
+
+- if merge_request_dashboard_enabled?(current_user)
+  #js-merge-request-dashboard{ data: { initial_data: merge_request_dashboard_data(current_user).to_json } }
+    = render ::Layouts::PageHeadingComponent.new(_('Merge requests'))
+    = gl_loading_icon(size: 'lg')
+
+- else
+  = render 'dashboard/empty_state', message: _('Merge requests are disabled for this project.')
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ruby_block_run
+    (ruby_code)
+    (tag
+      (id)
+      (attributes
+        (ruby_attributes))
+      (ruby_block_output
+        (ruby_code))
+      (ruby_block_output
+        (ruby_code))))
+  (ruby_block_run
+    (ruby_code)
+    (ruby_block_output
+      (ruby_code))))
+
+================================================================================
+Tailwind case #1
+================================================================================
+
+.mx-2.sm:mx-5.from-black@75
+  %p Some text
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (class
+      (class_name))
+    (class
+      (class_name))
+    (class
+      (class_name))
+    (tag
+      (tag_name)
+      (verbatim_string))))
+
+================================================================================
+Greedy new line
+================================================================================
+
+#container
+  %input
+
+:javascript
+  document.addEventListener("DOMContentLoaded", function() {
+    const input = document.querySelector('input');
+
+    input.addEventListener('click', function() {
+      alert("You clicked on: " + this);
+    });
+  });
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (tag
+    (id)
+    (tag
+      (tag_name)))
+  (filter
+    (filter_name)
+    (filter_body)))

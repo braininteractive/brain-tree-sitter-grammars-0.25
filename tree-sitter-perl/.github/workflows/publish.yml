@@ -1,0 +1,127 @@
+name: Publish packages
+
+on:
+  push:
+    tags: ["*"]
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  release-notes:
+    name: Extract release notes
+    runs-on: ubuntu-latest
+    outputs:
+      body: ${{ steps.notes.outputs.body }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: notes
+        run: |
+          body=$(git log -1 --format=%b)
+          echo "body<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$body" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+  github:
+    needs: release-notes
+    uses: tree-sitter/workflows/.github/workflows/release.yml@main
+    with:
+      generate: true
+      release-body: ${{ needs.release-notes.outputs.body }}
+
+  # Inlined instead of reusable workflows because tree-sitter/workflows
+  # runs `npm install` before `tree-sitter generate`, which fails when
+  # parser.c is gitignored. We generate from grammar.json first, then
+  # install and build.
+  # TODO: PR upstream to support a grammar-path input.
+
+  npm:
+    name: Publish npm package
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - uses: tree-sitter/setup-action/cli@v2
+      - run: tree-sitter generate src/grammar.json
+      - run: npm install --ignore-scripts
+      - run: npm publish
+
+  crates:
+    name: Publish Rust package
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: tree-sitter/setup-action/cli@v2
+      - run: tree-sitter generate src/grammar.json
+      - name: Authenticate with crates.io
+        id: auth
+        uses: rust-lang/crates-io-auth-action@v1
+      - run: cargo publish --allow-dirty
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
+
+  pypi-sdist:
+    name: Build Python source dist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - uses: tree-sitter/setup-action/cli@v2
+      - run: tree-sitter generate src/grammar.json
+      - run: pip install --upgrade build setuptools wheel
+      - run: python -mbuild -n -s
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist-sources
+          path: dist/*.tar.gz
+          retention-days: 2
+
+  pypi-wheels:
+    name: Build Python wheels (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: tree-sitter/setup-action/cli@v2
+      - run: tree-sitter generate src/grammar.json
+      - uses: pypa/cibuildwheel@v2.22
+        with:
+          output-dir: dist
+        env:
+          CIBW_ARCHS: native
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist-wheels-${{ matrix.os }}
+          path: dist/*.whl
+          retention-days: 2
+
+  pypi-publish:
+    name: Publish Python package
+    needs: [pypi-sdist, pypi-wheels]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+          pattern: dist-*
+          merge-multiple: true
+      - run: ls -l dist
+      - uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,0 +1,9 @@
+@function rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+}
+
+.spaced {
+  margin: rem(24);
+  width: calc(100% - 2rem);
+  color: rgba(51, 102, 153, 0.8);
+}

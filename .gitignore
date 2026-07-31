@@ -2,6 +2,8 @@
 .DS_Store
 target/
 node_modules/
+build/
+prebuilds/
 
 # local dev config, never published
 CLAUDE.md

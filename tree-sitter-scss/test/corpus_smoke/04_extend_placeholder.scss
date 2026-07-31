@@ -1,0 +1,14 @@
+.button-base {
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  @extend .button-base;
+  background: blue;
+}
+
+%placeholder-defined {
+  margin: 0;
+}

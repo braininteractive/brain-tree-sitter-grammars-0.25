@@ -1,0 +1,486 @@
+[
+  {
+    "type": "ampersand_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "path_expression",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "_end_delimiter",
+          "named": true
+        },
+        {
+          "type": "_start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "interpolation_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "path_expression",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inverted_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ampersand_statement",
+          "named": true
+        },
+        {
+          "type": "interpolation_statement",
+          "named": true
+        },
+        {
+          "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "inverted_section_begin",
+          "named": true
+        },
+        {
+          "type": "inverted_section_end",
+          "named": true
+        },
+        {
+          "type": "partial_statement",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        },
+        {
+          "type": "set_delimiter_statement",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "triple_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inverted_section_begin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        },
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inverted_section_end",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "erroneous_tag_name",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        },
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "partial_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "partial_content",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "path_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ampersand_statement",
+          "named": true
+        },
+        {
+          "type": "interpolation_statement",
+          "named": true
+        },
+        {
+          "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "partial_statement",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        },
+        {
+          "type": "section_begin",
+          "named": true
+        },
+        {
+          "type": "section_end",
+          "named": true
+        },
+        {
+          "type": "set_delimiter_statement",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "triple_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_begin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        },
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_end",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "erroneous_tag_name",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        },
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_delimiter_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "template",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ampersand_statement",
+          "named": true
+        },
+        {
+          "type": "comment_statement",
+          "named": true
+        },
+        {
+          "type": "interpolation_statement",
+          "named": true
+        },
+        {
+          "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "partial_statement",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        },
+        {
+          "type": "set_delimiter_statement",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "triple_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "triple_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "path_expression",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "_end_delimiter",
+    "named": true
+  },
+  {
+    "type": "_start_delimiter",
+    "named": true
+  },
+  {
+    "type": "end_delimiter",
+    "named": true
+  },
+  {
+    "type": "erroneous_tag_name",
+    "named": true
+  },
+  {
+    "type": "partial_content",
+    "named": true
+  },
+  {
+    "type": "start_delimiter",
+    "named": true
+  },
+  {
+    "type": "tag_name",
+    "named": true
+  },
+  {
+    "type": "text",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]

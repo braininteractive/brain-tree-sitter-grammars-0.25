@@ -1,0 +1,20 @@
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero {
+  @include flex-center(column);
+}
+
+.label {
+  @include truncate;
+}

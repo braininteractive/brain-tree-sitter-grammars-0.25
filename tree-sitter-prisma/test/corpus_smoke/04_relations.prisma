@@ -1,0 +1,16 @@
+model Category {
+  id       Int        @id
+  parent   Category?  @relation("Tree", fields: [parentId], references: [id])
+  parentId Int?
+  children Category[] @relation("Tree")
+  posts    PostCategory[]
+}
+
+model PostCategory {
+  postId     Int
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  @@id([postId, categoryId])
+  @@index([categoryId])
+}

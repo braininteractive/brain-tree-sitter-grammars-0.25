@@ -1,0 +1,11 @@
+/// Documentation comment on the view.
+view ActiveUsers {
+  id    Int    @unique
+  email String
+}
+
+// Regular comment
+model Log {
+  id      Int      @id
+  message String /// trailing doc
+}

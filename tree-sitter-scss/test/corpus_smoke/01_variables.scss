@@ -1,0 +1,9 @@
+$primary: #336699;
+$spacing: 1rem;
+$font-stack: "Helvetica", Arial, sans-serif;
+
+body {
+  color: $primary;
+  margin: $spacing * 2;
+  font-family: $font-stack;
+}

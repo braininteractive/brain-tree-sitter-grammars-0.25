@@ -1,0 +1,21 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views", "multiSchema"]
+}
+
+model Team {
+  id      Int      @id
+  name    String
+  members Member[]
+}
+
+model Member {
+  id     Int  @id
+  team   Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId Int
+}

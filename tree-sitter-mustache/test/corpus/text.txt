@@ -1,0 +1,51 @@
+========
+Simple text
+========
+
+Hello {{name}}!
+
+---
+
+(template
+  (text)
+  (interpolation_statement
+    (start_delimiter)
+    (identifier)
+    (end_delimiter))
+  (text))
+
+========
+Long text
+========
+
+Hello {{name}}!
+This is a complicated {{template}}
+{{#section}}
+Some text
+{{/section}}
+End
+
+---
+
+(template
+  (text)
+  (interpolation_statement
+    (start_delimiter)
+    (identifier)
+    (end_delimiter))
+  (text)
+  (interpolation_statement
+    (start_delimiter)
+    (identifier)
+    (end_delimiter))
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (text)
+    (section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter)))
+  (text))
