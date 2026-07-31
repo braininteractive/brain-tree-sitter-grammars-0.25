@@ -1,0 +1,6 @@
+{
+  "plain": "json still works",
+  "num": 42,
+  "arr": [1, 2, 3],
+  "nested": { "a": null, "b": false }
+}

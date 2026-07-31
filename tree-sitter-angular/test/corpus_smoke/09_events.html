@@ -1,0 +1,4 @@
+<form (ngSubmit)="submit()" #f="ngForm">
+  <input name="email" (keyup.enter)="submit()" (blur)="touched = true" required />
+  <button type="submit" [disabled]="f.invalid">Send</button>
+</form>

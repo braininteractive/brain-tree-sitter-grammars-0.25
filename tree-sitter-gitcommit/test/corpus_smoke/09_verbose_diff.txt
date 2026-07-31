@@ -1,0 +1,12 @@
+fix: crash on unicode input
+
+Input with emoji caused a panic.
+
+# ------------------------ >8 ------------------------
+diff --git a/src/main.rs b/src/main.rs
+index 123..456 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -1 +1 @@
+-old
++new

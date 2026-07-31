@@ -1,0 +1,6 @@
+<!-- comment node -->
+<section>
+  @let total = items.length;
+  <p i18n="@@totalLabel">{{ total }} entries</p>
+  <ng-container *ngTemplateOutlet="rowTpl; context: { $implicit: items }" />
+</section>

@@ -1,0 +1,5 @@
+[diff "exif"]
+	textconv = exiftool
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3

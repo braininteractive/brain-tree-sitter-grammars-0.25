@@ -1,0 +1,4 @@
+[alias]
+	st = status -sb
+	lg = log --oneline --graph
+	cp = cherry-pick

@@ -1,0 +1,11 @@
+@switch (status) {
+  @case ('active') { <span class="ok">on</span> }
+  @case ('paused') { <span>paused</span> }
+  @default { <span>off</span> }
+}
+
+@defer (on viewport) {
+  <heavy-chart [data]="series" />
+} @placeholder {
+  <div class="skeleton"></div>
+}

@@ -1,0 +1,6 @@
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[gpg]
+	format = ssh

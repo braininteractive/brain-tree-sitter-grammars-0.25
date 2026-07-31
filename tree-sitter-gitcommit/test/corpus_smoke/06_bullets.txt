@@ -1,0 +1,6 @@
+docs: update install guide
+
+- clarify prerequisites
+- add macOS section
+
+Refs: #101, #102

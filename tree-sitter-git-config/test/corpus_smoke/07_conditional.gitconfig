@@ -1,0 +1,4 @@
+[url "https://github.com/"]
+	insteadOf = gh:
+[includeIf "gitdir:~/work/"]
+	path = ~/.gitconfig-work

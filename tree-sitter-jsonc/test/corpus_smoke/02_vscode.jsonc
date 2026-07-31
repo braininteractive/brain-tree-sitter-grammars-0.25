@@ -1,0 +1,7 @@
+{
+  // Editor settings
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.git": true, // always hide
+  },
+}

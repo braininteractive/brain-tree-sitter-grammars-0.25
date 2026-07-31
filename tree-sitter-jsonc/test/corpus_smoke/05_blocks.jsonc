@@ -1,0 +1,9 @@
+{
+  /* multi
+     line
+     block */
+  "y": [
+    "a", // per-item comment
+    "b",
+  ],
+}

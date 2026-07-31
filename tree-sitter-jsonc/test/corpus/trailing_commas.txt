@@ -1,0 +1,19 @@
+==================
+Trailing commas in objects and arrays
+==================
+
+{
+  "a": [1, 2,],
+  "b": true,
+}
+
+---
+
+(document
+  (object
+    (pair
+      key: (string (string_content))
+      value: (array (number) (number)))
+    (pair
+      key: (string (string_content))
+      value: (true))))

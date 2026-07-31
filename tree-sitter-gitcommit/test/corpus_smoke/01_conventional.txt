@@ -1,0 +1,7 @@
+fix(parser): handle empty input
+
+The parser crashed on empty files.
+Closes #42
+
+# Please enter the commit message for your changes.
+# On branch main

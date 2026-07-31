@@ -1,0 +1,2 @@
+*.tf diff=terraform
+*.ipynb filter=strip-notebook-output

@@ -1,0 +1,2 @@
+git+https://github.com/org/pkg.git@v1.2.3#egg=pkg
+-e ./local/path

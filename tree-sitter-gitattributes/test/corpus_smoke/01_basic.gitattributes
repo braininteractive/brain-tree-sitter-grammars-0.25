@@ -1,0 +1,4 @@
+*.txt text
+*.jpg binary
+*.sh eol=lf
+*.bat eol=crlf

@@ -1,0 +1,10 @@
+{
+  // TypeScript configuration
+  "compilerOptions": {
+    "target": "ES2022",
+    "strict": true,
+    /* module resolution */
+    "moduleResolution": "bundler",
+  },
+  "include": ["src/**/*"],
+}

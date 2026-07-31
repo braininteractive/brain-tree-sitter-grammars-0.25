@@ -1,0 +1,6 @@
+feat: add login flow
+
+BREAKING CHANGE: session tokens rotate daily.
+
+Co-authored-by: Pat <pat@example.com>
+Signed-off-by: Jane <jane@example.com>

@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let user of users; index as i; trackBy: trackId">
+    {{ i }}: {{ user.name }}
+  </li>
+</ul>
+<div *ngIf="loaded; else spinner">content</div>
+<ng-template #spinner>loading…</ng-template>

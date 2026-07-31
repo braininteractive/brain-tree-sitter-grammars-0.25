@@ -1,0 +1,7 @@
+all: build test
+
+build:
+	cargo build
+
+test:
+	cargo test

@@ -1,0 +1,5 @@
+{
+  "grammars": [{"name": "  option_name: $ => seq(", "camelcase": "  option_name: $ => seq(", "scope": "source.  option_name: $ => seq(", "path": ".", "file-types": []}],
+  "metadata": {"version": "0.25.0", "license": "MIT"},
+  "bindings": {"rust": true}
+}

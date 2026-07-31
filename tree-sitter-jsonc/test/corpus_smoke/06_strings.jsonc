@@ -1,0 +1,5 @@
+{
+  "unicode": "caf\u00e9 \ud83d\ude00",
+  "escape": "tab\tnewline\n",
+  "slash": "a\/b"
+}

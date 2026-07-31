@@ -1,0 +1,4 @@
+<app-header [title]="pageTitle" (menuToggle)="onMenu($event)">
+  <ng-content select="[slot=actions]"></ng-content>
+</app-header>
+<router-outlet />

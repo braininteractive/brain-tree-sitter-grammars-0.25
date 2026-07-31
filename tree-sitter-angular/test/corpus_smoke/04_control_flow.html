@@ -1,0 +1,13 @@
+@if (user.isAdmin) {
+  <admin-panel />
+} @else if (user.isEditor) {
+  <editor-panel />
+} @else {
+  <viewer-panel />
+}
+
+@for (item of items; track item.id) {
+  <app-row [data]="item" />
+} @empty {
+  <p>No rows.</p>
+}

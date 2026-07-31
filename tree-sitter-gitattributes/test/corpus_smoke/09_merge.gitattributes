@@ -1,0 +1,2 @@
+*.po merge=union
+CHANGELOG merge=ours

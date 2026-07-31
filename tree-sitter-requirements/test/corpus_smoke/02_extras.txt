@@ -1,0 +1,3 @@
+# core deps
+pydantic[email]==2.5.0  # with extras
+uvicorn[standard]>=0.24

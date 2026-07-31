@@ -1,0 +1,2 @@
+[attr]rust text eol=lf diff=rust
+*.rs rust

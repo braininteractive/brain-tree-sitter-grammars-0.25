@@ -1,0 +1,2 @@
+torch==2.1.0 ; python_version >= "3.9" and sys_platform == "linux"
+dataclasses ; python_version < "3.7"

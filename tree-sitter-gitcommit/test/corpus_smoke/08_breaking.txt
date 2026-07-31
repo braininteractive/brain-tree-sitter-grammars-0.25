@@ -1,0 +1,3 @@
+chore!: drop node 16 support
+
+node 16 is EOL.

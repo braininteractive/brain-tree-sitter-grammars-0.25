@@ -1,0 +1,3 @@
+*.c diff=cpp
+*.md diff=markdown
+*.rs linguist-language=Rust

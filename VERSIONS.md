@@ -17,6 +17,23 @@ Drop-in replacements for weak/stale community crates. Package names kept verbati
 
 Notes: `cmake`, `hcl`, `r` (raw-git-dep families) were already in the monorepo (Section A). The official `tree-sitter-go` crate needs no fork — a consumer resolving both 0.23 and 0.25 simultaneously is a consumer-side pin conflict, not a grammar problem.
 
+## Section J — everyday file formats (added 2026-08-01, tag `v0.25.0-fork.10`)
+
+| Grammar (dir) | Crate name | Upstream @ rev | ABI | Corpus |
+| --- | --- | --- | --- | --- |
+| tree-sitter-ini | `tree-sitter-ini` | justinmk @ `e4018b5` | 15 (pin) | 11/11 |
+| tree-sitter-dotenv | `tree-sitter-dotenv` | pnx @ `8b1dad8` (2026-07-22) | 15 (pin) | 7/7 (+2 :cst-gated) |
+| tree-sitter-make | `tree-sitter-make` | tree-sitter-grammars @ `70613f3` | 15 (Rust crate built fork-side — upstream ships none) | 117/117 |
+| tree-sitter-proto | `tree-sitter-protobuf` | Clement-Jean @ `5c09ab4` (largest corpus of 4 rivals; proto2+3) | 13→15 + LanguageFn | 72/72 |
+| tree-sitter-angular | `tree-sitter-angular` | dlvandenberg @ `38a8014` (2026-05-15) | 15 + LanguageFn rewrite | 146/146 (incl. Angular 17+ @-blocks) |
+| tree-sitter-jsonc | `tree-sitter-jsonc` | WhyNotHugo (GitLab) @ `f7890ba` | 13→15 + LanguageFn + **fork fix: trailing commas** | 1/1 + regression test |
+| tree-sitter-gitignore | `tree-sitter-ignore` | shunsambongi @ `f4685bf` (format frozen) | 13→15 + LanguageFn | 14/14 |
+| tree-sitter-gitattributes | `tree-sitter-gitattributes` | ObserverOfTime @ `1b7af09` | 14→15 | 11/11 |
+| tree-sitter-git-config | `tree-sitter-git-config` | the-mikedavis @ `3a61756` (2026-07-20) | 14→15 + LanguageFn | 15/15 |
+| tree-sitter-gitcommit | `tree-sitter-gitcommit` | gbprod @ `49715a9` (2026-05-13) | 15 (pin; scanner) | 64/64 |
+| tree-sitter-starlark | `tree-sitter-starlark` | tree-sitter-grammars @ `a453dbf` | 14→15 | 93/93 |
+| tree-sitter-requirements | `tree-sitter-requirements` | ObserverOfTime @ `2c3bb29` (2026-04-30) | 15 (pin) | 10/10 |
+
 ## Section I — batch forks (added 2026-07-31, tag `v0.25.0-fork.8`)
 
 | Grammar (dir) | Crate name | Upstream @ rev | ABI | Corpus |

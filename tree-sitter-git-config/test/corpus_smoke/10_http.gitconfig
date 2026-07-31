@@ -1,0 +1,4 @@
+[http "https://weak.example.com"]
+	sslVerify = false
+[credential]
+	helper = cache --timeout=3600
