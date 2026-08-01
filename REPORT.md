@@ -63,7 +63,7 @@ so crates.io users migrate with a source-line change only):
 
 Everything else: crate name = directory name, constant = `LANGUAGE`.
 
-## 3. Language coverage (76 grammars)
+## 3. Language coverage (96 grammar families)
 
 **Systems / general-purpose:** swift, kotlin, dart, zig, nim, d, julia, fsharp,
 perl, powershell, elm, crystal, lua, r, groovy, objc, ada, clojure, commonlisp,
@@ -77,15 +77,17 @@ go-sum
 (handlebars), mustache, haml, jinja2 (dual), jsp, freemarker, blade,
 embedded-template (ERB + EJS), pug, scss, sass (indented), less
 
-**Markup / docs / config:** md (dual block+inline), rst, doxygen, jsdoc,
-graphql SDL, hcl/terraform, cmake, dockerfile, ninja, fish, elvish, vim, nix,
-ragel, thrift, go-template, rbs
+**Markup / docs / config:** md (dual block+inline), rst, asciidoc (dual), latex,
+bibtex, typst, doxygen, jsdoc, graphql SDL, hcl/terraform, cmake, make, just,
+ninja, starlark/bazel, dockerfile, nginx, ssh-config, ini, dotenv, jsonc,
+requirements, the git quartet (ignore/attributes/config/commit), fish, elvish,
+nushell, awk, vim, nix, ragel, thrift, go-template, rbs, angular, protobuf
 
 **Legacy / mainframe:** cobol (fixed-format COBOL-85, NIST-suite derived),
 abap, rpgle (free-form), hlasm
 
 Per-grammar corpus results, forked commits, and ABI provenance are tabulated in
-[VERSIONS.md](VERSIONS.md) (Sections A–I). Deep-validation history is in
+[VERSIONS.md](VERSIONS.md) (Sections A–K). Deep-validation history is in
 [DEEP_VALIDATION.md](DEEP_VALIDATION.md) and [DELIVERY_REPORT.md](DELIVERY_REPORT.md).
 
 ## 4. Engineering fixes delivered beyond packaging
@@ -124,7 +126,7 @@ regression tests:
    both sides parse correctly.
 4. **Publish audits (run before every push):** no file present on disk but
    excluded from the published tree by upstream gitignores (this exact bug was
-   caught and fixed four times: sql, swift, fsharp, perl — all of which
+   caught and fixed five times: sql, swift, fsharp, perl, latex — all of which
    gitignore their generated parsers); no build artifacts or local dev files
    in the tree; no duplicate crate names; no crates with a hard `tree-sitter`
    runtime dependency.
