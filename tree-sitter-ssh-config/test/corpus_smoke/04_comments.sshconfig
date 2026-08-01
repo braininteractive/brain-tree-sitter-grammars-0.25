@@ -1,0 +1,4 @@
+# personal boxes
+Host home
+  HostName home.example.net  # inline note
+  User pat

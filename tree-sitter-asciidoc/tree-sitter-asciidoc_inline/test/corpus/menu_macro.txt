@@ -1,0 +1,36 @@
+=================
+menu_macro
+=================
+
+menu:File[Save As...]
+menu:Edit[]
+menu:View[Page Style > No Style]
+menu:View[Page Style, No Style]
+
+-----
+
+(inline
+  (inline_element
+    (inline_macro
+      (macro_name)
+      (target)
+      (attr
+        (positional_attr
+          (replacement)))))
+  (inline_element
+    (inline_macro
+      (macro_name)
+      (target)))
+  (inline_element
+    (inline_macro
+      (macro_name)
+      (target)
+      (attr
+        (positional_attr))))
+  (inline_element
+    (inline_macro
+      (macro_name)
+      (target)
+      (attr
+        (positional_attr)
+        (positional_attr)))))

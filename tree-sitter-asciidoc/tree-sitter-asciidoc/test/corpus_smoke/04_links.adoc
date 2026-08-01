@@ -1,0 +1,3 @@
+Link to https://example.com[the site] and xref:other.adoc[another doc].
+
+image::diagram.png[Architecture,600,400]

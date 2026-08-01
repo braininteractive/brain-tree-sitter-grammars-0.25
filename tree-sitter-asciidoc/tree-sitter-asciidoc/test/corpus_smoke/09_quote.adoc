@@ -1,0 +1,8 @@
+____
+A quote block.
+____
+
+[quote, Someone, Somewhere]
+____
+Attributed quote.
+____

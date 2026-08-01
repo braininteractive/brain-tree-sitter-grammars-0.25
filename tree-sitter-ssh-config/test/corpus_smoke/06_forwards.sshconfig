@@ -1,0 +1,4 @@
+Host tunnel
+  LocalForward 8080 localhost:80
+  RemoteForward 9000 127.0.0.1:9000
+  DynamicForward 1080

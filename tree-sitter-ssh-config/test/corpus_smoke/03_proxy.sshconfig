@@ -1,0 +1,8 @@
+Host bastion
+  HostName 10.0.0.1
+  Port 2222
+  ProxyJump none
+
+Host internal-*
+  ProxyJump bastion
+  ForwardAgent yes

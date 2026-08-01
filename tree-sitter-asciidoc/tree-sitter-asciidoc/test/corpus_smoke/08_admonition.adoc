@@ -1,0 +1,6 @@
+[NOTE]
+====
+An admonition block.
+====
+
+WARNING: Inline admonition.

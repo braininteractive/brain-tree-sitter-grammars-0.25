@@ -1,0 +1,8 @@
+:project: demo
+:version: 1.2
+
+Building {project} v{version}.
+
+ifdef::env-github[]
+GitHub-only note.
+endif::[]

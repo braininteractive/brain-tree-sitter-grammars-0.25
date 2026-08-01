@@ -1,0 +1,3 @@
+Match host *.prod.example.com user deploy
+  IdentityFile ~/.ssh/deploy_key
+  StrictHostKeyChecking yes

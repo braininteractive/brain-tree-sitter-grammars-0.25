@@ -1,0 +1,5 @@
+{
+  "grammars": [{"name": "awk", "camelcase": "Awk", "scope": "source.awk", "path": ".", "file-types": ["awk"]}],
+  "metadata": {"version": "0.25.0", "license": "MIT"},
+  "bindings": {"rust": true}
+}

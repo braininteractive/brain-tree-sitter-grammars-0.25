@@ -1,0 +1,4 @@
+Host *
+  ServerAliveInterval 60
+  AddKeysToAgent yes
+  Compression yes

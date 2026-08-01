@@ -1,0 +1,3 @@
+Host "spaced name"
+  User "user name"
+  SetEnv FOO=bar BAZ=qux

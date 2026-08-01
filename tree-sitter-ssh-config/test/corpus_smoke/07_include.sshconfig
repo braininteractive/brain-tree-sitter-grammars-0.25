@@ -1,0 +1,2 @@
+Include ~/.ssh/config.d/*
+Include /etc/ssh/company_config

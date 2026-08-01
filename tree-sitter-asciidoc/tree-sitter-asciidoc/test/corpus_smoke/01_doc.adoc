@@ -1,0 +1,8 @@
+= Document Title
+Author Name <author@example.com>
+
+First paragraph of the preamble.
+
+== Section One
+
+Body text here.

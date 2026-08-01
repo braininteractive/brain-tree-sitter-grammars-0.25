@@ -1,0 +1,37 @@
+===========
+breaks
+===========
+
+'''
+
+<<<
+
+'''
+
+[.column]
+<<<
+
+-----
+
+(document
+  (block_element
+    (section_block
+      (breaks
+        (breaks_marker))))
+  (block_element
+    (section_block
+      (breaks
+        (breaks_marker))))
+  (block_element
+    (section_block
+      (breaks
+        (breaks_marker))))
+  (block_element
+    (section_block
+      (element_attr
+        (element_attr_marker)
+        (positional_attr
+          (role))
+        (element_attr_marker))
+      (breaks
+        (breaks_marker)))))
