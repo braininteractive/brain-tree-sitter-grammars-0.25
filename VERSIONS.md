@@ -26,7 +26,7 @@ Notes: `cmake`, `hcl`, `r` (raw-git-dep families) were already in the monorepo (
 | tree-sitter-typst | `tree-sitter-typst` | uben0 @ `46cf4de` | 14→15 + LanguageFn | 2840/2934 imported reference tests (94 pre-existing deviations documented) |
 | tree-sitter-just | `tree-sitter-just` | IndianBoy42 @ `5685543` (2026-03-25) | 15 (pin; scanner) | 71/71 |
 | tree-sitter-nu | `tree-sitter-nu` | nushell (official) @ `9467420` (2026-07-28) | 15 (pin; scanner) | 312/312 |
-| tree-sitter-awk | `tree-sitter-awk` | Beaglefoot @ `34bbdc7` | 14→15 + LanguageFn | 117/117 |
+| tree-sitter-awk | `tree-sitter-awk` | Beaglefoot @ `34bbdc7` | 14→15 + LanguageFn + **fork.12: build.rs scanner-compilation fix** (upstream shipped it commented out — crate could not link) | 117/117 |
 | tree-sitter-ssh-config | `tree-sitter-ssh-config` | ObserverOfTime @ `0c35b24` (2026-07-24) | 15 (pin) | 11/11 |
 | tree-sitter-nginx | `tree-sitter-nginx` | opa-oz @ `47ade64` (larger corpus + scanner vs GitLab rival) | 15 (pin) | 30/30 |
 | tree-sitter-asciidoc | `tree-sitter-asciidoc` + `tree-sitter-asciidoc-inline` (dual) | cathaysia @ `e071011` (2026-07-20) | 15 + LanguageFn rewrite | 57/57 + 63/63 |
