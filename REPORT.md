@@ -1,15 +1,15 @@
 # Tree-sitter Grammar Collection — Delivery Report
 
 **Repository:** `github.com/braininteractive/brain-tree-sitter-grammars-0.25`
-**Authoritative tag:** `v0.25.0-fork.9`
-**Report date:** 2026-07-31
+**Authoritative tag:** `v0.25.0-fork.12`
+**Report date:** 2026-08-01
 **Toolchain:** tree-sitter-cli 0.25.10 · Rust stable · clang
 
 ---
 
 ## 1. What this repository is
 
-A single monorepo of **76 tree-sitter grammars**, each in its own top-level
+A single monorepo of **96 grammar directories / 99 crates** (several are dual-grammar), each in its own top-level
 `tree-sitter-<lang>/` directory, uniformly brought to one engineering standard:
 
 - **ABI 15** generated `parser.c`, committed in-repo (consumers never run a
@@ -33,7 +33,7 @@ A single monorepo of **76 tree-sitter grammars**, each in its own top-level
 Every grammar is one Cargo line:
 
 ```toml
-<crate-name> = { git = "https://github.com/braininteractive/brain-tree-sitter-grammars-0.25", tag = "v0.25.0-fork.9" }
+<crate-name> = { git = "https://github.com/braininteractive/brain-tree-sitter-grammars-0.25", tag = "v0.25.0-fork.12" }
 ```
 
 Cargo locates each crate inside the monorepo by package name. One tag pins the
@@ -57,6 +57,9 @@ so crates.io users migrate with a source-line change only):
 | tree-sitter-fsharp | `tree-sitter-fsharp` | `LANGUAGE_FSHARP` + `LANGUAGE_SIGNATURE` |
 | tree-sitter-md | `tree-sitter-md` | `LANGUAGE` (block) + `INLINE_LANGUAGE` |
 | tree-sitter-jinja2 | `tree-sitter-jinja` + `tree-sitter-jinja-inline` | `LANGUAGE` each |
+| tree-sitter-asciidoc | `tree-sitter-asciidoc` + `tree-sitter-asciidoc-inline` | `LANGUAGE` each |
+| tree-sitter-gitignore | `tree-sitter-ignore` | `LANGUAGE` |
+| tree-sitter-proto | `tree-sitter-protobuf` | `LANGUAGE` |
 
 Everything else: crate name = directory name, constant = `LANGUAGE`.
 
@@ -146,8 +149,10 @@ regression tests:
   upstream's explicit `license = "MIT"` SPDX declaration in Cargo.toml, with a
   provenance note in the LICENSE itself. Fine for git consumption; registry
   publication should wait for upstream's word.
-- **Languages with no tree-sitter grammar anywhere** (exhaustively searched):
-  Stylus, Velocity/VTL. Windows batch is unverified-likely-absent.
+- **Languages with no viable tree-sitter grammar anywhere** (exhaustively searched):
+  Stylus, Velocity/VTL, zsh-specific, Windows batch. MDX was evaluated and rejected
+  (stale markdown fork sharing tree-sitter-md's crate name and C symbols — guaranteed
+  link collision); systemd unit files are INI-family — use `tree-sitter-ini`.
 
 ## 7. Tag history
 
@@ -161,7 +166,10 @@ regression tests:
 | `v0.25.0-fork.6` | hcl C-symbol rename; Cargo `links` collision guards |
 | `v0.25.0-fork.7` | +4 languages: swift, nix, crystal, graphql |
 | `v0.25.0-fork.8` | +15 languages (julia, fsharp, perl, powershell, elm, d, lua, md, scss, prisma, properties, embedded-template, mustache, haml, commonlisp) + cmake/r to ABI 15 — collection uniformly ABI 15 |
-| **`v0.25.0-fork.9`** | **Zero-warning builds (current)** |
+| `v0.25.0-fork.9` | Zero-warning builds |
+| `v0.25.0-fork.10` | +12 everyday formats: ini, dotenv, make, protobuf, angular, jsonc (+trailing-comma fix), gitignore, gitattributes, git-config, gitcommit, starlark, requirements |
+| `v0.25.0-fork.11` | +9 docs/infra families: latex, bibtex, typst, just, nushell, awk, ssh-config, nginx, asciidoc (dual) |
+| **`v0.25.0-fork.12`** | **awk build.rs scanner fix (upstream scaffold bug) + full-collection hard test sweep (current)** |
 
 Published tags are never moved; each fix ships as a new tag.
 
